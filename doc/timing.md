@@ -1,7 +1,7 @@
 # Timing
 
 |Week     |Beschrijving                                                       | 
-|--       |--                                                                 | 
+|---      |---                                                                 | 
 |M1W1     |**Keuze project / Groepsindeling**                                 | 
 |M1W2     |                                                                   | 
 |M1W3     |Einde sprint #1 / **Indienen projectplan**                         | 
