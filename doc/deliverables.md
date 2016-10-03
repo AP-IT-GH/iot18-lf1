@@ -1,5 +1,5 @@
 # Deliverables
-Korte beschrijving van de te inleveren documenten.
+Richtlijnen voor de te inleveren documenten.
 
 **Dit zijn richtlijnen voor de documentatie. U bent zelf verantwoordelijk voor
 de relevante documentatie**
