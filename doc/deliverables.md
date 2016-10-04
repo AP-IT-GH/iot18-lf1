@@ -44,3 +44,6 @@ Opsomming van de backlog items en beschrijving
 
 ##### Planning
 Planning van sprint 1 & 2
+
+## PCB Design
+### 1ste Versie 
