@@ -47,3 +47,30 @@ Planning van sprint 1 & 2
 
 ## PCB Design
 ### 1ste Versie 
+Beschrijf je PCB in een README file
+
+## Tussentijdse Presentatie
+### Project + Uitbreiding
+Kort jullie project beschrijven en jullie visie hier overgeven en mogelijke uitbreidingen voorstellen
+
+### Analyse
+* Hoe gaan jullie dit project tot een goed eind breng? 
+* Welke technologieën gaan jullie gebruiken en waarom gebruik jullie deze technologie?
+* Uitleggen van jullie high level diagrammen
+
+### Stand van zaken
+* Waar staan jullie nu in het project? 
+* Wat hebben jullie gerealiseerd deze afgelopen module?
+* Problemen?
+* Andere richting genomen?
+* Wat kon beter?
+
+
+### Volgende stappen
+* Wat zijn de volgende doelen / backlog items die je wilt realiseren? 
+* Ben je op schema?
+
+### Demo
+Demonstreer je project
+
+
