@@ -37,7 +37,7 @@ weergeven zijn communicatie patronen, koppeling van hardware componenten. Dit
 kunnen ook high level flowcharts zijn.
 
 #### Project Planning
-Link naar het gebruikte project managemennt tool
+Link naar het gebruikte project management tool
 
 ##### Backlog: 
 Opsomming van de backlog items en beschrijving
