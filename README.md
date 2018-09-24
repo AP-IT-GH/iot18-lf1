@@ -1,4 +1,8 @@
-# Internet of Things - [Naam Project]
-## Beschrijving Project
-## Documentatie
+# Internet of Things - Naam Project
+
 ## Groepsleden
+Naam - Verantwoordelijkheid
+
+## Documentatie
+
+Leg hier de link naar de nuttige documentatie
