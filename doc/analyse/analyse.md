@@ -56,7 +56,8 @@ Deze melding zal de gebruiker te zien krijgen op de webapplicatie die communicee
 Waar een "/" gezet is betekent dit dat er niets gevonden werd of dat het niet bestaat.
 
 ### Diagrammen
-Database model:   ![alt text](https://github.com/AP-Elektronica-ICT/iot1819--iot18lf1/blob/master/doc/img/DatabaseModel.JPG)
+Database model:  
+![alt text](https://github.com/AP-Elektronica-ICT/iot1819--iot18lf1/blob/master/doc/img/DatabaseModel.JPG)
 
 #### Algemene architectuur
 
