@@ -1,5 +1,4 @@
-# Internet of Things - Naam Project
-
+# Internet of Things - Leave It
 ## Groepsleden
 
 Wouter Huygen  
