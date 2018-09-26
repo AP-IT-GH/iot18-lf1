@@ -1,7 +1,13 @@
 # Internet of Things - Naam Project
 
 ## Groepsleden
-Naam - Verantwoordelijkheid
+
+Wouter Huygen
+Joris Van Looy
+Robbe Vermeire
+Matthijs Denny
+Steven De Keuster
+Gilian Sterckx
 
 ## Documentatie
 
