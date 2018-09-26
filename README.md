@@ -2,7 +2,7 @@
 
 ## Groepsleden
 
-Wouter Huygen
+Wouter Huygen  
 Joris Van Looy  
 Matthijs Denny  
 Steven De Keuster  
