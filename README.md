@@ -3,11 +3,10 @@
 ## Groepsleden
 
 Wouter Huygen
-Joris Van Looy
-Robbe Vermeire
-Matthijs Denny
-Steven De Keuster
-Gilian Sterckx
+Joris Van Looy  
+Matthijs Denny  
+Steven De Keuster  
+Gilian Sterckx  
 
 ## Documentatie
 
