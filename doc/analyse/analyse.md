@@ -56,18 +56,71 @@ Deze melding zal de gebruiker te zien krijgen op de webapplicatie die communicee
 Waar een "/" gezet is betekent dit dat er niets gevonden werd of dat het niet bestaat.
 
 ### Diagrammen
-Database model:  
-![alt text](https://github.com/AP-Elektronica-ICT/iot1819--iot18lf1/blob/master/doc/img/DatabaseModel.JPG)
 
 #### Algemene architectuur
 
 #### Gedetailleerde diagrammen
+
+Database model:  
+![alt text](https://github.com/AP-Elektronica-ICT/iot1819--iot18lf1/blob/master/doc/img/DatabaseModel.JPG)
+
+Software Flowchart:
+![alt text](https://github.com/AP-Elektronica-ICT/iot1819--iot18lf1/blob/master/doc/img/Software_Flowchart_LabFarm_v1.jpg)
 
 #### Schema's van het product
 
 #### Fysiek design (Optioneel)
 
 #### Niet functionele analyse 
+
+##### Inleiding
+
+In deze analyse gaan we in korte lijnen 4 non-functionele requirements bespreken. Deze zijn:
+
+* Durability
+* Portability
+* Maintainability
+* Testability
+
+##### Non-functionele Requirements
+
+###### 1) Durability
+
+Durability ofterwijl duurzaamheid is altijd een heel interessant gegeven. Men zou in ons geval natuurlijk niet willen dat de smart plantenbak het na een paar dagen al meteen zou begeven. Bij dit project komen er toch wel een aantal verschillende componenten van te pas die zo lang mogelijk moeten blijven werken. Hier spreken we dan bijvoorbeeld over:
+
+* Sensoren
+* Afsluitklemmen voor de buizen
+* Pompen
+
+We gaan hier ook nog even twee belangrijke types van duurzaamheid bespreken:
+
+1) Het gegeven van "Waterproofing" is een type van duurzaamheid. Bij dit project is dit van levensbelang, sinds we het elektriciteitsnet goed gaan moeten onderscheiden van de watervoorraad.
+
+2) Het gegeven van "Toughness" is ook een type van duurzaamheid. Bij dit project is het wel aangenaam als de smart plantenbak niet meteen zou breken na het op de grond te laten vallen.
+
+
+###### 2) Portability
+
+Portability vonden wij ook wel een leuke non-functionele requirement voor dit project. Sinds ons project wireless zal zijn, is het fijn dat de gebruiker de plantenbak zou kunnen neerzetten waar zij dat wensen. Het project moet dus niet te groot, maar ook niet te zwaar zijn. 
+
+Dit sluit dan ook weer aan op het gegeven van "Toughness", wat we bij durability hebben besproken. Als men deze smart plantenbak verscheidene keren gaat verplaatsen, dan moet het er ook wel een zekere weerstand tegen hebben. 
+
+###### 3) Maintainability
+
+Maintainability is ook iets dat zeer belangrijk is. Het onderhouden van de smart plantenbak is iets wat via het online web portaal of handmatig gebeurd. Handmatig zal dit neerkomen op bijvoorbeeld het makkelijk verversen van water en nutriënten en bij het online web portaal komt het er op neer dat alle data duidelijk en overzichtelijk zal worden getoond, zodat er meteen actie kan ondernomen worden als er iets mis moest zijn.
+
+Het online portaal moet natuurlijk door ons ook onderhouden worden. Dit gaan we dan zo efficiënt, betrouwbaar en veilig mogelijk doen. 
+
+###### 4) Testability
+
+Zoals bij de non-functionele requirement durability al staat vermeld, gaan wij toch wel wat hardware nodig hebben. In dit geval is het wel belangrijk dat we dit allemaal ook zo goed mogelijk kunnen testen. Testabilititeit werkt nauw samen met de SOLID principes. Een aantal factoren zijn bijvoorbeeld:
+
+* Encapsulation
+* Cohesion
+* Coupling
+* Redundancy
+
+Hoe beter we onze tests kunnen maken, hoe makkelijker het zal zijn om alles te doen samenwerken.
 
 ## Functionaliteit
 
