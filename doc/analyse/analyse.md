@@ -40,7 +40,20 @@ Deze melding zal de gebruiker te zien krijgen op de webapplicatie die communicee
 
 ![alt text](https://github.com/AP-Elektronica-ICT/iot1819--iot18lf1/blob/master/doc/img/NFT-System.png)
 
-### Marktonderzoek 
+### Marktonderzoek
+|               	| Click & Grow  | Niwa  		| SproutsIO  	| Windowfarms  | GROW duo  |
+| ----------------------|---------------|-----------------------|---------------|--------------|-----------|
+|Type           	| Binnenhuis smart tuin	| Binnenhuis groeikast| Binnenhuis smart tuin | Binnenhuis tuin | Buitenhuis
+|Camera         	| /|/|Bovenaan|/|/|
+|Sensoren       	|/|Omgevingstemperatuur  Omgevingslicht  pH(?)  Waterniveau|Omgevingstemperatuur  Omgevingslicht  pH(?)  Waterniveau  Geleidbaarheid  Bodemtemperatuur|/|Omgevingstemperatuur  Omgevingslicht  Waterniveau  Bodemtemperatuur|
+|Belichting    		| Led op beweegbare arm | Led met apart warmte element| LED | Natuurlijk Zonlicht | Natuurlijk Zonlicht |
+|App Control   	| / |Groeiprofielen  Onderhoud Reminders  Monitoring groeicyclus |Cameracontrol  Realtimedata  Monitoring Groeicyclus | /  | Info over tuinieren  Marketplace voor extra zaden|
+|Communicatie protocol  |/ |Wifi |Wifi |/ |/ |
+|Bodem Type             | "Smart Soil" | Anorganisch | Anorganisch | Anorganisch | Organisch |
+|Irrigatie  		| Automatisch |  Hydroponie | Hydroponie | Hydroponie | Sproeiers|
+|Extra info 		|/| /|/ |Verticaal geplaatst | Beschikt over "Plant-AI"|
+
+Waar een "/" gezet is betekent dit dat er niets gevonden werd of dat het niet bestaat.
 
 ### Diagrammen
 Database model: (zie DatabaseModel.JPG)
