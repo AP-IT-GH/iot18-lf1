@@ -68,6 +68,7 @@ Software Flowchart:
 ![alt text](https://github.com/AP-Elektronica-ICT/iot1819--iot18lf1/blob/master/doc/img/Software_Flowchart_LabFarm_v1.jpg)
 
 #### Schema's van het product
+![alt text](https://github.com/AP-Elektronica-ICT/iot1819--iot18lf1/blob/master/doc/img/NFT-System.png)
 
 #### Fysiek design (Optioneel)
 
