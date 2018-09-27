@@ -128,14 +128,14 @@ Hoe beter we onze tests kunnen maken, hoe makkelijker het zal zijn om alles te d
 
 ## Functionaliteit
 
-De functionaliteit van ons project kan u op onderstaande link vinden:
+De functionaliteit van ons project kan u op deze link vinden:
 https://jira.ap.be/projects/IOT18LF1/summary
 
 ## Release Plan 
 
 ## Inventarisatie Hardware
 
-### Central Processing --------------------------------------------
+### Central Processing
 
 #### ATMEGA644
     + goedkoop
@@ -155,7 +155,7 @@ https://jira.ap.be/projects/IOT18LF1/summary
     + fysieke UTP/USB aansluitingen kunnen extra mogelijkheden bieden
     - veel duurder
 
-### Light Sensor --------------------------------------------------
+### Light Sensor
 
 #### Ambient light sensor (ALS) - ICOPT3001 (Texas Instruments)
      + I²C communicatie (= duidelijke output)
@@ -173,7 +173,7 @@ https://jira.ap.be/projects/IOT18LF1/summary
       
      http://www.onsemi.com/pub/Collateral/LV0104CS-D.PDF
      
-### PH Sensor -----------------------------------------------------
+### PH Sensor 
 
 #### Gravity: Analog pH Sensor / Meter Kit For Arduino
     + goedkoop
@@ -183,12 +183,12 @@ https://jira.ap.be/projects/IOT18LF1/summary
     how to use:
     https://scidle.com/how-to-use-a-ph-sensor-with-arduino/
     
-### Electrical Conductivity Sensor --------------------------------
+### Electrical Conductivity Sensor 
 
 #### Zelf maken:
     https://www.youtube.com/watch?v=B0lrcvT2HRc
     
-### Camera --------------------------------------------------------
+### Camera 
 
 #### ArduCAM Mini Camera Module Shield w/ 2 MP OV2640 for Arduino
     + goedkoop
@@ -197,7 +197,7 @@ https://jira.ap.be/projects/IOT18LF1/summary
     
     https://www.robotshop.com/eu/en/arducam-mini-camera-module-shield-2-mp-ov2640-arduino.html?gclid=Cj0KCQjwuafdBRDmARIsAPpBmVUi0YRoRtd5osaa2rMZMbvfKH_YiUFcq9rJzr4onahy1zTNfeqEHioaAtWFEALw_wcB
     
-### Temperature Sensor --------------------------------------------
+### Temperature Sensor 
 
 #### LM35
     + goedkoop
@@ -205,7 +205,7 @@ https://jira.ap.be/projects/IOT18LF1/summary
     
     https://www.efxkits.us/lm35-temperature-sensor-circuit-working/
     
-### Water/Nutrition Pump ------------------------------------------
+### Water/Nutrition Pump 
 
 #### hoge kwaliteit dc 3v kleine waterpomp
     + goedkoop
@@ -222,7 +222,7 @@ https://jira.ap.be/projects/IOT18LF1/summary
     
     https://nl.aliexpress.com/item/12V-DC-DIY-Dosing-Pump-Peristaltic-Dosing-Head-For-Aquarium-Lab-Analytical-Water-Free-Shipping-From/32404308028.html?spm=a2g0z.search0104.3.25.3f352ab0mYwk9g&ws_ab_test=searchweb0_0,searchweb201602_5_10065_10068_5726820_10843_10546_10059_10884_10548_10887_10696_100031_5726920_10084_10083_10103_10618_10304_10307_10820_449,searchweb201603_45,ppcSwitch_5&algo_expid=0572c925-6725-4353-82e1-39e945880fe5-3&algo_pvid=0572c925-6725-4353-82e1-39e945880fe5&transAbTest=ae803_2&priceBeautifyAB=0
     
-### WiFi Module ---------------------------------------------------
+### WiFi Module
 
 #### ESP8266 ESP-01 ESP01
     + goedkoop
@@ -232,13 +232,13 @@ https://jira.ap.be/projects/IOT18LF1/summary
     
 ### Alternatieven en misschien nodig
 
-### PH Sensor -----------------------------------------------------
+### PH Sensor 
 
 #### PH sensor controller
     LMP91200 (Texas Instruments)
         http://www.ti.com/product/LMP91200
 	
-### Moisture Sensor -----------------------------------------------
+### Moisture Sensor 
 
 #### Soil Hygrometer Humidity Detection Module Moisture Sensor for Arduino
     + goedkoop
@@ -248,7 +248,7 @@ https://jira.ap.be/projects/IOT18LF1/summary
     how to use:
     https://www.instructables.com/id/Arduino-Soil-Moisture-Sensor/
     
-### Servo/Motor ---------------------------------------------------
+### Servo/Motor
 
 #### motor van school gebruiken?
     Is dit nodig?
