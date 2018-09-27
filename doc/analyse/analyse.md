@@ -128,6 +128,9 @@ Hoe beter we onze tests kunnen maken, hoe makkelijker het zal zijn om alles te d
 
 ## Functionaliteit
 
+De functionaliteit van ons project kan u op onderstaande link vinden:
+https://jira.ap.be/projects/IOT18LF1/summary
+
 ## Release Plan 
 
 ## Inventarisatie Hardware
