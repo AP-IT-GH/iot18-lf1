@@ -1,6 +1,26 @@
 Inventarisatie Hardware
 =======
 
+Central Processing--------------------------------------------
+
+    ATMEGA644
+        + goedkoop
+        + 40 pinnen (32 I/O pinnen)
+        + dubbel program memory van ATMEGA328
+        - geheugen sterk genoeg voor foto's?
+        
+    Arduino Mega    #### mag dit wel gebruikt worden? ####
+        + meer pinnen dan ATMEGA644
+        + Makkelijker in gebruik
+        - duurder
+        - geheugen sterk genoeg voor foto's?
+
+    Raspberry Pi    #### mag dit wel gebruikt worden? ####
+        + sterk
+        + uitbreidbaar geheugen
+        + fisieke UTP/USB aansluitingen kunnen extra mogelijkheden bieden
+        - veel duurder
+
 Light Sensor--------------------------------------------------
 
     Ambient light sensor (ALS) IC
@@ -27,14 +47,10 @@ PH Sensor-----------------------------------------------------
         how to use:
             https://scidle.com/how-to-use-a-ph-sensor-with-arduino/
             
-Moisture Sensor-----------------------------------------------
+Electrical Conductivity Sensor--------------------------------
     
-    Soil Hygrometer Humidity Detection Module Moisture Sensor for Arduino
-        + goedkoop
-        + makkelijke aansluiting op pcb
-        https://www.gearbest.com/lcd-led-display-module/pp_1604163.html?wid=1433363&currency=EUR&vip=4494060&gclid=Cj0KCQjwuafdBRDmARIsAPpBmVUVZ4v3PHXDPaJaefT5DMdvNO3SS2K4qrhyFczvhqV0_jlU99c4Qq8aAjazEALw_wcB
-        how to use:
-            https://www.instructables.com/id/Arduino-Soil-Moisture-Sensor/
+    Zelf maken
+        https://www.youtube.com/watch?v=B0lrcvT2HRc
     
 Camera--------------------------------------------------------
     
@@ -66,12 +82,6 @@ Water/Nutrition Pump------------------------------------------
         - traag? (max 60 ml/min)
         https://nl.aliexpress.com/item/12V-DC-DIY-Dosing-Pump-Peristaltic-Dosing-Head-For-Aquarium-Lab-Analytical-Water-Free-Shipping-From/32404308028.html?spm=a2g0z.search0104.3.25.3f352ab0mYwk9g&ws_ab_test=searchweb0_0,searchweb201602_5_10065_10068_5726820_10843_10546_10059_10884_10548_10887_10696_100031_5726920_10084_10083_10103_10618_10304_10307_10820_449,searchweb201603_45,ppcSwitch_5&algo_expid=0572c925-6725-4353-82e1-39e945880fe5-3&algo_pvid=0572c925-6725-4353-82e1-39e945880fe5&transAbTest=ae803_2&priceBeautifyAB=0
 
-Servo/Motor---------------------------------------------------
-
-    motor van school gebruiken?
-        Is dit nodig?
-            in plaats hiervan meerdere pompen plaatsen
-
 WiFi Module---------------------------------------------------
         
     ESP8266 ESP-01 ESP01
@@ -82,6 +92,22 @@ WiFi Module---------------------------------------------------
 
 ## Alternatieven en misschien nodig ######
 
-PH sensor controller
+PH Sensor-----------------------------------------------------
+
+    PH sensor controller
         LMP91200 (Texas Instruments)
             http://www.ti.com/product/LMP91200
+            
+Moisture Sensor-----------------------------------------------
+    
+    Soil Hygrometer Humidity Detection Module Moisture Sensor for Arduino
+        + goedkoop
+        + makkelijke aansluiting op pcb
+        https://www.gearbest.com/lcd-led-display-module/pp_1604163.html?wid=1433363&currency=EUR&vip=4494060&gclid=Cj0KCQjwuafdBRDmARIsAPpBmVUVZ4v3PHXDPaJaefT5DMdvNO3SS2K4qrhyFczvhqV0_jlU99c4Qq8aAjazEALw_wcB
+        how to use:
+            https://www.instructables.com/id/Arduino-Soil-Moisture-Sensor/
+    
+Servo/Motor---------------------------------------------------
+
+    motor van school gebruiken?
+        Is dit nodig?
