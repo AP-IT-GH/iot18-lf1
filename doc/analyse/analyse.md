@@ -133,6 +133,10 @@ https://jira.ap.be/projects/IOT18LF1/summary
 
 ## Release Plan 
 
+Ons release plan kan u momenteel ook op deze link vinden: https://jira.ap.be/projects/IOT18LF1/summary
+
+PS: De planning en de sprints zijn momenteel nog een heel ruwe schatting vanwege de deadline voor de analyse. Er zullen dus zeker nog wel updates komen, maar momenteel is het toch al een goede schatting naar wat u zou kunnen verwachten. 
+
 ## Inventarisatie Hardware
 
 ### Central Processing
