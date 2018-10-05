@@ -58,6 +58,7 @@ Waar een "/" gezet is betekent dit dat er niets gevonden werd of dat het niet be
 ### Diagrammen
 
 #### Algemene architectuur
+![alt text](https://github.com/AP-Elektronica-ICT/iot1819--iot18lf1/blob/master/doc/img/Software_Architecture_2.png)
 
 #### Gedetailleerde diagrammen
 
