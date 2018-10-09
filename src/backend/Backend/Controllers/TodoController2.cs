@@ -5,27 +5,28 @@ using Models;
 
 namespace Controllers
 {
-    [Route("api/todo")] // /api/todo
-    public class TodoController : ControllerBase
+    [Route("api/todo2")] // /api/todo2
+    public class TodoController2 : ControllerBase
     {
         private readonly CollectionContext _context;
 
-        public TodoController(CollectionContext context)
+        public TodoController2(CollectionContext context)
         {
             _context = context;
+
         }
 
-        [HttpGet] // /api/todo
-        public List<TodoItem> GetAll()
+        [HttpGet] // /api/todo2
+        public List<TodoItem2> GetAll()
         {
-            return _context.TodoItems.ToList();
+            return _context.TodoItems2.ToList();
         }
 
-        [Route("{id}")] // /api/todo/1
+        [Route("{id}")] // /api/todo2/2
         [HttpGet]
         public ActionResult GetById(long id)
         {
-            var item = _context.TodoItems.Find(id);
+            var item = _context.TodoItems2.Find(id);
             if (item == null)
             {
                 return NotFound();
@@ -33,10 +34,10 @@ namespace Controllers
             return Ok(item);
         }
 
-        [HttpPut("{id}")] // /api/todo/1 + body
-        public IActionResult Update(long id, TodoItem item)
+        [HttpPut("{id}")] // /api/todo2/2 + body
+        public IActionResult Update(long id, TodoItem2 item)
         {
-            var todo = _context.TodoItems.Find(id);
+            var todo = _context.TodoItems2.Find(id);
             if (todo == null)
             {
                 return NotFound();
@@ -44,30 +45,30 @@ namespace Controllers
 
             todo.Name =item.Name;
 
-            _context.TodoItems.Update(todo);
+            _context.TodoItems2.Update(todo);
             _context.SaveChanges();
             return NoContent();
 
         }
 
-        [HttpPost] // /api/todo + body
-        public IActionResult Post([FromBody] TodoItem todo)
+        [HttpPost] // /api/todo2 + body
+        public IActionResult Post([FromBody] TodoItem2 todo)
         {
-            _context.TodoItems.Add(todo);
+            _context.TodoItems2.Add(todo);
             _context.SaveChanges();
             return Created("", todo);
         }
 
-        [HttpDelete("{id}")] // /api/todo/1
+        [HttpDelete("{id}")] // /api/todo2/2
         public IActionResult Delete(long id)
         {
-            var todo = _context.TodoItems.Find(id);
+            var todo = _context.TodoItems2.Find(id);
             if (todo == null)
             {
                 return NotFound();
             }
 
-            _context.TodoItems.Remove(todo);
+            _context.TodoItems2.Remove(todo);
             _context.SaveChanges();
             return NoContent();
         }
