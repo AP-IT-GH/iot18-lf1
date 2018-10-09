@@ -1,0 +1,10 @@
+c:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\Backend\bin\Debug\netcoreapp2.0\Backend.deps.json
+c:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\Backend\bin\Debug\netcoreapp2.0\Backend.runtimeconfig.json
+c:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\Backend\bin\Debug\netcoreapp2.0\Backend.runtimeconfig.dev.json
+c:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\Backend\bin\Debug\netcoreapp2.0\Backend.dll
+c:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\Backend\bin\Debug\netcoreapp2.0\Backend.pdb
+c:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\Backend\obj\Debug\netcoreapp2.0\Backend.csproj.CoreCompileInputs.cache
+c:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\Backend\obj\Debug\netcoreapp2.0\Backend.AssemblyInfoInputs.cache
+c:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\Backend\obj\Debug\netcoreapp2.0\Backend.AssemblyInfo.cs
+c:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\Backend\obj\Debug\netcoreapp2.0\Backend.dll
+c:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\Backend\obj\Debug\netcoreapp2.0\Backend.pdb
