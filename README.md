@@ -5,7 +5,7 @@ Wouter Huygen
 Joris Van Looy  
 Matthijs Denny  
 Steven De Keuster  
-Gilian Sterckx  
+Melvin Boetsgezel 
 
 ## Documentatie
 
