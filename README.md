@@ -2,8 +2,8 @@
 ## Groepsleden
 
 Wouter Huygen  
-Joris Van Looy   
-Denny Matthijs 
+Joris Van Looy    
+Denny Matthijs   
 Steven De Keuster  
 Melvin Boetsgezel 
 
