@@ -11,8 +11,10 @@ namespace Models
         }
 
         //add database tables
-        public DbSet<TodoItem> TodoItems { get; set; }
-        public DbSet<TodoItem2> TodoItems2 { get; set; }
+        public DbSet<Camera> Cameras {get; set;}
+        public DbSet<LabFarm> LabFarms {get; set;}
+        public DbSet<Sensor> Sensors {get; set;}
+        public DbSet<SensorType> SensorTypes {get; set;}
 
     }
 }

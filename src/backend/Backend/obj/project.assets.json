@@ -12864,11 +12864,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\joris\\school\\2019\\App Valley\\Backend\\Backend.csproj",
+      "projectUniqueName": "c:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\Backend\\Backend.csproj",
       "projectName": "Backend",
-      "projectPath": "c:\\Users\\joris\\school\\2019\\App Valley\\Backend\\Backend.csproj",
+      "projectPath": "c:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\Backend\\Backend.csproj",
       "packagesPath": "C:\\Users\\joris\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\joris\\school\\2019\\App Valley\\Backend\\obj\\",
+      "outputPath": "c:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\Backend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
