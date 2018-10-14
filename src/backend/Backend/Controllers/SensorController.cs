@@ -48,8 +48,9 @@ namespace Controllers
             }
 
             sensor.SensorType =item.SensorType;
-
-            //SensorOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+            sensor.LabFarm = item.LabFarm;
+            sensor.TimeStamp = item.TimeStamp;
+            sensor.Value = item.Value;
 
             _context.Sensors.Update(sensor);
             _context.SaveChanges();

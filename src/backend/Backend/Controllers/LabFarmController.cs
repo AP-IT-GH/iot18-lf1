@@ -43,12 +43,17 @@ namespace Controllers
             }
 
             labFarm.AuthId =item.AuthId;
-            //***TODO */
-
-
-
+            labFarm.PlantSpecies = item.PlantSpecies;
+            labFarm.OptimalAcidityLevelHigh = item.OptimalAcidityLevelHigh;
+            labFarm.OptimalAcidityLevelLow = item.OptimalAcidityLevelLow;
+            labFarm.OptimalConductivityLevelHigh = item.OptimalConductivityLevelHigh;
+            labFarm.OptimalConductivityLevelLow = item.OptimalConductivityLevelLow;
+            labFarm.OptimalHumidityLevelHigh = item.OptimalHumidityLevelHigh;
+            labFarm.OptimalHumidityLevelLow = item.OptimalHumidityLevelLow;
+            labFarm.OptimalLightLevelHigh = item.OptimalLightLevelHigh;
+            labFarm.OptimalLightLevelLow = labFarm.OptimalLightLevelLow;
+            labFarm.MinimumReservoirLevel = item.MinimumReservoirLevel;
             
-
             _context.LabFarms.Update(labFarm);
             _context.SaveChanges();
             return NoContent();

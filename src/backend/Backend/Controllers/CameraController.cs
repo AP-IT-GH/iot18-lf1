@@ -44,8 +44,9 @@ namespace Controllers
             }
 
             camera.Column =item.Column;
-
-            //cameraOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+            camera.Row = item.Row;
+            camera.ImagePath = item.ImagePath;
+            camera.TimeStamp = item.TimeStamp;
 
             _context.Cameras.Update(camera);
             _context.SaveChanges();
