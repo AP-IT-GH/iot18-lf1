@@ -1,0 +1,91 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Models;
+
+
+namespace Repositories
+{
+    // DB calls
+    public class CameraRepository 
+    {
+        private CollectionContext _context;
+        public CameraRepository(CollectionContext context)
+        {
+            _context = context;
+        }
+
+        public List<CameraModel> GetAll()
+        {
+            try
+            {
+                return _context.Cameras.ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public CameraModel Get(long id)
+        {
+            try
+            {
+                return _context.Cameras.Find(id);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public CameraModel Put(CameraModel camera)
+        {
+            try
+            {
+                _context.Cameras.Update(camera);
+                _context.SaveChanges();
+                return camera;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public CameraModel Post(CameraModel camera)
+        {
+            try
+            {
+                _context.Cameras.Add(camera);
+                _context.SaveChanges();
+                return camera;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }    
+        public bool Delete(long id)
+        {
+            try
+            {
+                var camera = _context.Cameras.Find(id);
+                if (camera == null)
+                {
+                    return false;
+                }
+
+                _context.Cameras.Remove(camera);
+                _context.SaveChanges();
+                return true;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+    }
+}

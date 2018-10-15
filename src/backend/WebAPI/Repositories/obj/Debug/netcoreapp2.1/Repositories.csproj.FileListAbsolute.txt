@@ -1,0 +1,16 @@
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\obj\Debug\netcoreapp2.1\Repositories.csprojAssemblyReference.cache
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\obj\Debug\netcoreapp2.1\Repositories.csproj.CoreCompileInputs.cache
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\obj\Debug\netcoreapp2.1\Repositories.AssemblyInfoInputs.cache
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\obj\Debug\netcoreapp2.1\Repositories.AssemblyInfo.cs
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\bin\Debug\netcoreapp2.1\Repositories.deps.json
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\bin\Debug\netcoreapp2.1\Repositories.dll
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\bin\Debug\netcoreapp2.1\Repositories.pdb
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\bin\Debug\netcoreapp2.1\Models.dll
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\bin\Debug\netcoreapp2.1\Newtonsoft.Json.dll
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\bin\Debug\netcoreapp2.1\Models.pdb
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\bin\Debug\netcoreapp2.1\Newtonsoft.Json.xml
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\obj\Debug\netcoreapp2.1\Repositories.csproj.CopyComplete
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\obj\Debug\netcoreapp2.1\Repositories.dll
+C:\Users\joris\school\2019\IoT\NewProject\NewProject3\WebAPI\Repositories\obj\Debug\netcoreapp2.1\Repositories.pdb
