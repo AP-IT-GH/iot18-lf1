@@ -1,0 +1,24 @@
+
+
+.labfarm-container {
+    display: inline-flex;
+}
+.labfarm-header {
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    margin-top: 60px;
+}
+.labfarm-header a {
+    margin-top: 2px;
+}
+
+.labfarm-body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+app-sensor-graph {
+    padding-top: 24px;
+    padding-right: 48px;
+}

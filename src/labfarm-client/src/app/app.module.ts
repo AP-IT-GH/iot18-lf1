@@ -9,6 +9,7 @@ import { FarmComponent } from './pages/farm/farm.component';
 import { OptionsComponent } from './pages/options/options.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { LabFarmOverviewComponent } from './components/lab-farm-overview/lab-farm-overview.component';
+import { SensorGraphComponent } from './components/sensor-graph/sensor-graph.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LabFarmOverviewComponent } from './components/lab-farm-overview/lab-far
     FarmComponent,
     OptionsComponent,
     PageNotFoundComponent,
-    LabFarmOverviewComponent
+    LabFarmOverviewComponent,
+    SensorGraphComponent
   ],
   imports: [
     RouterModule.forRoot([
