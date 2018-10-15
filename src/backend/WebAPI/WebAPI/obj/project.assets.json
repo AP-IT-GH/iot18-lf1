@@ -4348,6 +4348,9 @@
       "Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Microsoft.AspNetCore.App": "2.1.1"
+        },
         "compile": {
           "bin/placeholder/Models.dll": {}
         },
@@ -4359,6 +4362,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
+          "Microsoft.AspNetCore.App": "2.1.1",
           "Models": "1.0.0"
         },
         "compile": {
@@ -4373,6 +4377,7 @@
         "framework": ".NETCoreApp,Version=v2.1",
         "dependencies": {
           "EntityFramework": "6.2.0",
+          "Microsoft.AspNetCore.App": "2.1.1",
           "Repositories": "1.0.0"
         },
         "compile": {
@@ -11601,11 +11606,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joris\\school\\2019\\IoT\\NewProject\\NewProject3\\WebAPI\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\NewProject\\NewProject3\\WebAPI\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\joris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joris\\school\\2019\\IoT\\NewProject\\NewProject3\\WebAPI\\WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11624,14 +11629,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\joris\\school\\2019\\IoT\\NewProject\\NewProject3\\WebAPI\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\NewProject\\NewProject3\\WebAPI\\Models\\Models.csproj"
+            "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Models\\Models.csproj"
             },
-            "C:\\Users\\joris\\school\\2019\\IoT\\NewProject\\NewProject3\\WebAPI\\Repositories\\Repositories.csproj": {
-              "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\NewProject\\NewProject3\\WebAPI\\Repositories\\Repositories.csproj"
+            "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Repositories\\Repositories.csproj": {
+              "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Repositories\\Repositories.csproj"
             },
-            "C:\\Users\\joris\\school\\2019\\IoT\\NewProject\\NewProject3\\WebAPI\\Services\\Services.csproj": {
-              "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\NewProject\\NewProject3\\WebAPI\\Services\\Services.csproj"
+            "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Services\\Services.csproj": {
+              "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Services\\Services.csproj"
             }
           }
         }
