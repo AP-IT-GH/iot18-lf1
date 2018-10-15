@@ -17,6 +17,12 @@
     display: flex;
     flex-wrap: wrap;
 }
+.lf-options {
+    display: flex;
+    justify-content: space-between;
+    line-height: 30px;
+}
+
 
 app-sensor-graph {
     padding-top: 24px;

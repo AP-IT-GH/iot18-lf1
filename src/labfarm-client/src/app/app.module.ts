@@ -10,6 +10,7 @@ import { OptionsComponent } from './pages/options/options.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { LabFarmOverviewComponent } from './components/lab-farm-overview/lab-farm-overview.component';
 import { SensorGraphComponent } from './components/sensor-graph/sensor-graph.component';
+import { UiSwitchModule } from 'ngx-toggle-switch';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SensorGraphComponent } from './components/sensor-graph/sensor-graph.com
         { path: '', redirectTo: 'home', pathMatch: 'full'},
         { path: "**", component: PageNotFoundComponent}
       ], { useHash: true }),
-    BrowserModule
+    BrowserModule,
+    UiSwitchModule
   ],
   providers: [],
   bootstrap: [AppComponent]
