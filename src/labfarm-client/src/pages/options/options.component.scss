@@ -1,0 +1,17 @@
+.options-container {
+    min-width: 300px;
+    max-width: 400px;
+    margin-top: 80px;
+    div div div {
+        margin-bottom: 20px;
+    }
+    div div div span p {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.updated {
+    padding-top: 18px;
+}
+
+

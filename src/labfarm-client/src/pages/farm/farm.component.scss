@@ -18,6 +18,14 @@
     display: flex;
     flex-wrap: wrap;
 }
+.labfarm-body * {
+    padding-top: 24px;
+    padding-right: 48px;
+}
+.labfarm-body img {
+    padding: 12px;
+    border-radius: 8px;
+}
 .lf-options {
     display: flex;
     justify-content: space-between;
@@ -26,10 +34,10 @@
 }
 
 
-app-sensor-graph {
-    padding-top: 24px;
-    padding-right: 48px;
-}
+// app-sensor-graph {
+//     padding-top: 24px;
+//     padding-right: 48px;
+// }
 
 mat-slider {
     max-width: 200px;

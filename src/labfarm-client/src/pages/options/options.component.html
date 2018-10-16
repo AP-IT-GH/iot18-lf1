@@ -1,3 +1,38 @@
-<p>
-  options works!
-</p>
+<div class="options-container offset-2">
+
+    <div class="card">
+        <div class="card-header bg-dark text-light">
+            <a>Preferences</a>
+        </div>
+        <div class="card-body">
+            <div>
+                <span>
+                    <h5 class="card-title">Lab Farm #123</h5>
+                    <p class="card-text">
+                        <ui-switch [(ngModel)]="preferences-lf123" (change)="autoModeChanged($event)" size="small"></ui-switch>
+                        <a>Notify me when something is wrong</a>
+                    </p>
+                </span>
+            </div>
+
+            <div>
+                <span>
+                    <h5 class="card-title">Lab Farm #124</h5>
+                    <p class="card-text">
+                        <ui-switch [(ngModel)]="preferences-lf124" (change)="autoModeChanged($event)" size="small"></ui-switch>
+                        <a>Notify me when something is wrong</a>
+                    </p>
+                </span>
+            </div>
+            <div>
+                <span>
+                    <p class="card-text">
+                        <a class="updated small italic text-right font-italic font-weight-light">Updated: 12/10/18
+                            15:59:22</a>
+                        <button type="button" class="btn bg-dark text-light">Save</button>
+                    </p>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
