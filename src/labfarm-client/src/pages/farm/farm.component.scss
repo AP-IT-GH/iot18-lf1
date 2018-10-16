@@ -3,6 +3,7 @@
 .labfarm-container {
     display: inline-flex;
 }
+
 .labfarm-header {
     // display: flex;
     // align-items: center;
@@ -21,10 +22,15 @@
     display: flex;
     justify-content: space-between;
     line-height: 30px;
+    margin-bottom: 10px;
 }
 
 
 app-sensor-graph {
     padding-top: 24px;
     padding-right: 48px;
+}
+
+mat-slider {
+    max-width: 200px;
 }

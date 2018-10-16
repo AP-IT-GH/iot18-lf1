@@ -1,2 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+
+
+.mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label, .mat-accent .mat-slider-track-fill {
+    background-color: #45C48B !important;
+}
+
+.checked {
+    background-color: #45C48B !important;
+}

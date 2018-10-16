@@ -51,7 +51,7 @@ export class SensorGraphComponent implements OnInit {
                 }
             });
            
-        });
+        }, 100*this.SensorId);
     }
 
 }
