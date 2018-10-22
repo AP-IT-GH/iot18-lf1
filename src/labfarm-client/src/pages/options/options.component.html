@@ -9,7 +9,7 @@
                 <span>
                     <h5 class="card-title">Lab Farm #123</h5>
                     <p class="card-text">
-                        <ui-switch [(ngModel)]="preferences-lf123" (change)="autoModeChanged($event)" size="small"></ui-switch>
+                        <ui-switch [(ngModel)]="preferences_lf123" (change)="toggleNotifications($event)" size="small"></ui-switch>
                         <a>Notify me when something is wrong</a>
                     </p>
                 </span>
@@ -19,7 +19,7 @@
                 <span>
                     <h5 class="card-title">Lab Farm #124</h5>
                     <p class="card-text">
-                        <ui-switch [(ngModel)]="preferences-lf124" (change)="autoModeChanged($event)" size="small"></ui-switch>
+                        <ui-switch [(ngModel)]="preferences_lf124" (change)="toggleNotifications($event)" size="small"></ui-switch>
                         <a>Notify me when something is wrong</a>
                     </p>
                 </span>
@@ -29,7 +29,7 @@
                     <p class="card-text">
                         <a class="updated small italic text-right font-italic font-weight-light">Updated: 12/10/18
                             15:59:22</a>
-                        <button type="button" class="btn bg-dark text-light">Save</button>
+                        <button type="button" class="btn bg-dark text-light" (click)="savePreferences($event)">Save</button>
                     </p>
                 </span>
             </div>
