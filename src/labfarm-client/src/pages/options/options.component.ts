@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PushNotificationsService } from 'src/providers/push-notifications/push-notifications.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
     selector: 'app-options',
@@ -13,15 +14,19 @@ export class OptionsComponent implements OnInit {
     private preferences_lf123: boolean = false;
     private preferences_lf124: boolean = false;
 
-    constructor(private notificationService: PushNotificationsService) {
-        
-     }
+    private cookieValue = "UNKNOWN";
+
+    constructor(private notificationService: PushNotificationsService, private cookieService: CookieService) {
+        this.cookieService.set('Test', 'HELLO WORLD!');
+    }
 
     ngOnInit() {
+        this.cookieValue = this.cookieService.get('Test');
+
     }
 
     notify() {
-        let data: Array <any> = [];
+        let data: Array<any> = [];
         data.push({
             'title': 'Lab farm warning!',
             'alertContent': 'Be wary, the light intensity level of Labfarm 123 is low!'
@@ -31,7 +36,7 @@ export class OptionsComponent implements OnInit {
     }
 
     toggleNotifications(event) {
-        if(!this.preferences_lf123 || !this.preferences_lf124){
+        if (!this.preferences_lf123 || !this.preferences_lf124) {
             console.log("Requesting permission");
             this.notificationService.requestPermission();
 

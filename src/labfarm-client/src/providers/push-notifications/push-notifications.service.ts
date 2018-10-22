@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { PushNotification } from 'src/models/PushNotification';
 import { Observable } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
     providedIn: 'root'
 })
 export class PushNotificationsService {
     public permission: Permission;
+
+    // public readonly VAPID_PUBLIC_KEY = "BH3O2qT3dsFifHbHY62eXrTWxYznDibBaZxivAk4bviTHq9o7YnurMoSK9ZVgppqRFMcM5q1MXZndZ7RUAfbmV0";
 
     constructor() { 
         this.permission = this.isSupported() ? 'default' : 'denied';
