@@ -158,7 +158,13 @@ PS: De planning en de sprints zijn momenteel nog een heel ruwe schatting vanwege
     + sterk
     + uitbreidbaar geheugen
     + fysieke UTP/USB aansluitingen kunnen extra mogelijkheden bieden
+    + Wifi Module ingebouwd
     - veel duurder
+    
+#### Uiteindelijke keuze
+We hebben uiteindelijk besloten om voor 4 Raspberry Pi's te gaan in combinatie met 4 ATTiny85's. 1 Raspberry Pi zal dienen als Master voor de ATTiny's en de 3 anderen zullen elks 1 Pi Camera bevatten. Dit model werd ons aanbevolen bij de eerste presentatie.
+
+De communicatie tussen de Raspberry Pi en de 4 ATTiny's zal gebeuren met behulp van het I2C protocol. 
 
 ### Light Sensor
 
@@ -178,6 +184,18 @@ PS: De planning en de sprints zijn momenteel nog een heel ruwe schatting vanwege
       
      http://www.onsemi.com/pub/Collateral/LV0104CS-D.PDF
      
+#### Uiteindelijke keuze
+Uiteindelijk hebben we besloten om gewoon een Light Dependent Resistor (LDR) te gebruiken. De LDR kan makkelijk de waarden via I2C doorsturen en heeft ook verscheidene formaten. Hieronder kan u nog even de voordelen en nadelen terugvinden zoals bij de voorgaande opties.
+
+**Light Dependent Resistor (LDR)**
+
+	+ Goedkoop
+	+ Verschillende formaten
+	+ Minder power consumptie
+	+ Waarden zijn makkelijk te verkrijgen
+	- Hebben een aantal millieseconden nodig om zich aan te passen aan het licht.
+	- Sensitiviteit hangt af van toepassing tot toepassing
+
 ### PH Sensor 
 
 #### Gravity: Analog pH Sensor / Meter Kit For Arduino
@@ -188,10 +206,23 @@ PS: De planning en de sprints zijn momenteel nog een heel ruwe schatting vanwege
     how to use:
     https://scidle.com/how-to-use-a-ph-sensor-with-arduino/
     
+#### Uiteindelijke keuze
+We hebben ervoor gekozen om de PH Sensor te verwijderen uit ons project, sinds deze een aantal voorwaarden heeft voor we deze kunnen laten werken. De PH Sensoren (meetprobes) die we hadden gevonden waren labo-probes. Dit waren probes die we niet 24/7 onder water konden steken. Dit was echter niet echt een probleem, sinds we zoals bij Smart Systems een systeem zouden kunnen maken waarbij deze op en neer gaat. Dat was echter niet het enige. Het tweede punt is dat deze PH sensoren om de zoveel tijd terug in chemisch water moeten worden afgespoeld. Dit zou er dus voor zorgen dat we een apart rail systeem zouden moeten voorzien, alleen voor deze sensor (tenzij we het er ergens anders zouden opkrijgen). 
+
+Vanwege deze redenen zijn we dus overgeschakeld van een PH Sensor naar een Particle Sensor ofterwijl Stofsensor.
+
+### Stof Sensor
+
+#### PPD42NS
+	Voordelen en nadelen zullen zo snel mogelijk worden aangevuld.
+    
 ### Electrical Conductivity Sensor 
 
 #### Zelf maken:
     https://www.youtube.com/watch?v=B0lrcvT2HRc
+    
+#### Uiteindelijke keuze
+Voor de Conductivity Sensor is er uiteindelijk niets verandert. We blijven bij ons idee van deze zelf te maken.
     
 ### Camera 
 
@@ -202,6 +233,16 @@ PS: De planning en de sprints zijn momenteel nog een heel ruwe schatting vanwege
     
     https://www.robotshop.com/eu/en/arducam-mini-camera-module-shield-2-mp-ov2640-arduino.html?gclid=Cj0KCQjwuafdBRDmARIsAPpBmVUi0YRoRtd5osaa2rMZMbvfKH_YiUFcq9rJzr4onahy1zTNfeqEHioaAtWFEALw_wcB
     
+#### Uiteindelijke keuze
+Voor de camera hadden ze ons bij de vorige presentatie de PiCam aanbevolen. Sinds we toch al Raspberry Pi's gingen gebruiken, konden we beter deze camera gebruiken die daar specifiek voor dient. De voordelen en nadelen kan u hieronder vinden:
+
+**Raspberry Pi Camera**
+
+	+ Goede kwaliteit
+	+ Gemaakt voor de Raspberry Pi
+	+ Raspberry Pi heeft er een aantal pinnen voor voorzien
+	- Kabel kan best niet langer worden gemaakt
+    
 ### Temperature Sensor 
 
 #### LM35
@@ -210,11 +251,22 @@ PS: De planning en de sprints zijn momenteel nog een heel ruwe schatting vanwege
     
     https://www.efxkits.us/lm35-temperature-sensor-circuit-working/
     
+#### Uiteindelijke keuze
+Onze uiteindelijke keuze voor de temperatuur sensor was een MCP9700. Dit was vooral omdat ze deze momenteel in stock hadden. Hieronder wederom de voordelen en nadelen:
+
+**MCP9700**
+
+	+ Goedkoop
+	+ Klein component
+	+ Kan makkelijk waarden doorgeven via I2C
+	- Kwetsbaar
+    
 ### Water/Nutrition Pump 
 
 #### hoge kwaliteit dc 3v kleine waterpomp
     + goedkoop
-    + klein
+    + klein component
+   
     + makkelijk aan te sluiten (enkel DC aansluiting)
     + lage energie (3V-6V)
     
@@ -227,6 +279,9 @@ PS: De planning en de sprints zijn momenteel nog een heel ruwe schatting vanwege
     
     https://nl.aliexpress.com/item/12V-DC-DIY-Dosing-Pump-Peristaltic-Dosing-Head-For-Aquarium-Lab-Analytical-Water-Free-Shipping-From/32404308028.html?spm=a2g0z.search0104.3.25.3f352ab0mYwk9g&ws_ab_test=searchweb0_0,searchweb201602_5_10065_10068_5726820_10843_10546_10059_10884_10548_10887_10696_100031_5726920_10084_10083_10103_10618_10304_10307_10820_449,searchweb201603_45,ppcSwitch_5&algo_expid=0572c925-6725-4353-82e1-39e945880fe5-3&algo_pvid=0572c925-6725-4353-82e1-39e945880fe5&transAbTest=ae803_2&priceBeautifyAB=0
     
+#### Uiteindelijke keuze
+TODO - Deze moet nog aangevuld worden!
+
 ### WiFi Module
 
 #### ESP8266 ESP-01 ESP01
@@ -234,7 +289,10 @@ PS: De planning en de sprints zijn momenteel nog een heel ruwe schatting vanwege
     - betrouwbaar?
     
     https://nl.aliexpress.com/item/ESP8266-Serial-Esp-01-WIFI-Wireless-Transceiver-Module-Send-Receive-LWIP-AP-STA/32278773466.html?spm=a2g0z.search0104.3.16.3e0c4c2b114YK0&ws_ab_test=searchweb0_0,searchweb201602_5_10065_10068_5726815_10843_10059_10884_10887_10696_100031_10084_10083_5726915_10103_10618_10304_10307_10820_10821_10302,searchweb201603_60,ppcSwitch_5&algo_expid=ba6cfe04-9b5a-43a5-b1c6-314b907f42b2-2&algo_pvid=ba6cfe04-9b5a-43a5-b1c6-314b907f42b2&priceBeautifyAB=0
-    
+
+#### Uiteindelijke keuze
+De WiFi module hebben we nu ook afgeschreven, sinds de Raspberry Pi al een ingebouwde WiFi module heeft. 
+
 ### Alternatieven en misschien nodig
 
 ### PH Sensor 

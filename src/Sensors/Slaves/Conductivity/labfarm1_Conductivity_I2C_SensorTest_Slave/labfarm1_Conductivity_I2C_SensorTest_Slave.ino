@@ -1,6 +1,6 @@
 #include <TinyWire.h>
 
-byte own_address = 0x13;
+byte own_address = 0x12;
 
 //Global Sensor
 int sensorPin = A2; 
@@ -19,9 +19,8 @@ void loop() {
 
 void requestEvent()
 {
-  sensorValue = analogRead(sensorPin)*5/1024.0; // read the value from the sensor
-  sensorValue -= 0.5; //Convert to Fahrenheit
-  sensorValue = sensorValue / 0.01;
+  sensorValue = analogRead(sensorPin); // read the value from the sensor
+  sensorValue = sensorValue*(5.0/1024.0); //Convert to voltage
   TinyWire.send(sensorValue); //send data [1 byte]
 }
 
