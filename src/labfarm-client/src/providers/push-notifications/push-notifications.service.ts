@@ -69,7 +69,7 @@ export class PushNotificationsService {
         source.forEach((item) => {
             let options = {
                 body: item.alertContent,
-                icon: "assets/images/leaf.png"
+                icon: "assets/images/leaf.png",
             };
             let notify = self.create(item.title, options).subscribe();
         })
