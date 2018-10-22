@@ -1,16 +1,16 @@
 <div class="labfarm-header col-md-8 offset-2">
-    <h3>Lab Farm #123</h3>
-    <a class="updated small italic text-right font-italic font-weight-light">Updated: 12/10/18 15:59:22</a>
+    <h3>Lab Farm #{{labFarm.LabFarmId}}</h3>
+    <a class="updated small italic text-right font-italic font-weight-light">Updated: {{humiditySensor.Timestamp}}</a>
 </div>
 <div class="container labfarm-container col-md-10 offset-2">
 
     <div class="labfarm-body col-md-6">
-        <app-sensor-graph [SensorId]="1"></app-sensor-graph>
-        <app-sensor-graph [SensorId]="2"></app-sensor-graph>
-        <app-sensor-graph [SensorId]="3"></app-sensor-graph>
-        <app-sensor-graph [SensorId]="4"></app-sensor-graph>
-        <app-sensor-graph [SensorId]="5"></app-sensor-graph>
-        <div><img src="https://via.placeholder.com/300x150"  class="bg-light"></div>
+        <app-sensor-graph SensorId="{{humiditySensor.SensorId}}"></app-sensor-graph>
+        <app-sensor-graph SensorId="{{dustSensor.SensorId}}"></app-sensor-graph>
+        <app-sensor-graph SensorId="{{lightSensor.SensorId}}"></app-sensor-graph>
+        <app-sensor-graph SensorId="{{conductivitySensor.SensorId}}"></app-sensor-graph>
+        <app-sensor-graph SensorId="{{waterSensor.SensorId}}"></app-sensor-graph>
+        <div><img src="https://via.placeholder.com/300x150" class="bg-light"></div>
     </div>
     <div class="labfarm-options col-md-3">
         <div class="card">
@@ -31,8 +31,8 @@
                     <a>{{lightLevel}} Light level</a>
                 </div>
                 <div class="lf-options">
-                    <a class="updated small italic text-right font-italic font-weight-light">Updated: 12/10/18
-                        15:59:22</a>
+                    <a class="updated small italic text-right font-italic font-weight-light">Updated:
+                        {{humiditySensor.Timestamp}}</a>
                     <button type="button" class="btn bg-dark text-light">Save</button>
                 </div>
             </div>

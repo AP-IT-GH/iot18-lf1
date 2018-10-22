@@ -1,4 +1,4 @@
 export class SensorType {
-    private TypeId: number;
-    private TypeName: string;
+    public TypeId: number;
+    public TypeName: string;
 }

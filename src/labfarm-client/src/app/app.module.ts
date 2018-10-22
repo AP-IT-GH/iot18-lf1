@@ -14,6 +14,8 @@ import { UiSwitchModule } from 'ngx-toggle-switch';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule, MatSliderModule} from '@angular/material';
 import 'hammerjs';
+import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
+import { SensorDataService } from 'src/providers/sensor-data/sensor-data.service';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,10 @@ import 'hammerjs';
     MatCheckboxModule,
     MatSliderModule
   ],
-  providers: [],
+  providers: [
+      LabfarmService,
+      SensorDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

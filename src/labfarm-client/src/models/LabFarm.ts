@@ -1,15 +1,15 @@
 
 export class LabFarm {
-    private LabFarmId: number;
-    private AuthId: string;
-    private PlantSpecies: string;
-    private DustLevelHigh: number;
-    private DustLevelLow: number;
-    private LightLevelHigh: number
-    private LightLevelLow: number;
-    private HumidityLevelHigh: number;
-    private HumidityLevelLow: number;
-    private ConductivitySensorHigh: number;
-    private ConductivitySensorLow: number;
-    private MinimumReservoirLevel: number;
+    public LabFarmId: number;
+    public AuthId: string;
+    public PlantSpecies: string;
+    public DustLevelHigh: number;
+    public DustLevelLow: number;
+    public LightLevelHigh: number
+    public LightLevelLow: number;
+    public HumidityLevelHigh: number;
+    public HumidityLevelLow: number;
+    public ConductivitySensorHigh: number;
+    public ConductivitySensorLow: number;
+    public MinimumReservoirLevel: number;
 }

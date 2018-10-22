@@ -1,33 +1,33 @@
-<span class="labfarm-label">Lab Farm #123</span>
-<div class="labfarm-overview">
+<span class="labfarm-label bg-dark text-light" *ngIf="labFarm">Lab Farm #{{labFarm.LabFarmId}}</span>
+<div class="labfarm-overview bg-dark text-light" *ngIf="labFarm">
     <table class="table">
         <tbody>
             <tr>
                 <td>
                     <ul class="list-group">
-                        <li class="d-flex justify-content-between align-items-center">Humidity
-                            <span class="badge badge-primary badge-pill">14%</span></li>
-                        <li class="d-flex justify-content-between align-items-center">Dust
-                            <span class="badge badge-primary badge-pill">6.0</span></li>
-                        <li class="d-flex justify-content-between align-items-center">Light
-                            <span class="badge badge-primary badge-pill">343</span></li>
+                        <li class="d-flex justify-content-between align-items-center">{{humiditySensor.SensorType.TypeName}}
+                            <span class="badge badge-primary badge-pill">{{humiditySensor.SensorValue}}%</span></li>
+                        <li class="d-flex justify-content-between align-items-center">{{dustSensor.SensorType.TypeName}}
+                            <span class="badge badge-primary badge-pill">{{dustSensor.SensorValue}}%</span></li>
+                        <li class="d-flex justify-content-between align-items-center">{{lightSensor.SensorType.TypeName}}
+                            <span class="badge badge-primary badge-pill">{{lightSensor.SensorValue}} lux</span></li>
                     </ul>
 
                 </td>
                 <td>
                     <ul class="list-group">
-                        <li class="d-flex justify-content-between align-items-center">Conductivity
-                            <span class="badge badge-primary badge-pill">4.3%</span></li>
-                        <li class="d-flex justify-content-between align-items-center">Water level
-                            <span class="badge badge-primary badge-pill">32.4l</span></li>
+                        <li class="d-flex justify-content-between align-items-center">{{conductivitySensor.SensorType.TypeName}}
+                            <span class="badge badge-primary badge-pill">{{conductivitySensor.SensorValue}}%</span></li>
+                        <li class="d-flex justify-content-between align-items-center">{{waterSensor.SensorType.TypeName}}
+                            <span class="badge badge-primary badge-pill">{{waterSensor.SensorValue}}l</span></li>
                     </ul>
                 </td>
                 <td>
                     <ul class="list-group">
-                        <button type="button" routerLink="/farm/123" class="btn btn-outline-light btn-sm">Go to farm</button>
+                        <button type="button" routerLink="/farm/{{labFarm.LabFarmId}}" class="btn btn-outline-light btn-sm">Go to farm</button>
                         <br>
                         <br>
-                        <span class="updated small italic text-right font-italic font-weight-light">Updated: 12/10/18 15:59:22</span>
+                        <span class="updated small italic text-right font-italic font-weight-light">{{humiditySensor.Timestamp}}</span>
                     </ul>
                 </td>
                 <td>

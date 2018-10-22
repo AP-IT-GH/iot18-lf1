@@ -1,15 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { LabFarm } from 'src/models/LabFarm';
+import { SensorData } from 'src/models/SensorData';
+import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 
 @Component({
-  selector: 'app-lab-farm-overview',
-  templateUrl: './lab-farm-overview.component.html',
-  styleUrls: ['./lab-farm-overview.component.scss']
+    selector: 'app-lab-farm-overview',
+    templateUrl: './lab-farm-overview.component.html',
+    styleUrls: ['./lab-farm-overview.component.scss']
 })
 export class LabFarmOverviewComponent implements OnInit {
 
-  constructor() { }
+    @Input() labFarm: LabFarm;
 
-  ngOnInit() {
-  }
+    public humiditySensor: SensorData;
+    public dustSensor: SensorData;
+    public lightSensor: SensorData;
+    public conductivitySensor: SensorData;
+    public waterSensor: SensorData;
+
+    constructor(private labfarmService: LabfarmService) {
+        let latestSensorData = labfarmService.getLatestSensorData();
+        this.humiditySensor = latestSensorData[0];
+        this.dustSensor = latestSensorData[1];
+        this.lightSensor = latestSensorData[2];
+        this.conductivitySensor = latestSensorData[3];
+        this.waterSensor = latestSensorData[4];
+
+        this.labFarm = this.humiditySensor.LabFarm;
+    }
+
+    ngOnInit() {
+
+    }
 
 }

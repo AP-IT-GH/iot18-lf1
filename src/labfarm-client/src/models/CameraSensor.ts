@@ -1,9 +1,9 @@
 import { LabFarm } from "./LabFarm";
 
 export class CameraSensor {
-    private LabFarm: LabFarm;
-    private LabFarmColumn: number;
-    private LabFarmRow: number;
-    private ImagePath: string;
-    private TimeStamp: string;
+    public LabFarm: LabFarm;
+    public LabFarmColumn: number;
+    public LabFarmRow: number;
+    public ImagePath: string;
+    public TimeStamp: string;
 }
