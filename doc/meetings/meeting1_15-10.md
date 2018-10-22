@@ -21,3 +21,7 @@ De volgende punten worden verwerkt in sprint 1
     - Bezig met het ontwerp van het camera mount systeem. Dat is nu af
     - Heeft 2 onderdelen laten 3d printen
     - PCB maken voor de steppe-motor. Microcontroller programmeren
+- Melvin
+    - Relationeel Database Model aanpassen
+    - Prototypes maken voor website
+    - Front-end realiseren a.d.h.v. het prototype
