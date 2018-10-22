@@ -24,7 +24,7 @@ namespace Services
             return _repository.Put(camera);
         }
 
-        public bool Delete(long id)
+        public bool Delete(int id)
         {
             return _repository.Delete(id);
         }
@@ -34,7 +34,7 @@ namespace Services
             return _repository.GetAll();
         }
 
-        public CameraModel Get(long id)
+        public CameraModel Get(int id)
         {
             return _repository.Get(id);
         }

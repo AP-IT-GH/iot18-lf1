@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Models;
 
 
@@ -19,7 +20,7 @@ namespace Repositories
         {
             try
             {
-                return _context.Cameras.ToList();
+                return _context.Cameras.Include(d => d.Labfarm).ToList();
             }
             catch (Exception ex)
             {
@@ -27,11 +28,11 @@ namespace Repositories
             }
 
         }
-        public CameraModel Get(long id)
+        public CameraModel Get(int id)
         {
             try
             {
-                return _context.Cameras.Find(id);
+                return _context.Cameras.Include(d => d.Labfarm).SingleOrDefault(d => d.Id == id);
             }
             catch (Exception ex)
             {
@@ -68,7 +69,7 @@ namespace Repositories
             }
 
         }    
-        public bool Delete(long id)
+        public bool Delete(int id)
         {
             try
             {

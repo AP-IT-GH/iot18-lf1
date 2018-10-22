@@ -23,7 +23,7 @@ namespace WebAPI
         }
 
         [HttpGet("{id}")] // GET api/camera/5
-        public CameraModel Get(long id)
+        public CameraModel Get(int id)
         {
             return _service.Get(id);
         }
@@ -41,7 +41,7 @@ namespace WebAPI
         }
 
         [HttpDelete("{id}")]
-        public bool Delete(long id)
+        public bool Delete(int id)
         {
             return _service.Delete(id);
         }

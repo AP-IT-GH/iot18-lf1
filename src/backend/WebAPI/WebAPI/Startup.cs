@@ -35,9 +35,13 @@ namespace WebAPI
             services.AddScoped<CameraRepository>();
             services.AddScoped<SensorRepository>();
             services.AddScoped<LabFarmRepository>();
+            services.AddScoped<SensorDataRepository>();
+            services.AddScoped<PicturesRepository>();
             services.AddScoped<CameraService>();
             services.AddScoped<SensorService>();
             services.AddScoped<LabFarmService>();
+            services.AddScoped<PictureService>();
+            services.AddScoped<SensorDataService>();
 
         }
 

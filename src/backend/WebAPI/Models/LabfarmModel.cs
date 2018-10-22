@@ -6,7 +6,7 @@ namespace Models
     public class LabFarmModel
     {
         public int Id { get; set; } 
-        public int AuthId {get; set;}
+        public string AuthId {get; set;}
         public string PlantSpecies { get; set; }
         public float OptimalAcidityLevelHigh {get; set;}
         public float OptimalAcidityLevelLow {get; set;}

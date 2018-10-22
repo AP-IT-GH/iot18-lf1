@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
 using Models;
 
 namespace Repositories
@@ -19,7 +20,7 @@ namespace Repositories
         {
             try
             {
-                return _context.Sensors.ToList();
+                return _context.Sensors.Include(d => d.LabFarm).Include(d => d.SensorType).ToList();
             }
             catch (Exception ex)
             {
@@ -31,7 +32,7 @@ namespace Repositories
         {
             try
             {
-                return _context.Sensors.Find(id);
+                return _context.Sensors.Include(d => d.LabFarm).Include(d => d.SensorType).SingleOrDefault(d => d.Id == id);
             }
             catch (Exception ex)
             {

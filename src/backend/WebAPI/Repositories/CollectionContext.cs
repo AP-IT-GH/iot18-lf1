@@ -16,6 +16,8 @@ namespace Repositories
         public DbSet<LabFarmModel> LabFarms {get; set;}
         public DbSet<SensorModel> Sensors {get; set;}
         public DbSet<SensorType> SensorTypes {get; set;}
+        public DbSet<SensorDataModel> SensorValues { get; set; }
+        public DbSet<PictureModel> Pictures { get; set; }
 
     }
 }
