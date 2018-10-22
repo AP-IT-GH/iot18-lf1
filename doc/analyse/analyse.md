@@ -63,7 +63,7 @@ Waar een "/" gezet is betekent dit dat er niets gevonden werd of dat het niet be
 #### Gedetailleerde diagrammen
 
 Database model:  
-![alt text](https://github.com/AP-Elektronica-ICT/iot1819--iot18lf1/blob/master/doc/img/DatabaseModel.JPG)
+![alt text](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/img/DatabaseModel.png)
 
 Software Flowchart:
 ![alt text](https://github.com/AP-Elektronica-ICT/iot1819--iot18lf1/blob/master/doc/img/Software_Flowchart_LabFarm_v1.jpg)
