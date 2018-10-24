@@ -17,6 +17,7 @@ namespace Models
         public float OptimalConductivityLevelHigh {get; set;}
         public float OptimalConductivityLevelLow {get; set;}
         public float MinimumReservoirLevel {get; set;}
+        public bool AutoMode { get; set; }
 
         [JsonIgnore]
         public ICollection<CameraModel> Cameras {get; set;}

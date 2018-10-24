@@ -40,3 +40,5 @@ C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\bin\Debug\net
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\bin\Debug\netcoreapp2.1\WebAPI.runtimeconfig.dev.json
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\bin\Debug\netcoreapp2.1\WebAPI.dll
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\bin\Debug\netcoreapp2.1\WebAPI.pdb
+C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\bin\Debug\netcoreapp2.1\ViewModels.dll
+C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\bin\Debug\netcoreapp2.1\ViewModels.pdb

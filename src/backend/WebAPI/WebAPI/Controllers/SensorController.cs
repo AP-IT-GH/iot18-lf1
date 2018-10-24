@@ -26,7 +26,7 @@ namespace WebAPI
         }
 
         [HttpGet("{id}")] // GET api/sensor/5
-        public SensorModel Get(long id)
+        public SensorModel Get(int id)
         {
             return _service.Get(id);
         }
@@ -44,7 +44,7 @@ namespace WebAPI
         }
 
         [HttpDelete("{id}")]
-        public bool Delete(long id)
+        public bool Delete(int id)
         {
             return _service.Delete(id);
         }

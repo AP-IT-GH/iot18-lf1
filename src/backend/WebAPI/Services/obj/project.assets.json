@@ -4371,6 +4371,19 @@
         "runtime": {
           "bin/placeholder/Repositories.dll": {}
         }
+      },
+      "ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ViewModels.dll": {}
+        }
       }
     }
   },
@@ -11567,6 +11580,11 @@
       "type": "project",
       "path": "../Repositories/Repositories.csproj",
       "msbuildProject": "../Repositories/Repositories.csproj"
+    },
+    "ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../ViewModels/ViewModels.csproj",
+      "msbuildProject": "../ViewModels/ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -11574,7 +11592,8 @@
       "EntityFramework >= 6.2.0",
       "Microsoft.AspNetCore.App >= 2.1.1",
       "Microsoft.NETCore.App >= 2.1.0",
-      "Repositories >= 1.0.0"
+      "Repositories >= 1.0.0",
+      "ViewModels >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -11609,6 +11628,9 @@
           "projectReferences": {
             "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Repositories\\Repositories.csproj": {
               "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Repositories\\Repositories.csproj"
+            },
+            "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\ViewModels\\ViewModels.csproj": {
+              "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\ViewModels\\ViewModels.csproj"
             }
           }
         }

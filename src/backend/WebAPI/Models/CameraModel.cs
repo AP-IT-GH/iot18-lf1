@@ -6,7 +6,8 @@ namespace Models
 {
     public class CameraModel
     {
-        public int Id { get; set; } 
+        public int Id { get; set; }
+        public int LabfarmId { get; set; } //FK
         public LabFarmModel Labfarm { get; set; }
         public int Column {get; set;}
         public int Row {get; set;}

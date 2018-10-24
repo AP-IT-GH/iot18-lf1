@@ -9,36 +9,40 @@ namespace Services
     //Bussines logic
     public class SensorService
     {
-        private SensorRepository _repository;
+        private SensorRepository _sensorRepository;
+        private LabFarmRepository _labFarmRepository;
 
-        public SensorService(SensorRepository repository)
+        public SensorService(SensorRepository sensorRepository, LabFarmRepository labFarmRepository)
         {
-            _repository = repository;
+            _sensorRepository = sensorRepository;
+            _labFarmRepository = labFarmRepository;
         }
 
         public SensorModel Create(SensorModel sensor)
         {
-            return _repository.Post(sensor);
+            sensor.LabFarm = _labFarmRepository.Get(sensor.LabFarmId);
+            return _sensorRepository.Post(sensor);
         }
 
         public SensorModel Update(SensorModel sensor)
         {
-            return _repository.Put(sensor);
+            sensor.LabFarm = _labFarmRepository.Get(sensor.LabFarmId);
+            return _sensorRepository.Put(sensor);
         }
 
-        public bool Delete(long id)
+        public bool Delete(int id)
         {
-            return _repository.Delete(id);
+            return _sensorRepository.Delete(id);
         }
 
         public List<SensorModel> GetAll()
         {
-            return _repository.GetAll();
+            return _sensorRepository.GetAll();
         }
 
-        public SensorModel Get(long id)
+        public SensorModel Get(int id)
         {
-            return _repository.Get(id);
+            return _sensorRepository.Get(id);
         }
 
     }

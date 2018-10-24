@@ -20,7 +20,7 @@ namespace Repositories
         {
             try
             {
-                return _context.SensorValues.Include(d => d.Sensor).ToList();
+                return _context.SensorValues.Include(d => d.Sensor).ThenInclude(b => b.SensorType).ToList();
             }
             catch (Exception ex)
             {
@@ -32,7 +32,7 @@ namespace Repositories
         {
             try
             {
-                return _context.SensorValues.Include(d => d.Sensor).SingleOrDefault(d => d.Id == id);
+                return _context.SensorValues.Include(d => d.Sensor).ThenInclude(b => b.SensorType).SingleOrDefault(d => d.Id == id);
             }
             catch (Exception ex)
             {

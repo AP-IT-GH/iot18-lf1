@@ -27,7 +27,7 @@ namespace Repositories
                 }
 
             }
-            public LabFarmModel Get(long id)
+            public LabFarmModel Get(int id)
             {
                 try
                 {
@@ -68,7 +68,7 @@ namespace Repositories
                 }
 
             }
-            public bool Delete(long id)
+            public bool Delete(int id)
             {
                 try
                 {

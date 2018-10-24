@@ -14,7 +14,9 @@ namespace Models
     public class SensorModel
     {
         public int Id { get; set; } 
+        public int LabFarmId { get; set; }//FK
         public LabFarmModel LabFarm {get; set;}
+        public int SensorTypeId { get; set; }//FK
         public SensorType SensorType {get; set;}
         [JsonIgnore]
         public ICollection<SensorDataModel> SensorValues { get; set; }

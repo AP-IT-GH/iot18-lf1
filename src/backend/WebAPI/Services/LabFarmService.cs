@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Models;
 using Repositories;
@@ -26,17 +27,32 @@ namespace Services
             return _repository.Put(labfarm);
         }
 
-        public bool Delete(long id)
+        public bool Delete(int id)
         {
             return _repository.Delete(id);
         }
 
-        public List<LabFarmModel> GetAll()
+        public List<LabFarmModel> GetAll(string userId)
         {
-            return _repository.GetAll();
+            var list = _repository.GetAll();
+
+            if (userId == null || userId == "")
+            {
+                return list;
+            }
+            
+            List<LabFarmModel> updatedList = new List<LabFarmModel>();
+            foreach(LabFarmModel x in list)
+            {
+                if(x.AuthId == userId)
+                {
+                    updatedList.Add(x);
+                }
+            }
+            return updatedList;
         }
 
-        public LabFarmModel Get(long id)
+        public LabFarmModel Get(int id)
         {
             return _repository.Get(id);
         }

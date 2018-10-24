@@ -42,6 +42,8 @@ namespace WebAPI
             services.AddScoped<LabFarmService>();
             services.AddScoped<PictureService>();
             services.AddScoped<SensorDataService>();
+            services.AddScoped<LastLabfarmDataService>();
+            services.AddScoped<LastSensorDataService>();
 
         }
 

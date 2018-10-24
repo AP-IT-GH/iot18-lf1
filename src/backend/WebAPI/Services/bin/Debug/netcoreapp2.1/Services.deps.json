@@ -10,7 +10,8 @@
         "dependencies": {
           "EntityFramework": "6.2.0",
           "Microsoft.NETCore.App": "2.1.0",
-          "Repositories": "1.0.0"
+          "Repositories": "1.0.0",
+          "ViewModels": "1.0.0"
         },
         "runtime": {
           "Services.dll": {}
@@ -65,6 +66,14 @@
         },
         "runtime": {
           "Repositories.dll": {}
+        }
+      },
+      "ViewModels/1.0.0": {
+        "dependencies": {
+          "Models": "1.0.0"
+        },
+        "runtime": {
+          "ViewModels.dll": {}
         }
       }
     }
@@ -137,6 +146,11 @@
       "sha512": ""
     },
     "Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -8,36 +8,41 @@ namespace Services
 {
     public class PictureService
     {
-        private PicturesRepository _repository;
+        private PicturesRepository _pictureRepository;
+        private CameraRepository _cameraRepository;
 
-        public PictureService(PicturesRepository repository)
+        public PictureService(PicturesRepository picturesRepository, CameraRepository cameraRepository)
         {
-            _repository = repository;
+            _pictureRepository = picturesRepository;
+            _cameraRepository = cameraRepository;
         }
 
         public PictureModel Create(PictureModel picture)
         {
-            return _repository.Post(picture);
+            picture.TimeStamp = DateTime.Now;
+            picture.Camera = _cameraRepository.Get(picture.CameraId);
+            return _pictureRepository.Post(picture);
         }
 
         public PictureModel Update(PictureModel picture)
         {
-            return _repository.Put(picture);
+            picture.Camera = _cameraRepository.Get(picture.CameraId);
+            return _pictureRepository.Put(picture);
         }
 
         public bool Delete(int id)
         {
-            return _repository.Delete(id);
+            return _pictureRepository.Delete(id);
         }
 
         public List<PictureModel> GetAll()
         {
-            return _repository.GetAll();
+            return _pictureRepository.GetAll();
         }
 
         public PictureModel Get(int id)
         {
-            return _repository.Get(id);
+            return _pictureRepository.Get(id);
         }
     }
 }

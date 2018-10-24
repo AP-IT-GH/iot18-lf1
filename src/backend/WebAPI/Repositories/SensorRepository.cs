@@ -28,7 +28,7 @@ namespace Repositories
             }
 
         }
-        public SensorModel Get(long id)
+        public SensorModel Get(int id)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace Repositories
             }
 
         }
-        public bool Delete(long id)
+        public bool Delete(int id)
         {
             try
             {

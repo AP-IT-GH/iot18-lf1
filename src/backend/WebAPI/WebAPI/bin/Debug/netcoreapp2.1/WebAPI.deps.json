@@ -29,7 +29,8 @@
           "Microsoft.NETCore.App": "2.1.0",
           "Models": "1.0.0",
           "Repositories": "1.0.0",
-          "Services": "1.0.0"
+          "Services": "1.0.0",
+          "ViewModels": "1.0.0"
         },
         "runtime": {
           "WebAPI.dll": {}
@@ -253,13 +254,25 @@
         "dependencies": {
           "EntityFramework": "6.2.0",
           "Microsoft.AspNetCore.App": "2.1.1",
-          "Repositories": "1.0.0"
+          "Repositories": "1.0.0",
+          "ViewModels": "1.0.0"
         },
         "runtime": {
           "Services.dll": {}
         },
         "compile": {
           "Services.dll": {}
+        }
+      },
+      "ViewModels/1.0.0": {
+        "dependencies": {
+          "Models": "1.0.0"
+        },
+        "runtime": {
+          "ViewModels.dll": {}
+        },
+        "compile": {
+          "ViewModels.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3284,6 +3297,11 @@
       "sha512": ""
     },
     "Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

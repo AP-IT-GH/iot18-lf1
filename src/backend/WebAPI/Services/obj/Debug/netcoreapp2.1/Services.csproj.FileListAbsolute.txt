@@ -32,3 +32,5 @@ C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Services\obj\Debug\n
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Services\obj\Debug\netcoreapp2.1\Services.pdb
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Services\bin\Debug\netcoreapp2.1\Services.runtimeconfig.json
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Services\bin\Debug\netcoreapp2.1\Services.runtimeconfig.dev.json
+C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Services\bin\Debug\netcoreapp2.1\ViewModels.dll
+C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Services\bin\Debug\netcoreapp2.1\ViewModels.pdb

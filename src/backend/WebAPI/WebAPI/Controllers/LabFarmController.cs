@@ -20,13 +20,13 @@ namespace WebAPI
         }
 
         [HttpGet] // GET api/labfarm
-        public IEnumerable<LabFarmModel> Get()
+        public IEnumerable<LabFarmModel> GetAll(string userId)
         {
-            return _service.GetAll();
+            return _service.GetAll(userId);
         }
 
         [HttpGet("{id}")] // GET api/labfarm/5
-        public LabFarmModel Get(long id)
+        public LabFarmModel Get(int id)
         {
             return _service.Get(id);
         }
@@ -44,7 +44,7 @@ namespace WebAPI
         }
 
         [HttpDelete("{id}")]
-        public bool Delete(long id)
+        public bool Delete(int id)
         {
             return _service.Delete(id);
         }
