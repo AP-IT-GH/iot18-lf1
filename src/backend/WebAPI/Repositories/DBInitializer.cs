@@ -1,5 +1,7 @@
+using System.IO;
 using System.Linq;
 using Models;
+using System.Drawing;
 
 namespace Repositories
 {
@@ -29,14 +31,14 @@ namespace Repositories
 
                 var Picture1 = new PictureModel()
                  {
-                      ImagePath = "url/test/1",
+                      Content = null,
                       CameraId = Camera1.Id
                  };
                 context.Pictures.Add(Picture1);
 
                 var Picture2 = new PictureModel()
                 {
-                      ImagePath = "url/test/2",
+                      Content = null,
                       CameraId = Camera1.Id
                 };
                 context.Pictures.Add(Picture2);
@@ -94,5 +96,6 @@ namespace Repositories
                 
             } 
         }
+        
     }
 }
