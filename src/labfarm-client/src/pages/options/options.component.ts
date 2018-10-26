@@ -36,11 +36,7 @@ export class OptionsComponent implements OnInit {
     }
 
     toggleNotifications(event) {
-        if (!this.preferences_lf123 || !this.preferences_lf124) {
-            console.log("Requesting permission");
-            this.notificationService.requestPermission();
-
-        }
+        this.notificationService.requestPermission();
     }
 
     savePreferences() {
