@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Repositories;
 using Models;
+using System.Linq;
+using ViewModels;
 
 namespace Services
 {
@@ -10,23 +12,19 @@ namespace Services
     public class SensorService
     {
         private SensorRepository _sensorRepository;
-        private LabFarmRepository _labFarmRepository;
 
-        public SensorService(SensorRepository sensorRepository, LabFarmRepository labFarmRepository)
+        public SensorService(SensorRepository sensorRepository )
         {
             _sensorRepository = sensorRepository;
-            _labFarmRepository = labFarmRepository;
         }
 
-        public SensorModel Create(SensorModel sensor)
+        public Sensor Create(Sensor sensor)
         {
-            sensor.LabFarm = _labFarmRepository.Get(sensor.LabFarmId);
             return _sensorRepository.Post(sensor);
         }
 
-        public SensorModel Update(SensorModel sensor)
+        public Sensor Update(Sensor sensor)
         {
-            sensor.LabFarm = _labFarmRepository.Get(sensor.LabFarmId);
             return _sensorRepository.Put(sensor);
         }
 
@@ -35,14 +33,48 @@ namespace Services
             return _sensorRepository.Delete(id);
         }
 
-        public List<SensorModel> GetAll()
+        public List<Sensor> GetAll()
         {
             return _sensorRepository.GetAll();
         }
 
-        public SensorModel Get(int id)
+        public Sensor Get(int id)
         {
             return _sensorRepository.Get(id);
+        }
+
+        public List<LastSensorValues> GetLastValues(string labfarm, int count)
+        {
+            if(count == 0)
+            {
+                count = 999;
+            }
+            var sensors = _sensorRepository.GetAllIncludingLabfarm();
+            var sensors2 = new List<Sensor>();
+            foreach(Sensor s in sensors)
+            {
+                if(s.LabFarm.Name == labfarm)
+                {
+                    sensors2.Add(s);
+                }
+            }
+            var latestSensors = new List<LastSensorValues>();
+
+            foreach (Sensor s in sensors2)
+            {
+                s.SensorValues = s.SensorValues.OrderByDescending(x => x.TimeStamp).ToList();
+                var d = new LastSensorValues();
+                d.Name = s.Name; //TODO mapper?
+                d.Data = s.SensorValues.ToList();               
+                if(count < d.Data.Count)
+                {
+                    d.Data.RemoveRange(count, d.Data.Count - count);
+                }
+                latestSensors.Add(d);
+            }
+
+            return latestSensors;
+           
         }
 
     }

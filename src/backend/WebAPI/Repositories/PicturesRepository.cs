@@ -16,11 +16,11 @@ namespace Repositories
             _context = context;
         }
 
-        public List<PictureModel> GetAll()
+        public List<Picture> GetAll()
         {
             try
             {
-                return _context.Pictures.Include(d => d.Camera).ToList();
+                return _context.Pictures.ToList();
             }
             catch (Exception ex)
             {
@@ -28,11 +28,11 @@ namespace Repositories
             }
 
         }
-        public PictureModel Get(int id)
+        public Picture Get(int id)
         {
             try
             {
-                return _context.Pictures.Include(d => d.Camera).SingleOrDefault(d => d.Id == id);
+                return _context.Pictures.Find(id);
             }
             catch (Exception ex)
             {
@@ -41,7 +41,7 @@ namespace Repositories
 
         }
 
-        public PictureModel Put(PictureModel picture)
+        public Picture Put(Picture picture)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace Repositories
             }
         }
 
-        public PictureModel Post(PictureModel picture)
+        public Picture Post(Picture picture)
         {
             try
             {

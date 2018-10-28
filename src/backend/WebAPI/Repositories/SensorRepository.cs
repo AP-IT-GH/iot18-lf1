@@ -16,11 +16,11 @@ namespace Repositories
             _context = context;
         }
 
-        public List<SensorModel> GetAll()
+        public List<Sensor> GetAll()
         {
             try
             {
-                return _context.Sensors.Include(d => d.LabFarm).Include(d => d.SensorType).ToList();
+                return _context.Sensors.Include(d => d.SensorValues).Include(d => d.SensorType).ToList();
             }
             catch (Exception ex)
             {
@@ -28,11 +28,23 @@ namespace Repositories
             }
 
         }
-        public SensorModel Get(int id)
+        public List<Sensor> GetAllIncludingLabfarm()
         {
             try
             {
-                return _context.Sensors.Include(d => d.LabFarm).Include(d => d.SensorType).SingleOrDefault(d => d.Id == id);
+                return _context.Sensors.Include(d => d.SensorValues).Include(d => d.SensorType).Include(d => d.LabFarm).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+        public Sensor Get(int id)
+        {
+            try
+            {
+                return _context.Sensors.Include(d => d.SensorValues).Include(d => d.SensorType).SingleOrDefault(d => d.Id == id);
             }
             catch (Exception ex)
             {
@@ -41,7 +53,7 @@ namespace Repositories
 
         }
 
-        public SensorModel Put(SensorModel sensor)
+        public Sensor Put(Sensor sensor)
         {
             try
             {
@@ -55,7 +67,7 @@ namespace Repositories
             }
         }
 
-        public SensorModel Post(SensorModel sensor)
+        public Sensor Post(Sensor sensor)
         {
             try
             {

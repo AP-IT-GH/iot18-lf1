@@ -11,24 +11,20 @@ namespace Services
     {
 
         private SensorDataRepository _sensorDataRepository;
-        private SensorRepository _sensorRepository;
 
-        public SensorDataService(SensorDataRepository sensorDataRepository, SensorRepository sensorRepository)
+        public SensorDataService(SensorDataRepository sensorDataRepository )
         {
             _sensorDataRepository = sensorDataRepository;
-            _sensorRepository = sensorRepository;
         }
 
-        public SensorDataModel Create(SensorDataModel data)
+        public SensorData Create(SensorData data)
         {
             data.TimeStamp = DateTime.Now;
-            data.Sensor = _sensorRepository.Get(data.SensorId);
             return _sensorDataRepository.Post(data);
         }
 
-        public SensorDataModel Update(SensorDataModel data)
+        public SensorData Update(SensorData data)
         {
-            data.Sensor = _sensorRepository.Get(data.SensorId);
             return _sensorDataRepository.Put(data);
         }
 
@@ -37,12 +33,12 @@ namespace Services
             return _sensorDataRepository.Delete(id);
         }
 
-        public List<SensorDataModel> GetAll()
+        public List<SensorData> GetAll()
         {
             return _sensorDataRepository.GetAll();
         }
 
-        public SensorDataModel Get(int id)
+        public SensorData Get(int id)
         {
             return _sensorDataRepository.Get(id);
         }

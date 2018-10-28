@@ -10,8 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace WebAPI
 {
     //API endpoints
-    [Route("api/picture")]
-    public class PictureController : ControllerBase
+    [Route("api/v1/picture")]
+    public class PictureController : Controller
     {
         private PictureService _service;
 
@@ -21,25 +21,25 @@ namespace WebAPI
         }
 
         [HttpGet] // GET api/sensor
-        public IEnumerable<PictureModel> Get()
+        public IEnumerable<Picture> Get()
         {
             return _service.GetAll();
         }
 
-        [HttpGet("{id}")] // GET api/picture/5
-        public PictureModel Get(int id)
+        [HttpGet("{id}")] 
+        public Picture Get(int id)
         {
             return _service.Get(id);
         }
 
         [HttpPut("{id}")]
-        public PictureModel Put([FromBody]PictureModel picture)
+        public Picture Put([FromBody]Picture picture)
         {
             return _service.Update(picture);
         }
 
         [HttpPost]
-        public PictureModel Post([FromBody]PictureModel picture)
+        public Picture Post([FromBody]Picture picture)
         {
             return _service.Create(picture);
         }

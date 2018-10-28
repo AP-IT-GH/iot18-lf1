@@ -10,51 +10,91 @@ namespace Services
     //Bussines logic
     public class LabFarmService
     {
-        private LabFarmRepository _repository;
+        private LabFarmRepository _labfarmRepository;
+        private PlantRepository _plantRepository;
+        private SensorRepository _sensorRepository;
 
-        public LabFarmService(LabFarmRepository repository)
+        public LabFarmService(LabFarmRepository labfarmRepository, PlantRepository plantRepository, SensorRepository sensorRepository)
         {
-            _repository = repository;
+            _labfarmRepository = labfarmRepository;
+            _plantRepository = plantRepository;
+            _sensorRepository = sensorRepository;
         }
 
-        public LabFarmModel Create(LabFarmModel labfarm)
+        public LabFarm Create(LabFarm labfarm)
         {
-            return _repository.Post(labfarm);
+            return _labfarmRepository.Post(labfarm);
         }
 
-        public LabFarmModel Update(LabFarmModel labfarm)
+        public LabFarm Update(LabFarm labfarm, int id)
         {
-            return _repository.Put(labfarm);
+            if(labfarm.Id == 0)
+            {
+                labfarm.Id = id;
+            }
+            return _labfarmRepository.Put(labfarm);
         }
 
         public bool Delete(int id)
         {
-            return _repository.Delete(id);
+            return _labfarmRepository.Delete(id);
         }
 
-        public List<LabFarmModel> GetAll(string userId)
+        public List<LabFarm> GetList(string name,string authId = "")
         {
-            var list = _repository.GetAll();
 
-            if (userId == null || userId == "")
+            if (authId != null && name == null)
             {
-                return list;
+                var labfarm1 = from s in _labfarmRepository.GetAll()
+                              where s.AuthId == authId
+                              select s;
+                return labfarm1.ToList();
             }
-            
-            List<LabFarmModel> updatedList = new List<LabFarmModel>();
-            foreach(LabFarmModel x in list)
+            else if (authId == null && name != null)
             {
-                if(x.AuthId == userId)
-                {
-                    updatedList.Add(x);
-                }
+                var labfarm2 = from s in _labfarmRepository.GetAll()
+                              where s.Name == name
+                              select s;
+                return labfarm2.ToList();
             }
-            return updatedList;
+            else
+            {
+                return _labfarmRepository.GetAll();
+            }
+       
         }
 
-        public LabFarmModel Get(int id)
+        public LabFarm GetById(int id)
+        {         
+             return _labfarmRepository.Get(id);
+        }
+
+        public LabFarm GetByName(string name)
         {
-            return _repository.Get(id);
+            var labfarm = from s in _labfarmRepository.GetAll()
+                          where s.Name == name
+                          select s;
+            return labfarm.ToList()[0]; //TODO bad code???
         }
+
+        public List<Plant> GetPlant(string name, string plantName)
+        {
+            var plants = GetByName(name).Plants.ToList();
+            var plant = from s in plants
+                        where s.Name == plantName
+                        select s;
+            return plant.ToList();
+        }
+        
+        public List<Sensor> GetSensor(string name, string sensorName)
+        {
+            var sensors = GetByName(name).Sensors.ToList();
+            var sensor = from s in sensors
+                         where s.Name == sensorName
+                         select s;
+            return sensor.ToList();
+        }
+
+
     }
 }
