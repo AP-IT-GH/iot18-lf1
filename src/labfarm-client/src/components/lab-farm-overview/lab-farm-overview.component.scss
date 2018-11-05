@@ -17,10 +17,33 @@
     // background: rgb(72, 207, 147);
     border-radius: 8px;
     color: white;
+
+    img {
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+    }
 }
 .labfarm-overview ul{
-    
+    padding: 6px;
+    li {
+        padding-bottom: 6px;
+    }
 }
 .rounded {
     height: 100px;
+}
+.tooltip-container{
+    width: 200px;
+    li {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 10px;
+
+        a {
+            background: #007bff;
+            padding: 0 10px;
+            border-radius: 12px;
+        }
+    }
 }

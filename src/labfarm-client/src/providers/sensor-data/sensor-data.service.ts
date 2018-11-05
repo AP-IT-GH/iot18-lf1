@@ -13,6 +13,25 @@ export class SensorDataService {
     private sensorDatas: SensorData[];
 
     constructor() {
+        this.sensorType = {
+            TypeId: 1,
+            TypeName: "Sensor #"
+        }
+        this.labFarm = {
+            LabFarmId: 123,
+            AuthId: "abc123",
+            PlantSpecies: "Cucumber",
+            DustLevelHigh: 20,
+            DustLevelLow: 14,
+            LightLevelHigh: 240,
+            LightLevelLow: 160,
+            HumidityLevelHigh: 4.2,
+            HumidityLevelLow: 2.4,
+            ConductivityLevelHigh: 7.2,
+            ConductivityLevelLow: 5.6,
+            MinimumReservoirLevel: 5,
+            MaximumReservoirLevel: 60
+        };
         this.sensorDatas = [
             {
                 SensorId: 2,

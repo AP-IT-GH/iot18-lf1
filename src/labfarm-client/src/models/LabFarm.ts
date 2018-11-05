@@ -9,7 +9,8 @@ export class LabFarm {
     public LightLevelLow: number;
     public HumidityLevelHigh: number;
     public HumidityLevelLow: number;
-    public ConductivitySensorHigh: number;
-    public ConductivitySensorLow: number;
+    public ConductivityLevelHigh: number;
+    public ConductivityLevelLow: number;
     public MinimumReservoirLevel: number;
+    public MaximumReservoirLevel: number;
 }

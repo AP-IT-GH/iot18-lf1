@@ -2,9 +2,9 @@
     <h3>Lab Farm #{{labFarm.LabFarmId}}</h3>
     <a class="updated small italic text-right font-italic font-weight-light">Updated: {{humiditySensor.Timestamp}}</a>
 </div>
-<div class="container labfarm-container col-md-10 offset-2">
+<div class="container labfarm-container col-md-10 offset-1">
 
-    <div class="labfarm-body col-md-6">
+    <div class="labfarm-body col-md-8">
         <app-sensor-graph SensorId="{{humiditySensor.SensorId}}"></app-sensor-graph>
         <app-sensor-graph SensorId="{{dustSensor.SensorId}}"></app-sensor-graph>
         <app-sensor-graph SensorId="{{lightSensor.SensorId}}"></app-sensor-graph>

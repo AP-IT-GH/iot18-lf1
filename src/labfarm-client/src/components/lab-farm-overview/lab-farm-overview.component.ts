@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { LabFarm } from 'src/models/LabFarm';
 import { SensorData } from 'src/models/SensorData';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 @Component({
     selector: 'app-lab-farm-overview',
@@ -9,6 +11,7 @@ import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
     styleUrls: ['./lab-farm-overview.component.scss']
 })
 export class LabFarmOverviewComponent implements OnInit {
+
 
     @Input() labFarm: LabFarm;
 

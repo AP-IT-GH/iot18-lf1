@@ -17,6 +17,7 @@ import 'hammerjs';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 import { SensorDataService } from 'src/providers/sensor-data/sensor-data.service';
 import { CookieService } from 'ngx-cookie-service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     declarations: [
@@ -42,7 +43,8 @@ import { CookieService } from 'ngx-cookie-service';
         BrowserAnimationsModule,
         MatButtonModule,
         MatCheckboxModule,
-        MatSliderModule
+        MatSliderModule,
+        NgbModule
     ],
     providers: [
         LabfarmService,

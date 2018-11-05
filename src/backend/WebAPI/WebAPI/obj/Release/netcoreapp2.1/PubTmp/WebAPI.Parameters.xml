@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="labfarmapi" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^/Users/melvinb/Documents/Git\ Repos/iot1819--iot18lf1/src/backend/WebAPI/WebAPI/obj/Release/netcoreapp2\.1/PubTmp/Out/$" />
+  </parameter>
+</parameters>

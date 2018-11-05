@@ -46,9 +46,10 @@ export class LabfarmService {
                 LightLevelLow: 160,
                 HumidityLevelHigh: 4.2,
                 HumidityLevelLow: 2.4,
-                ConductivitySensorHigh: 7.2,
-                ConductivitySensorLow: 5.6,
-                MinimumReservoirLevel: 5
+                ConductivityLevelHigh: 7.2,
+                ConductivityLevelLow: 5.6,
+                MinimumReservoirLevel: 5,
+                MaximumReservoirLevel: 60
             },
             {
                 LabFarmId: 124,
@@ -60,9 +61,10 @@ export class LabfarmService {
                 LightLevelLow: 160,
                 HumidityLevelHigh: 7.8,
                 HumidityLevelLow: 4.3,
-                ConductivitySensorHigh: 5.5,
-                ConductivitySensorLow: 4.3,
-                MinimumReservoirLevel: 5
+                ConductivityLevelHigh: 5.5,
+                ConductivityLevelLow: 4.3,
+                MinimumReservoirLevel: 5,
+                MaximumReservoirLevel: 80
             }
         ];
         this.sensorDatas = [
