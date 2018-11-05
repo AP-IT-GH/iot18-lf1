@@ -25,9 +25,18 @@ namespace WebAPI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<CollectionContext>(
-               options => options.UseSqlServer(
-                   Configuration.GetConnectionString("DefaultConnection")));
+            // Use SQL Database if in Azure, otherwise, use SQLite
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+                services.AddDbContext<CollectionContext>(options =>
+                        options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+            else
+                services.AddDbContext<CollectionContext>(
+                        options => options.UseSqlServer(
+                 Configuration.GetConnectionString("LocalConnection")));
+
+            // Automatically perform database migration
+            services.BuildServiceProvider().GetService<CollectionContext>().Database.Migrate();
+
             services.AddCors();
             services.AddMvc();
 

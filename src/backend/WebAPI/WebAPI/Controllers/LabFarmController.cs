@@ -34,12 +34,11 @@ namespace WebAPI
             return _labfarmService.GetById(id);
         }
 
-        [HttpGet("{name?}")]  
-        public List<LabFarm> Get(string name,string authorId )
+        [HttpGet("{authId?}")]
+        public List<LabFarm> GetList(string authId = "")
         {
-            return _labfarmService.GetList(name, authorId);
+            return _labfarmService.GetList(authId);
         }
-
 
         [HttpPut("{id}")]
         public LabFarm Put([FromBody]LabFarm labfarm,int id)
@@ -59,66 +58,66 @@ namespace WebAPI
             return _labfarmService.Delete(id);
         }
 
-        [HttpGet("{name}/plants")]
-        public List<Plant> GetPlants(string name)
+        [HttpGet("{id}/plants")]
+        public List<Plant> GetPlants(int id)
         {
-            return _labfarmService.GetByName(name).Plants.ToList();
+            return _labfarmService.GetById(id).Plants.ToList();
         }
 
-        [HttpGet("{name}/plants/pictures")]
-        public List<LastPictures> GetPlants(string name, int count)
+        [HttpGet("{id}/plants/pictures")]
+        public List<LastPictures> GetPlants(int id, int count)
         {
-            return _plantService.GetLastPictures(name, count);
+            return _plantService.GetLastPictures(id, count);
         }
 
-        [HttpPost("{name}/plants")]
-        public Plant PostCamera([FromBody]Plant plant, string name)
+        [HttpPost("{id}/plants")]
+        public Plant PostCamera([FromBody]Plant plant, int id)
         {
-            plant.Labfarm = _labfarmService.GetByName(name);
+            plant.Labfarm = _labfarmService.GetById(id);
             return _plantService.Create(plant);
         }
 
-        [HttpGet("{name}/plants/{plantName}")]
-        public List<Plant> GetPlant(string name, string plantName)
+        [HttpGet("{id}/plants/{plantName}")]
+        public List<Plant> GetPlant(int id, string plantName)
         {
-            return _labfarmService.GetPlant(name, plantName);
+            return _labfarmService.GetPlant(id, plantName);
         }
 
-        [HttpPost("{name}/plants/{plantName}/pictures")]
-        public Picture PostPicture([FromBody]Picture picture, string name, string plantName)
+        [HttpPost("{id}/plants/{plantName}/pictures")]
+        public Picture PostPicture([FromBody]Picture picture, int id, string plantName)
         {
-            picture.Plant = _labfarmService.GetPlant(name, plantName)[0]; //TODO bad code?
+            picture.Plant = _labfarmService.GetPlant(id, plantName)[0]; //TODO bad code?
             return _pictureService.Create(picture);
         }
 
-        [HttpGet("{name}/sensors")]
-        public List<Sensor> GetSensors(string name)
+        [HttpGet("{id}/sensors")]
+        public List<Sensor> GetSensors(int id)
         {
-            return _labfarmService.GetByName(name).Sensors.ToList();
+            return _labfarmService.GetById(id).Sensors.ToList();
         }
 
-        [HttpGet("{name}/sensors/values")]
-        public List<LastSensorValues> GetSensors(string name, int count)
+        [HttpGet("{id}/sensors/values")]
+        public List<LastSensorValues> GetSensors(int id, int count)
         {
-            return _sensorService.GetLastValues(name, count);
+            return _sensorService.GetLastValues(id, count);
         }
 
-        [HttpPost("{name}/sensors")]
-        public Sensor PostSensor([FromBody]Sensor sensor, string name)
+        [HttpPost("{id}/sensors")]
+        public Sensor PostSensor([FromBody]Sensor sensor, int id)
         {
-            sensor.LabFarm = _labfarmService.GetByName(name);
+            sensor.LabFarm = _labfarmService.GetById(id);
             return _sensorService.Create(sensor);
         }
-        [HttpGet("{name}/sensors/{sensorName}")]
-        public List<Sensor> GetSensor(string name, string sensorName)
+        [HttpGet("{id}/sensors/{sensorName}")]
+        public List<Sensor> GetSensor(int id, string sensorName)
         {
-            return _labfarmService.GetSensor(name, sensorName);
+            return _labfarmService.GetSensor(id, sensorName);
         }
 
-        [HttpPost("{name}/sensors/{sensorName}/data")]
-        public SensorData PostSensorData([FromBody]SensorData data, string name, string sensorName)
+        [HttpPost("{id}/sensors/{sensorName}/data")]
+        public SensorData PostSensorData([FromBody]SensorData data, int id, string sensorName)
         {
-            data.Sensor = _labfarmService.GetSensor(name, sensorName)[0]; // TODO bad code?
+            data.Sensor = _labfarmService.GetSensor(id, sensorName)[0]; // TODO bad code?
             return _sensorDataService.Create(data);
         }
 

@@ -43,7 +43,7 @@ namespace Services
             return _sensorRepository.Get(id);
         }
 
-        public List<LastSensorValues> GetLastValues(string labfarm, int count)
+        public List<LastSensorValues> GetLastValues(int id, int count)
         {
             if(count == 0)
             {
@@ -53,7 +53,7 @@ namespace Services
             var sensors2 = new List<Sensor>();
             foreach(Sensor s in sensors)
             {
-                if(s.LabFarm.Name == labfarm)
+                if(s.LabFarm.Id == id)
                 {
                     sensors2.Add(s);
                 }

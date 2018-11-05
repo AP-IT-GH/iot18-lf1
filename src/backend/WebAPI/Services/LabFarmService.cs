@@ -40,22 +40,15 @@ namespace Services
             return _labfarmRepository.Delete(id);
         }
 
-        public List<LabFarm> GetList(string name,string authId = "")
+        public List<LabFarm> GetList(string authId = "")
         {
 
-            if (authId != null && name == null)
+            if (authId != "")
             {
                 var labfarm1 = from s in _labfarmRepository.GetAll()
                               where s.AuthId == authId
                               select s;
                 return labfarm1.ToList();
-            }
-            else if (authId == null && name != null)
-            {
-                var labfarm2 = from s in _labfarmRepository.GetAll()
-                              where s.Name == name
-                              select s;
-                return labfarm2.ToList();
             }
             else
             {
@@ -69,32 +62,24 @@ namespace Services
              return _labfarmRepository.Get(id);
         }
 
-        public LabFarm GetByName(string name)
-        {
-            var labfarm = from s in _labfarmRepository.GetAll()
-                          where s.Name == name
-                          select s;
-            return labfarm.ToList()[0]; //TODO bad code???
-        }
 
-        public List<Plant> GetPlant(string name, string plantName)
+        public List<Plant> GetPlant(int  id, string plantName)
         {
-            var plants = GetByName(name).Plants.ToList();
+            var plants = GetById(id).Plants.ToList();
             var plant = from s in plants
                         where s.Name == plantName
                         select s;
             return plant.ToList();
         }
         
-        public List<Sensor> GetSensor(string name, string sensorName)
+        public List<Sensor> GetSensor(int id, string sensorName)
         {
-            var sensors = GetByName(name).Sensors.ToList();
+            var sensors = GetById(id).Sensors.ToList();
             var sensor = from s in sensors
                          where s.Name == sensorName
                          select s;
             return sensor.ToList();
         }
-
 
     }
 }

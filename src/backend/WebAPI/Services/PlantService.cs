@@ -41,7 +41,7 @@ namespace Services
             return _plantRepository.Get(id);
         }
 
-        public List<LastPictures> GetLastPictures(string labfarm, int count)
+        public List<LastPictures> GetLastPictures(int id, int count)
         {
             if(count == 0)
             {
@@ -51,7 +51,7 @@ namespace Services
             var plants2 = new List<Plant>();
             foreach (Plant s in plants)
             {
-                if (s.Labfarm.Name == labfarm)
+                if (s.Labfarm.Id == id)
                 {
                     plants2.Add(s);
                 }
