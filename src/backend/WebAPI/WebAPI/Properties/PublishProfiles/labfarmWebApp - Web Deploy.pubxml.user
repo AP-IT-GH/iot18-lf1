@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgsI3TjwUW0Krz7c3oJ7IoAAAAAACAAAAAAAQZgAAAAEAACAAAADEbYxG2hq6y0l+5ZS+wHcrqOqGAH9DVs5D5F2wolAoTwAAAAAOgAAAAAIAACAAAADknfU2/2DZe2DXB+yVbagW5LSthfvgSFM/ID2DwCkOg4AAAABIYrFLIoyALwAh0TZEDxVQTccr7xtCJYZ996bmgr1ptNGYneHo8E7vysGf2XdLZw+JtZ/krEQUqi+gGmzIXtdjPhcglTUT3jJmmScFZdhgl9GJfcJjhTcub0qCSO5Lc9f5mDjBattn8ap425E2c+q5O3tabR+4BOBjre85luuo+UAAAAAX26CX78VMlV2USWwa6hmigA6XfxpCY40V0ioH7DcrRWSIq270tUz2ljAGeIcbbR8aQEufezD6fqeFzaQrCPgE</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="MyDbConnection">
+      <Value>Server=tcp:iotlabfarm.database.windows.net,1433%3bDatabase=coreDB%3bUser ID=labfarmadmin%3bPassword=ditiseenIOTwachtwoord99%3bEncrypt=true%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

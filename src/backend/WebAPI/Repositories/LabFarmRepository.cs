@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using Models;
 
 namespace Repositories
@@ -15,11 +16,16 @@ namespace Repositories
                 _context = context;
             }
 
-            public List<LabFarmModel> GetAll()
+            public List<LabFarm> GetAll()
             {
                 try
                 {
-                    return _context.LabFarms.ToList();
+                return _context.LabFarms.Include(d => d.Plants)
+                                            .ThenInclude(d => d.Pictures)
+                                                .Include(d => d.Sensors)
+                                                    .ThenInclude(d => d.SensorValues)
+                                                        .Include(d => d.Sensors)
+                                                            .ThenInclude(d => d.SensorType).ToList();
                 }
                 catch (Exception ex)
                 {
@@ -27,11 +33,16 @@ namespace Repositories
                 }
 
             }
-            public LabFarmModel Get(int id)
+            public LabFarm Get(int id)
             {
                 try
                 {
-                    return _context.LabFarms.Find(id);
+                return _context.LabFarms.Include(d => d.Plants)
+                                            .ThenInclude(d => d.Pictures)
+                                                .Include(d => d.Sensors)
+                                                    .ThenInclude(d => d.SensorValues)
+                                                        .Include(d => d.Sensors)
+                                                            .ThenInclude(d => d.SensorType).SingleOrDefault(d => d.Id == id);
                 }
                 catch (Exception ex)
                 {
@@ -40,7 +51,7 @@ namespace Repositories
 
             }
 
-            public LabFarmModel Put(LabFarmModel labfarm)
+            public LabFarm Put(LabFarm labfarm)
             {
                 try
                 {
@@ -54,7 +65,7 @@ namespace Repositories
                 }
             }
 
-            public LabFarmModel Post(LabFarmModel labfarm)
+            public LabFarm Post(LabFarm labfarm)
             {
                 try
                 {

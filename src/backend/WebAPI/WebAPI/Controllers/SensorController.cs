@@ -9,7 +9,7 @@ using Services;
 namespace WebAPI
 {
     //API endpoints
-    [Route("api/sensor")]
+    [Route("api/v1/sensor")]
     public class SensorController : ControllerBase
     {
         private SensorService _service;
@@ -19,26 +19,26 @@ namespace WebAPI
             _service = service;
         }
 
-        [HttpGet] // GET api/sensor
-        public IEnumerable<SensorModel> Get()
+        [HttpGet] 
+        public IEnumerable<Sensor> Get()
         {
             return _service.GetAll();
         }
 
-        [HttpGet("{id}")] // GET api/sensor/5
-        public SensorModel Get(int id)
+        [HttpGet("{id}")] 
+        public Sensor Get(int id)
         {
             return _service.Get(id);
         }
 
         [HttpPut("{id}")]
-        public SensorModel Put([FromBody]SensorModel sensor)
+        public Sensor Put([FromBody]Sensor sensor)
         {
             return _service.Update(sensor);
         }
 
         [HttpPost]
-        public SensorModel Post([FromBody]SensorModel sensor)
+        public Sensor Post([FromBody]Sensor sensor)
         {
             return _service.Create(sensor);
         }
