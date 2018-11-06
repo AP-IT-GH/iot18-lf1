@@ -4,11 +4,11 @@ Europe" { "id":
 "location": "westeurope", "managedBy": null, "name": "IoT\_labfarm",
 "properties": { "provisioningState": "Succeeded" }, "tags": null }
 
-admin : labfarmadmin password: ditiseenIOTwachtwoord99
+admin : labfarmadmin password: *************
 
 van@Azure:\~\$ az sql server create --name IoTlabfarm --resource-group
 IoT\_labfarm --location "West Europe" --admin-user labfarmadmin
---admin-password ditiseenIOTwachtwoord99 { "administratorLogin":
+--admin-password *********** { "administratorLogin":
 "labfarmadmin", "administratorLoginPassword": null,
 "fullyQualifiedDomainName": "iotlabfarm.database.windows.net", "id":
 "/subscriptions/d4aba205-a7c8-4197-89fa-3313897eed68/resourceGroups/IoT\_labfarm/providers/Microsoft.Sql/servers/iotlabfarm",
@@ -52,17 +52,17 @@ iotlabfarm --name coreDB --service-objective S0 { "catalogCollation":
 
 connection string:
 Server=tcp:iotlabfarm.database.windows.net,1433;Database=coreDB;User
-ID=labfarmadmin;Password=ditiseenIOTwachtwoord99;Encrypt=true;Connection
+ID=labfarmadmin;Password=************;Encrypt=true;Connection
 Timeout=30;
 
 van@Azure:\~\$ az webapp deployment user set --user-name sS096257
---password Ditiseenuniekwachtwoord99 { "id": null, "kind": null, "name":
+--password ************ { "id": null, "kind": null, "name":
 "web", "publishingPassword": null, "publishingPasswordHash": null,
 "publishingPasswordHashSalt": null, "publishingUserName": "sS096257",
 "scmUri": null, "type": "Microsoft.Web/publishingUsers/web" }
 
 Azure deployment user: user: sS096257 wachtwoord:
-Ditiseenuniekwachtwoord99
+****************
 
 van@Azure:\~\$ az appservice plan create --name labfarmServicePlan
 --resource-group IoT\_labfarm --sku FREE { "adminSiteName": null,
@@ -124,9 +124,9 @@ null, "toUpdate": null, "toUpdateIpBasedSsl": null, "virtualIp": null },
 van@Azure:\~\$ az webapp config connection-string set --resource-group
 IoT\_labfarm --name labfarmWebApp --settings
 MyDbConnection='Server=tcp:iotlabfarm.database.windows.net,1433;Database=coreDB;User
-ID=labfarmadmin;Password=ditiseenIOTwachtwoord99;Encrypt=true;Connection
+ID=labfarmadmin;Password=**********;Encrypt=true;Connection
 Timeout=30;' --connection-string-type SQLServer { "MyDbConnection": {
 "type": "SQLServer", "value":
 "Server=tcp:iotlabfarm.database.windows.net,1433;Database=coreDB;User
-ID=labfarmadmin;Password=ditiseenIOTwachtwoord99;Encrypt=true;Connection
+ID=labfarmadmin;Password=**********;Encrypt=true;Connection
 Timeout=30;" } }
