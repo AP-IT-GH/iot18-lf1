@@ -11,12 +11,13 @@ namespace Repositories
 
         }
         //add database tables
-        public DbSet<Plant> Plants {get; set;}
+       
         public DbSet<LabFarm> LabFarms {get; set;}
         public DbSet<Sensor> Sensors {get; set;}
         public DbSet<SensorType> SensorTypes {get; set;}
         public DbSet<SensorData> SensorValues { get; set; }
         public DbSet<Picture> Pictures { get; set; }
+        public DbSet<Plant> Plants { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

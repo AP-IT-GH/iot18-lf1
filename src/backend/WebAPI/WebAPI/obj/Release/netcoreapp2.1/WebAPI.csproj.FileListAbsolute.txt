@@ -21,3 +21,4 @@ C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\obj\Release\n
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.csproj.CopyComplete
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.dll
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.pdb
+C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs

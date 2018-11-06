@@ -26,13 +26,13 @@ namespace WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             // Use SQL Database if in Azure, otherwise, use SQLite
-            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+          /*  if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
                 services.AddDbContext<CollectionContext>(options =>
                         options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
-            else
+            else */
                 services.AddDbContext<CollectionContext>(
                         options => options.UseSqlServer(
-                 Configuration.GetConnectionString("LocalConnection")));
+                 Configuration.GetConnectionString("MyDbConnection")));
 
             // Automatically perform database migration
             services.BuildServiceProvider().GetService<CollectionContext>().Database.Migrate();
