@@ -7,10 +7,6 @@ Denny Matthijs
 Steven De Keuster  
 Melvin Boetsgezel 
 
-## Documentatie
-
-Leg hier de link naar de nuttige documentatie
-
 ## Teamrollen
 
 2 Personen Conditioning : Wouter & Denny  
@@ -33,3 +29,14 @@ Leg hier de link naar de nuttige documentatie
 1 Persoon Project Manager/Web development: Melvin  
 * Frontend web  
 * Project management  
+
+
+## Documentatie
+
+### Backend
+
+De ASP.NET core web API en de SQL database draaien op azure services.
+
+Base url web API: http://labfarmwebapp.azurewebsites.net/
+
+Voor extra documentatie zoals route's, endpoints en DB modellen : [API endpoint ocumentatie](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/backend/Labfarm%20API%20endpoint%20documentation.pdf)
