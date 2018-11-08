@@ -13,8 +13,8 @@ namespace Models
         public float DusLevelLow {get; set;}
         public float LightLevelHigh {get; set;}
         public float LightLevelLow {get; set;}
-        public float HumidityLevelHigh {get; set;}
-        public float HumidityLevelLow {get; set;}
+        public float TemperatureLevelHigh {get; set;}
+        public float TemperatureLevelLow {get; set;}
         public float ConductivityLevelHigh {get; set;}
         public float ConductivityLevelLow { get; set;}
         public float MinimumReservoirLevel {get; set;}

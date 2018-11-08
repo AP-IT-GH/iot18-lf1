@@ -15,17 +15,51 @@ namespace Repositories
 
            if(!context.LabFarms.Any()) //check if database is empty
             {
+
+                var SensorType1 = new SensorType()
+                {
+                    Name = "DustSensor",
+                };
+                context.SensorTypes.Add(SensorType1);
+
+                var SensorType2 = new SensorType()
+                {
+                    Name = "LightSensor",
+                };
+                context.SensorTypes.Add(SensorType2);
+                var SensorType3 = new SensorType()
+                {
+                    Name = "LightSensor",
+                };
+                context.SensorTypes.Add(SensorType3);
+                var SensorType4 = new SensorType()
+                {
+                    Name = "LightSensor",
+                };
+                context.SensorTypes.Add(SensorType4);
+
                 var Labfarm1 = new LabFarm() // add item
                 {
-                    Name = "labfarm1",
-                    PlantSpecies = "pisbloem",
-                    AuthId = "admin",            
+                    Name = "Test Labfarm",
+                    PlantSpecies = "Test Bloem",
+                    AuthId = "Test admin",    
+                    DustLevelHigh = 28,
+                    DusLevelLow = 12,
+                    ConductivityLevelHigh = 123,
+                    ConductivityLevelLow = 45,
+                    TemperatureLevelHigh = 100,
+                    TemperatureLevelLow = 0,
+                    LightLevelHigh = 3000,
+                    LightLevelLow = 2000,
+                    MaximumReservoirLevel = 20,
+                    MinimumReservoirLevel = -20,
+
                 };
                 context.LabFarms.Add(Labfarm1); 
 
                 var Plant1 = new Plant() // add item
                 {
-                    Name = "plant1",
+                    Name = "Test plant1",
                     Labfarm = Labfarm1,
                     Column = 2,
                     Row = 3
@@ -34,33 +68,22 @@ namespace Repositories
 
                 var Picture1 = new Picture()
                  {
-                      Content = "Base64 datata",
+                     Content = "Base64 datata",
                      Plant = Plant1
                 };
                 context.Pictures.Add(Picture1);
 
                 var Picture2 = new Picture()
                 {
-                      Content = "Base64 datata",
+                    Content = "Base64 datata",
                     Plant = Plant1
                 };
                 context.Pictures.Add(Picture2);
-
-                var SensorType1 = new SensorType()
-                {
-                    Name = "LightSensor",
-                };
-                context.SensorTypes.Add(SensorType1);
-
-                var SensorType2 = new SensorType()
-                {
-                    Name = "HumiditySensor",
-                };
-                context.SensorTypes.Add(SensorType2);
+               
 
                 var Sensor1 = new Sensor()
                 {
-                    Name = "sensor1",
+                    Name = "Test sensor1",
                     LabFarm = Labfarm1,
                     SensorType = SensorType1
                 };
@@ -69,7 +92,7 @@ namespace Repositories
 
                 var Sensor2 = new Sensor()
                 {
-                    Name = "sensor2",
+                    Name = "Test sensor2",
                     LabFarm = Labfarm1,
                     SensorType = SensorType2
                 };

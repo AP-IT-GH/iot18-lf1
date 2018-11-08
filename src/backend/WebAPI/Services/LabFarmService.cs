@@ -23,6 +23,14 @@ namespace Services
 
         public LabFarm Create(LabFarm labfarm)
         {
+           
+            var sensor1 = new Sensor()
+            {
+                Name = "DustSensor",
+                LabFarmId = labfarm.Id,
+
+
+            };
             return _labfarmRepository.Post(labfarm);
         }
 
