@@ -39,4 +39,6 @@ De ASP.NET core web API en de SQL database draaien op azure services.
 
 Base url web API: http://labfarmwebapp.azurewebsites.net/
 
-Voor extra documentatie zoals route's, endpoints en DB modellen : [API endpoint ocumentatie](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/backend/Labfarm%20API%20endpoint%20documentation.pdf)
+Example url (GET labfarms): http://labfarmwebapp.azurewebsites.net/api/v1/labfarm
+
+Voor extra documentatie zoals route's, endpoints, DB modellen en SQL queries : [API endpoint ocumentatie](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/backend/Labfarm%20API%20endpoint%20documentation.pdf)
