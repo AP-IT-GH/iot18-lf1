@@ -41,6 +41,21 @@ void loop(){
 }
 
 
+void reotateAll(int steps, float spd){
+  int dir = (steps > 0)? HIGH:LOW;
+  steps = abs(steps);
+
+  digitalWrite(DIR_PINS,dir);
+
+  float usDelay = (1/spd) * 70;
+
+  for(int i=0; i < steps; i++){
+    digitalWrite(STEP_PINS, HIGH);
+    delayMicroseconds(usDelay);
+    digitalWrite(STEP_PINS, LOW);
+    delayMicroseconds(usDelay);
+  }
+}
 
 void rotate(int motor, int steps, float spd){
   //rotate a specific number of microsteps (8 microsteps per step) – (negitive for reverse movement)
@@ -59,7 +74,6 @@ void rotate(int motor, int steps, float spd){
     delayMicroseconds(usDelay);
   }
 }
-
 
 void rotateDeg(int motor, float deg, float spd){
   //rotate a specific number of degrees (negitive for reverse movement)

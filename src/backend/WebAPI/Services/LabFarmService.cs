@@ -10,51 +10,76 @@ namespace Services
     //Bussines logic
     public class LabFarmService
     {
-        private LabFarmRepository _repository;
+        private LabFarmRepository _labfarmRepository;
+        private PlantRepository _plantRepository;
+        private SensorRepository _sensorRepository;
 
-        public LabFarmService(LabFarmRepository repository)
+        public LabFarmService(LabFarmRepository labfarmRepository, PlantRepository plantRepository, SensorRepository sensorRepository)
         {
-            _repository = repository;
+            _labfarmRepository = labfarmRepository;
+            _plantRepository = plantRepository;
+            _sensorRepository = sensorRepository;
         }
 
-        public LabFarmModel Create(LabFarmModel labfarm)
+        public LabFarm Create(LabFarm labfarm)
         {
-            return _repository.Post(labfarm);
+            return _labfarmRepository.Post(labfarm);
         }
 
-        public LabFarmModel Update(LabFarmModel labfarm)
+        public LabFarm Update(LabFarm labfarm, int id)
         {
-            return _repository.Put(labfarm);
+            if(labfarm.Id == 0)
+            {
+                labfarm.Id = id;
+            }
+            return _labfarmRepository.Put(labfarm);
         }
 
         public bool Delete(int id)
         {
-            return _repository.Delete(id);
+            return _labfarmRepository.Delete(id);
         }
 
-        public List<LabFarmModel> GetAll(string userId)
+        public List<LabFarm> GetList(string authId = "")
         {
-            var list = _repository.GetAll();
 
-            if (userId == null || userId == "")
+            if (authId != "")
             {
-                return list;
+                var labfarm1 = from s in _labfarmRepository.GetAll()
+                              where s.AuthId == authId
+                              select s;
+                return labfarm1.ToList();
             }
-            
-            List<LabFarmModel> updatedList = new List<LabFarmModel>();
-            foreach(LabFarmModel x in list)
+            else
             {
-                if(x.AuthId == userId)
-                {
-                    updatedList.Add(x);
-                }
+                return _labfarmRepository.GetAll();
             }
-            return updatedList;
+       
         }
 
-        public LabFarmModel Get(int id)
+        public LabFarm GetById(int id)
+        {         
+             return _labfarmRepository.Get(id);
+        }
+
+
+        public List<Plant> GetPlant(int  id, string plantName)
         {
-            return _repository.Get(id);
+            var plants = GetById(id).Plants.ToList();
+            var plant = from s in plants
+                        where s.Name == plantName
+                        select s;
+            return plant.ToList();
         }
+        
+        public List<Sensor> GetSensor(int id, string sensorName)
+        {
+            var sensors = GetById(id).Sensors.ToList();
+            var sensor = from s in sensors
+                         where s.Name == sensorName
+                         select s;
+            return sensor.ToList();
+        }
+
     }
 }
