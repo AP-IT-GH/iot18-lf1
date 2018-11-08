@@ -18,6 +18,7 @@ import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 import { SensorDataService } from 'src/providers/sensor-data/sensor-data.service';
 import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthenticationService } from 'src/providers/authentication/authentication.service';
 
 @NgModule({
     declarations: [
@@ -49,7 +50,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     providers: [
         LabfarmService,
         SensorDataService,
-        CookieService
+        CookieService,
+        AuthenticationService
     ],
     bootstrap: [AppComponent]
 })
