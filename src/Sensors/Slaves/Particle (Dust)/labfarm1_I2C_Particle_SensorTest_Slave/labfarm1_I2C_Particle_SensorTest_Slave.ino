@@ -3,9 +3,15 @@
 byte own_address = 0x11;
 
 //Global Sensor
+unsigned long duration;
+unsigned long startTime;
+unsigned long sampletime_ms = 30000;
+unsigned long lowPulseOccupancy = 0;
+
+float ratio = 0;
+float concentration = 0;
+
 int sensorPin = A2; 
-float sensorValue = 0; 
-float dustDensity = 0;
 
 void setup() 
 {
@@ -15,14 +21,20 @@ void setup()
 }
 
 void loop() {
-  delay(100);
+  duration = pulseIn(sensorPin, LOW);
+  lowPulseOccupancy = lowPulseOccupancy + duration;
+  
+  if ((millis()-startTime) >= sampletime_ms) //if the sample time >= 30s
+  {
+    ratio = lowPulseOccupancy/(sampletime_ms*10.0);  
+    concentration = 1.1*pow(ratio,3)-3.8*pow(ratio,2)+520*ratio+0.62;    
+    lowPulseOccupancy = 0;
+    startTime = millis();
+  }
 }
 
 void requestEvent()
 {
-  sensorValue = analogRead(sensorPin); // read the value from the sensor
-  sensorValue = sensorValue*(5.0/1024.0); //Convert to voltage
-  dustDensity = 0.17 * sensorValue - 0.1; //Calculate dust density
-  TinyWire.send(dustDensity); //send data [1 byte]
+  TinyWire.send(concentration); //send data [1 byte]
 }
 
