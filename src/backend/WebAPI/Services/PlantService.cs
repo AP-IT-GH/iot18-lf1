@@ -60,7 +60,10 @@ namespace Services
             var lastPictures = new List<LastPictures>();
             foreach(Plant s in plants2)
             {
-                s.Pictures = s.Pictures.OrderByDescending(x => x.TimeStamp).ToList();
+                s.Pictures = s.Pictures.OrderByDescending(x => x.TimeStamp.TimeOfDay)
+                                            .ThenBy(x => x.TimeStamp.Date)
+                                                .ThenBy(x=> x.TimeStamp.Year)
+                                                    .ToList();
                 var d = new LastPictures();
                 d.Name = s.Name;
                 d.Pictures = s.Pictures.ToList(); //TODO mapper?

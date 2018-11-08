@@ -64,17 +64,18 @@ namespace WebAPI
             return _labfarmService.GetById(id).Plants.ToList();
         }
 
-        [HttpGet("{id}/plants/pictures")]
-        public List<LastPictures> GetPlants(int id, int count)
-        {
-            return _plantService.GetLastPictures(id, count);
-        }
 
         [HttpPost("{id}/plants")]
         public Plant PostCamera([FromBody]Plant plant, int id)
         {
             plant.Labfarm = _labfarmService.GetById(id);
             return _plantService.Create(plant);
+        }
+
+        [HttpGet("{id}/plants/pictures")]
+        public List<LastPictures> GetPlants(int id, int count)
+        {
+            return _plantService.GetLastPictures(id, count);
         }
 
         [HttpGet("{id}/plants/{plantName}")]

@@ -45,14 +45,15 @@ namespace Services
 
             if (authId != "")
             {
-                var labfarm1 = from s in _labfarmRepository.GetAll()
+                var labfarms = from s in _labfarmRepository.GetAll()
                               where s.AuthId == authId
                               select s;
-                return labfarm1.ToList();
+               
+                return GetLatetsValues(labfarms.ToList()).ToList();
             }
             else
             {
-                return _labfarmRepository.GetAll();
+                return GetLatetsValues(_labfarmRepository.GetAll());
             }
        
         }
@@ -79,6 +80,37 @@ namespace Services
                          where s.Name == sensorName
                          select s;
             return sensor.ToList();
+        }
+
+        public List<LabFarm> GetLatetsValues(List<LabFarm> labfarms)
+        {
+            foreach (LabFarm l in labfarms)
+            {
+                foreach (Plant p in l.Plants)
+                {
+                    var pictures = p.Pictures.OrderByDescending(x => x.TimeStamp.TimeOfDay)
+                                                .ThenBy(x => x.TimeStamp.Date)
+                                                    .ThenBy(x => x.TimeStamp.Year)
+                                                        .ToList();
+                    var picture = pictures[0]; // get latest picture
+                    p.Pictures.Clear();
+                    p.Pictures.Add(picture);
+
+                }
+
+                foreach(Sensor s in l.Sensors)
+                {
+                    var values = s.SensorValues.OrderByDescending(x => x.TimeStamp.TimeOfDay)
+                                                .ThenBy(x => x.TimeStamp.Date)
+                                                    .ThenBy(x => x.TimeStamp.Year)
+                                                        .ToList();
+                    var value = values[0];
+                    s.SensorValues.Clear();
+                    s.SensorValues.Add(value);
+                }
+            }
+
+            return labfarms;
         }
 
     }

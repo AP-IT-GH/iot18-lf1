@@ -1,28 +1,21 @@
+﻿
 CREATE TABLE [dbo].[LabFarms] (
     [Id]                           INT            IDENTITY (1, 1) NOT NULL,
     [Name]                         NVARCHAR (MAX) NULL,
     [AuthId]                       NVARCHAR (MAX) NULL,
     [PlantSpecies]                 NVARCHAR (MAX) NOT NULL,
-    [OptimalAcidityLevelHigh]      REAL           NOT NULL,
-    [OptimalAcidityLevelLow]       REAL           NOT NULL,
-    [OptimalHumidityLevelHigh]     REAL           NOT NULL,
-    [OptimalHumidityLevelLow]      REAL           NOT NULL,
-    [OptimalLightLevelHigh]        REAL           NOT NULL,
-    [OptimalLightLevelLow]         REAL           NOT NULL,
-    [OptimalConductivityLevelHigh] REAL           NOT NULL,
-    [OptimalConductivityLevelLow]  REAL           NOT NULL,
-    [MinimumReservoirLevel]        REAL           NOT NULL,
+    [DustLevelHigh]                REAL           NOT NULL,
+    [DusLevelLow]                  REAL           NOT NULL,
+    [LightLevelHigh]	           REAL           NOT NULL,
+    [LightLevelLow]                REAL           NOT NULL,
+    [HumidityLevelHigh]            REAL           NOT NULL,
+    [HumidityLevelLow]             REAL           NOT NULL,
+    [ConductivityLevelHigh]        REAL           NOT NULL,
+    [ConductivityLevelLow]         REAL           NOT NULL,
+	[MinimumReservoirLevel]        REAL           NOT NULL,
+    [MaximumReservoirLevel]        REAL           NOT NULL,
     [AutoMode]                     BIT            NULL,
     CONSTRAINT [PK_LabFarms] PRIMARY KEY CLUSTERED ([Id] ASC)
-);
-
-CREATE TABLE [dbo].[Pictures] (
-    [Id]        INT            IDENTITY (1, 1) NOT NULL,
-    [Content]   NVARCHAR (MAX) NOT NULL,
-    [TimeStamp] DATETIME2 (7)  NOT NULL,
-    [PlantId]   INT            NOT NULL,
-    CONSTRAINT [PK_Pictures] PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [FK_Pictures_Plants_PlantId] FOREIGN KEY ([PlantId]) REFERENCES [dbo].[Plants] ([Id])
 );
 
 CREATE TABLE [dbo].[Plants] (
@@ -33,6 +26,20 @@ CREATE TABLE [dbo].[Plants] (
     [Row]       INT            NOT NULL,
     CONSTRAINT [PK_Plants] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_Plants_LabFarms_LabfarmId] FOREIGN KEY ([LabfarmId]) REFERENCES [dbo].[LabFarms] ([Id]) ON DELETE CASCADE
+);
+CREATE TABLE [dbo].[Pictures] (
+    [Id]        INT            IDENTITY (1, 1) NOT NULL,
+    [Content]   NVARCHAR (MAX) NOT NULL,
+    [TimeStamp] DATETIME2 (7)  NOT NULL,
+    [PlantId]   INT            NOT NULL,
+    CONSTRAINT [PK_Pictures] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Pictures_Plants_PlantId] FOREIGN KEY ([PlantId]) REFERENCES [dbo].[Plants] ([Id])
+);
+
+CREATE TABLE [dbo].[SensorTypes] (
+    [Id]   INT            IDENTITY (1, 1) NOT NULL,
+    [Name] NVARCHAR (MAX) NOT NULL,
+    CONSTRAINT [PK_SensorTypes] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
 	CREATE TABLE [dbo].[Sensors] (
@@ -45,11 +52,7 @@ CREATE TABLE [dbo].[Plants] (
     CONSTRAINT [FK_Sensors_SensorTypes_SensorTypeId] FOREIGN KEY ([SensorTypeId]) REFERENCES [dbo].[SensorTypes] ([Id]) ON DELETE CASCADE
 );
 
-CREATE TABLE [dbo].[SensorTypes] (
-    [Id]   INT            IDENTITY (1, 1) NOT NULL,
-    [Name] NVARCHAR (MAX) NOT NULL,
-    CONSTRAINT [PK_SensorTypes] PRIMARY KEY CLUSTERED ([Id] ASC)
-);
+
 CREATE TABLE [dbo].[SensorValues] (
     [Id]          INT           IDENTITY (1, 1) NOT NULL,
     [SensorValue] REAL          NOT NULL,

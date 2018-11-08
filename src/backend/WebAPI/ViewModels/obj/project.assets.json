@@ -11519,11 +11519,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\ViewModels\\ViewModels.csproj",
+      "projectUniqueName": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\webAPI\\ViewModels\\ViewModels.csproj",
       "projectName": "ViewModels",
-      "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\ViewModels\\ViewModels.csproj",
+      "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\webAPI\\ViewModels\\ViewModels.csproj",
       "packagesPath": "C:\\Users\\joris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\ViewModels\\obj\\",
+      "outputPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\webAPI\\ViewModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11542,8 +11542,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Models\\Models.csproj"
+            "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\webAPI\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\webAPI\\Models\\Models.csproj"
             }
           }
         }
