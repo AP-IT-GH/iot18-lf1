@@ -37,11 +37,11 @@ Melvin Boetsgezel
 
 Voor meer informatie over het project zelf kan u volgende links volgen:
 
-Analyse: https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/analyse
+[Analyse](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/analyse)
 
-Flowcharts / Blokdiagrammen / ... : in de analyse of https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/img
-
-**Meetings:** https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/meetings
+[Flowcharts + Blokdiagrammen](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/img)
+ 
+[Meetings](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/meetings)
 
 PS: We hebben ook zo goed als elke les, aan het begin, een kleine meeting. In deze map hierboven staan echter alleen de grote meetings na dat er een sprint is afgerond of als er een nieuwe gestart wordt. 
 
@@ -55,45 +55,45 @@ Base url web API: http://labfarmwebapp.azurewebsites.net/
 
 Example url (GET labfarms): http://labfarmwebapp.azurewebsites.net/api/v1/labfarm
 
-Voor extra documentatie zoals route's, endpoints, DB modellen en SQL queries : [API endpoint ocumentatie](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/backend/Labfarm%20API%20endpoint%20documentation.pdf)
+Voor extra documentatie over route's, endpoints, DB modellen en SQL queries : [API endpoint ocumentatie](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/backend/Labfarm%20API%20endpoint%20documentation.pdf)
 
 ### Sensoren
 
 Voor het verkrijgen van de data vanuit de sensoren gebruiken we een Raspberry Pi als master met daarbij 4 ATTiny85s als slaves. De communicatie van de ATTiny85s naar de Raspberry Pi gebeurd via het I2C protocol. Meer informatie kan u op volgende links vinden:
 
-Sensor code (master / slave): https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/Sensors
+[Sensor code (master / slave)](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/Sensors)
 
-Gebruikte Libraries: https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/Libraries
+[Gebruikte Libraries](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/Libraries)
 
-Sensor datasheets: https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/datasheet
+[Sensor datasheets](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/datasheet)
 
 ### Hardware / Elektrische Schema's / Code betreffende hardware
 
 Meer informatie over de hardware alsook de elektrische schema's kan u vinden via volgende links:
 
-Hardware tekeningen: https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/Drawings
+[Hardware tekeningen](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/Drawings)
 
-Elektrische schema's: https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/Electrical%20Designs
+[Elektrische schema's](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/Electrical%20Designs)
 
-Hardware code: https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/MCU%20Programs
+[Hardware code](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/MCU%20Programs)
 
 ### Camera
 
 Updates betreffende de camera zal u in deze map kunnen vinden:
 
-Camera: https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/cameras
+[Camera](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/cameras)
 
 ### Online Platform 
 
 Natuurlijk maken we, voor ons project, ook gebruik van een online platform. Belangrijke informatie kan u vinden via volgende link:
 
-Online Platform: https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/labfarm-client
+[Online Platform](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/labfarm-client)
 
 ### Presentaties
 
 De presentaties kan u hier terugvinden:
 
-Presentatie 1 & 2: https://prezi.com/view/gqtpL6frQNvXV23dgvv2 (deze gebruiken hetzelfde design, alleen was er bij de tweede presentatie meer duidelijkheid over wat we allemaal gingen gebruiken. Het is daaraan ook aangepast. Onze excuses voor geen kopie te nemen van de eerste presentatie apart.)
+[Presentatie 1 & 2](https://prezi.com/view/gqtpL6frQNvXV23dgvv2) (deze gebruiken hetzelfde design, alleen was er bij de tweede presentatie meer duidelijkheid over wat we allemaal gingen gebruiken. Het is daaraan ook aangepast. Onze excuses voor geen kopie te nemen van de eerste presentatie apart.)
 
 Presentatie 3: Komt er aan wanneer we de presentatie gegeven hebben. No spoilers! 
 
