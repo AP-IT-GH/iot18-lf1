@@ -11,27 +11,20 @@ namespace Services
     public class LabFarmService
     {
         private LabFarmRepository _labfarmRepository;
-        private PlantRepository _plantRepository;
+        private SensorTypeRepository _sensorTypeRepository;
         private SensorRepository _sensorRepository;
 
-        public LabFarmService(LabFarmRepository labfarmRepository, PlantRepository plantRepository, SensorRepository sensorRepository)
+        public LabFarmService(LabFarmRepository labfarmRepository, SensorTypeRepository sensorTypeRepository, SensorRepository sensorRepository)
         {
             _labfarmRepository = labfarmRepository;
-            _plantRepository = plantRepository;
+            _sensorTypeRepository = sensorTypeRepository;
             _sensorRepository = sensorRepository;
         }
 
         public LabFarm Create(LabFarm labfarm)
         {
-           
-            var sensor1 = new Sensor()
-            {
-                Name = "DustSensor",
-                LabFarmId = labfarm.Id,
-
-
-            };
-            return _labfarmRepository.Post(labfarm);
+            InitializeSensors(_labfarmRepository.Post(labfarm));
+            return _labfarmRepository.Get(labfarm.Id);
         }
 
         public LabFarm Update(LabFarm labfarm, int id)
@@ -81,13 +74,17 @@ namespace Services
             return plant.ToList();
         }
         
-        public List<Sensor> GetSensor(int id, string sensorName)
+        public List<Sensor> GetSensorByName(int id, string sensorName)
         {
             var sensors = GetById(id).Sensors.ToList();
             var sensor = from s in sensors
                          where s.Name == sensorName
                          select s;
             return sensor.ToList();
+        }
+        public Sensor GetSensorById(int id1, int id2) //TODO bad code?
+        {
+            return _sensorRepository.Get(id2);
         }
 
         public List<LabFarm> GetLatetsValues(List<LabFarm> labfarms)
@@ -119,6 +116,22 @@ namespace Services
             }
 
             return labfarms;
+        }
+
+        public void InitializeSensors(LabFarm _labfarm)
+        {
+            var types = _sensorTypeRepository.GetAll();
+            for (int i = 0; i < types.Count; i++)
+            {
+                var sensor = new Sensor()
+                {
+                    Name = "Sensor" + i,
+                    SensorType = types[i],
+                    LabFarmId = _labfarm.Id
+                };
+
+                _sensorRepository.Post(sensor);
+            };
         }
 
     }

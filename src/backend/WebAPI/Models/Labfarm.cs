@@ -10,7 +10,7 @@ namespace Models
         public string AuthId {get; set;}
         public string PlantSpecies { get; set; }
         public float DustLevelHigh {get; set;}
-        public float DusLevelLow {get; set;}
+        public float DustLevelLow {get; set;}
         public float LightLevelHigh {get; set;}
         public float LightLevelLow {get; set;}
         public float TemperatureLevelHigh {get; set;}

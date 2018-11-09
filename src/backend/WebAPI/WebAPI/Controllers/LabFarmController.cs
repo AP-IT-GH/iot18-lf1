@@ -100,7 +100,7 @@ namespace WebAPI
         [HttpGet("{id}/sensors/values")]
         public List<LastSensorValues> GetSensors(int id, int count)
         {
-            return _sensorService.GetLastValues(id, count);
+            return _sensorService.GetLastValuesByLabfarm(id, count);
         }
 
         [HttpPost("{id}/sensors")]
@@ -109,16 +109,20 @@ namespace WebAPI
             sensor.LabFarm = _labfarmService.GetById(id);
             return _sensorService.Create(sensor);
         }
-        [HttpGet("{id}/sensors/{sensorName}")]
+        [HttpGet("{id:int}/sensors/{sensorName}")]
         public List<Sensor> GetSensor(int id, string sensorName)
         {
-            return _labfarmService.GetSensor(id, sensorName);
+            return _labfarmService.GetSensorByName(id, sensorName);
         }
-
+        [HttpGet("{id:int}/sensors/{id2}:int")] //TODO bad endpoint?
+        public Sensor GetSensor(int id, int id2 )
+        {
+            return _labfarmService.GetSensorById(id, id2);
+        }
         [HttpPost("{id}/sensors/{sensorName}/data")]
         public SensorData PostSensorData([FromBody]SensorData data, int id, string sensorName)
         {
-            data.Sensor = _labfarmService.GetSensor(id, sensorName)[0]; // TODO bad code?
+            data.Sensor = _labfarmService.GetSensorByName(id, sensorName)[0]; // TODO bad code?
             return _sensorDataService.Create(data);
         }
 

@@ -43,7 +43,7 @@ namespace Services
             return _sensorRepository.Get(id);
         }
 
-        public List<LastSensorValues> GetLastValues(int id, int count)
+        public List<LastSensorValues> GetLastValuesByLabfarm(int id, int count)
         {
             if(count == 0)
             {
@@ -75,6 +75,20 @@ namespace Services
 
             return latestSensors;
            
+        }
+
+        public LastSensorValues GetLastValuesBySensor(int id, int count)
+        {
+            var sensor = _sensorRepository.Get(id);
+            sensor.SensorValues.OrderByDescending(x => x.TimeStamp).ToList();
+            var d = new LastSensorValues();
+            d.Name = sensor.Name;
+            d.Data = sensor.SensorValues.ToList();
+            if(count < d.Data.Count)
+            {
+                d.Data.RemoveRange(count, d.Data.Count - count);
+            }
+            return d;
         }
 
     }

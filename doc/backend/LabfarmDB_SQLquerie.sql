@@ -5,7 +5,7 @@ CREATE TABLE [dbo].[LabFarms] (
     [AuthId]                       NVARCHAR (MAX) NULL,
     [PlantSpecies]                 NVARCHAR (MAX) NOT NULL,
     [DustLevelHigh]                REAL           NOT NULL,
-    [DusLevelLow]                  REAL           NOT NULL,
+    [DustlevelLow]                 REAL           NOT NULL,
     [LightLevelHigh]	           REAL           NOT NULL,
     [LightLevelLow]                REAL           NOT NULL,
     [TemperatureLevelhigh]         REAL           NOT NULL,
