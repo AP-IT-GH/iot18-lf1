@@ -96,5 +96,5 @@ De presentaties kan u hier terugvinden:
 * [Presentatie 1 & 2](https://prezi.com/view/gqtpL6frQNvXV23dgvv2) 
 Deze gebruiken hetzelfde design, alleen was er bij de tweede presentatie meer duidelijkheid over wat we allemaal gingen gebruiken. Het is daaraan ook aangepast. Onze excuses voor geen kopie te nemen van de eerste presentatie apart.
 
-Presentatie 3: Komt er aan wanneer we de presentatie gegeven hebben. No spoilers! 
+* [Presentatie 3]() Komt er aan wanneer we de presentatie gegeven hebben. No spoilers! 
 
