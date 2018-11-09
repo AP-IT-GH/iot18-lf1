@@ -55,7 +55,11 @@ Base url web API: http://labfarmwebapp.azurewebsites.net/
 
 Example url (GET labfarms): http://labfarmwebapp.azurewebsites.net/api/v1/labfarm
 
-Voor extra documentatie over route's, endpoints, DB modellen en SQL queries : [API endpoint ocumentatie](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/backend/Labfarm%20API%20endpoint%20documentation.pdf)
+* [Database model](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/backend/DBmodel.png)
+
+* [SQL query](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/backend/LabfarmDB_SQLquerie.sql)
+
+* [Endpoint documentation](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/backend/Labfarm%20API%20endpoint%20documentation.pdf)
 
 ### Sensoren
 
