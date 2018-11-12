@@ -1,5 +1,11 @@
-<div class="labfarm-container">
-    <app-lab-farm-overview>
+<div class="labfarm-container" *ngIf="userLabFarms">
+    <app-lab-farm-overview *ngFor="let labfarm of userLabFarms" [labFarm]="labfarm">
 
     </app-lab-farm-overview>
 </div>
+<app-loading *ngIf="!userLabFarms">
+
+</app-loading>
+<app-error *ngIf="serverError">
+
+</app-error>

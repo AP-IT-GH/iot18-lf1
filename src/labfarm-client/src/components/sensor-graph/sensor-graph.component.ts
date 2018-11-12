@@ -3,6 +3,9 @@ import { Chart } from 'chart.js';
 import { SensorDataService } from 'src/providers/sensor-data/sensor-data.service';
 import { SensorData } from 'src/models/SensorData';
 import { SensorType } from 'src/models/SensorType';
+import { SensorValue, LastSensorValues } from 'src/models/SensorValue';
+import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
+import { Sensor } from 'src/models/Sensor';
 
 
 @Component({
@@ -12,74 +15,93 @@ import { SensorType } from 'src/models/SensorType';
 })
 export class SensorGraphComponent implements OnInit {
 
-    @Input() SensorId;
+    @Input() Sensor: Sensor;
+    @Input() LabfarmId;
+
+
 
     public chart = [];
     public sensorType: SensorType;
+    public sensorValues: SensorValue[] = [];
+
     public sensorDatas: SensorData[];
     public sensorDataTime: string[] = [];
     public sensorDataValue: number[] = [];
 
-    constructor(private sensorDataService: SensorDataService) {
+    constructor(private labfarmService: LabfarmService) {
 
     }
 
     ngOnInit() {
-        this.sensorDatas = this.sensorDataService.getSensorDatas();
-        this.sensorDatas.forEach(e => {
-            if (e.SensorId == this.SensorId) {
-                this.sensorDataTime.push(e.Timestamp);
-                this.sensorDataValue.push(e.SensorValue);
-            }
-        });
-        this.sensorType = this.sensorDatas[0].SensorType;
-    }
+        //getSensorValues(this.Sensor.id);
 
-    ngAfterViewInit() {
-        setTimeout(() => {
+        this.labfarmService.getSensorValues(this.LabfarmId).subscribe(data => {
+            let latestSensorValues = data;
 
-            this.chart = new Chart('sensor-chart-' + this.SensorId, {
-                type: 'line',
-                data: {
-                    labels: this.sensorDataTime,
-                    datasets: [
-                        {
-                            label: 'label',
-                            data: this.sensorDataValue,
-                            borderColor: "#3cba9f",
-                            fill: false
-                        }
-                    ]
-                },
-                options: {
-                    title: {
-                        display: true,
-                        text: this.sensorDatas[0].SensorType ? this.sensorDatas[0].SensorType.TypeName : "No type specified"
-                    },
-                    legend: {
-                        display: false
-                    },
-                    scales: {
-                        xAxes: [{
-                            display: true,
+            latestSensorValues.forEach(element => {
+                element.data.forEach(e => {
+                    if (e.sensorId == this.Sensor.id) {
+                        console.log("SensorValue: " + e.sensorId + " is the same as " + this.Sensor.id);
 
-                            scaleLabel: {
-                                display: true,
-                                labelString: "Time"
-                              }
-                        }],
-                        yAxes: [{
-                            display: true,
-                            scaleLabel: {
-                                display: true,
-                                labelString: "Value in %"
-                              }
-                        }],
+                        let date = new Date(e.timeStamp);
+                        let dateString = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+                        this.sensorDataTime.push(dateString);
+                        this.sensorDataValue.push(e.sensorValue);
                     }
-                }
+                });
             });
 
-        }, 100 * this.SensorId);
+            this.initSensorGraph();
+        });
+
+
+
+    }
+
+    initSensorGraph() {
+
+        this.chart = new Chart('sensor-chart-' + this.Sensor.id, {
+            type: 'line',
+            data: {
+                labels: this.sensorDataTime,
+                datasets: [
+                    {
+                        label: 'label',
+                        data: this.sensorDataValue,
+                        borderColor: "#3cba9f",
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: this.Sensor.sensorType ? this.Sensor.sensorType.name : "No type specified"
+                },
+                legend: {
+                    display: false
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Time"
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: "Value in %"
+                        }
+                    }],
+                }
+            }
+        });
+
     }
 
 }

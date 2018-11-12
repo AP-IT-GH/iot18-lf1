@@ -1,18 +1,16 @@
-<div class="labfarm-header col-md-8 offset-2">
+<div class="labfarm-header col-md-8 offset-2" *ngIf="labfarm">
     <h3>Lab Farm #{{farmId}}</h3>
-    <a class="updated small italic text-right font-italic font-weight-light" *ngIf="humiditySensor">Updated: {{humiditySensor.timeStamp}}</a>
+    <a class="updated small italic text-right font-italic font-weight-light" *ngIf="humiditySensor">Updated: </a>
 </div>
-<div class="container labfarm-container col-md-10 offset-1" *ngIf="labfarm">
+<div class="labfarm-container" *ngIf="labfarm">
 
-    <div class="labfarm-body col-md-9">
-        <app-sensor-graph SensorId="{{humiditySensor.SensorId}}" *ngIf="humiditySensor"></app-sensor-graph>
-        <app-sensor-graph SensorId="{{dustSensor.SensorId}}" *ngIf="dustSensor"></app-sensor-graph>
-        <app-sensor-graph SensorId="{{lightSensor.SensorId}}" *ngIf="lightSensor"></app-sensor-graph>
-        <app-sensor-graph SensorId="{{conductivitySensor.SensorId}}" *ngIf="conductivitySensor"></app-sensor-graph>
-        <app-sensor-graph SensorId="{{waterSensor.SensorId}}" *ngIf="waterSensor"></app-sensor-graph>
+    <div class="labfarm-body">
+        <app-sensor-graph [Sensor]="sensor" LabfarmId="{{farmId}}" *ngFor="let sensor of sensors"></app-sensor-graph>
         <div class="camera-sensor bg-light"> <img src="https://via.placeholder.com/300x150"></div>
     </div>
-    <div class="labfarm-options col-md-3 col-sm-4">
+
+    <div class="labfarm-options-container">
+
         <div class="card">
             <div class="card-header bg-dark text-light">Lab farm options</div>
             <div class="card-body">
@@ -32,13 +30,18 @@
                 </div>
                 <div class="lf-options">
                     <a class="updated small italic text-right font-italic font-weight-light">Updated:
-                        {{humiditySensor.Timestamp}}</a>
+                        time</a>
                     <button type="button" class="btn bg-dark text-light">Save</button>
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
+<!-- *ngIf="!labfarm" -->
+<app-loading>
+
+    </app-loading>
 <app-error *ngIf="serverError">
 
 </app-error>

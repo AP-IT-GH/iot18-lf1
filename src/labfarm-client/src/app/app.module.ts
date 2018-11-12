@@ -19,6 +19,9 @@ import { SensorDataService } from 'src/providers/sensor-data/sensor-data.service
 import { CookieService } from 'ngx-cookie-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationService } from 'src/providers/authentication/authentication.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ErrorComponent } from '../components/error/error.component';
+import { LoadingComponent } from '../components/loading/loading.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +32,9 @@ import { AuthenticationService } from 'src/providers/authentication/authenticati
         OptionsComponent,
         PageNotFoundComponent,
         LabFarmOverviewComponent,
-        SensorGraphComponent
+        SensorGraphComponent,
+        ErrorComponent,
+        LoadingComponent
     ],
     imports: [
         RouterModule.forRoot([
@@ -45,6 +50,7 @@ import { AuthenticationService } from 'src/providers/authentication/authenticati
         MatButtonModule,
         MatCheckboxModule,
         MatSliderModule,
+        HttpClientModule,
         NgbModule
     ],
     providers: [

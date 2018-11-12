@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatSliderModule } from '@angular/material/slider';
 import * as hammerjs from 'hammerjs/hammer';
 import { LabFarm } from 'src/models/LabFarm';
 import { SensorData } from 'src/models/SensorData';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
+import { ActivatedRoute } from '@angular/router';
+import { LabFarmDto } from 'src/models/LabFarmDto';
+import { Sensor } from 'src/models/Sensor';
 
 @Component({
     selector: 'app-farm',
@@ -12,7 +15,12 @@ import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 })
 export class FarmComponent implements OnInit {
 
+    public serverError: boolean = false;
+
     public autoMode = true;
+
+    public farmId: number;
+    public labfarm: LabFarmDto;
 
     public lightLevel = 160;
     public lightDisabled = true;
@@ -20,24 +28,21 @@ export class FarmComponent implements OnInit {
     public conductivityDisabled = true;
 
     public labFarm: LabFarm;
-    public humiditySensor: SensorData;
-    public dustSensor: SensorData;
-    public lightSensor: SensorData;
-    public conductivitySensor: SensorData;
-    public waterSensor: SensorData;
+    public sensors: Sensor[];
 
-    constructor(private labfarmService: LabfarmService) {
-        let latestSensorData = labfarmService.getLatestSensorData();
-        this.humiditySensor = latestSensorData[0];
-        this.dustSensor = latestSensorData[1];
-        this.lightSensor = latestSensorData[2];
-        this.conductivitySensor = latestSensorData[3];
-        this.waterSensor = latestSensorData[4];
+    constructor(private route: ActivatedRoute, private labfarmService: LabfarmService) {
 
-        this.labFarm = this.humiditySensor.LabFarm;
-     }
+    }
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.farmId = parseInt(this.route.snapshot.paramMap.get("id"));
+        this.labfarmService.getLabFarm(this.farmId).subscribe(data => {
+            this.labfarm = data;
+            this.sensors = data.sensors;
+        }, error => {
+            this.serverError = true;
+        });
+    }
 
     autoModeChanged() {
         this.lightDisabled = !this.autoMode;

@@ -5,39 +5,39 @@
             <tr>
                 <td>
                     <ul class="list-group">
-                        <ng-template #humidityValues>
+                        <ng-template #temperatureValues>
                             <ul class="tooltip-container">
-                                <li><a>Max </a><a>{{labFarm.HumidityLevelHigh}} %</a></li>
-                                <li><a>Current</a><a>{{humiditySensor.SensorValue}} %</a></li>
-                                <li><a>Min</a><a>{{labFarm.HumidityLevelLow}} %</a></li>
+                                <li><a>Max </a><a>{{labFarm.temperatureLevelHigh}} %</a></li>
+                                <li><a>Current</a><a>{{temperatureSensor.sensorValue}} %</a></li>
+                                <li><a>Min</a><a>{{labFarm.temperatureLevelLow}} %</a></li>
                             </ul>
                         </ng-template>
-                        <li class="d-flex justify-content-between align-items-center">{{humiditySensor.SensorType.TypeName}}
-                            <span placement="top" [ngbTooltip]="humidityValues" class="badge badge-primary badge-pill">{{humiditySensor.SensorValue}}
+                        <li class="d-flex justify-content-between align-items-center" *ngIf="temperatureSensor">Temperature
+                            <span placement="top" [ngbTooltip]="temperatureValues" class="badge badge-primary badge-pill">{{temperatureSensor.sensorValue}}
                                 %</span></li>
 
 
                         <ng-template #dustValues>
                             <ul class="tooltip-container">
-                                <li><a>Max </a><a>{{labFarm.DustLevelHigh}} %</a></li>
-                                <li><a>Current</a><a>{{dustSensor.SensorValue}} %</a></li>
-                                <li><a>Min</a><a>{{labFarm.DustLevelLow}} %</a></li>
+                                <li><a>Max </a><a>{{labFarm.dustLevelHigh}} %</a></li>
+                                <li><a>Current</a><a>{{dustSensor.sensorValue}} %</a></li>
+                                <li><a>Min</a><a>{{labFarm.dusLevelLow}} %</a></li>
                             </ul>
                         </ng-template>
-                        <li class="d-flex justify-content-between align-items-center">{{dustSensor.SensorType.TypeName}}
-                            <span placement="top" [ngbTooltip]="dustValues" class="badge badge-primary badge-pill">{{dustSensor.SensorValue}}
+                        <li class="d-flex justify-content-between align-items-center" *ngIf="dustSensor">Dust
+                            <span placement="top" [ngbTooltip]="dustValues" class="badge badge-primary badge-pill">{{dustSensor.sensorValue}}
                                 %</span></li>
 
 
                         <ng-template #lightValues>
                             <ul class="tooltip-container">
-                                <li><a>Max </a><a>{{labFarm.LightLevelHigh}} lux</a></li>
-                                <li><a>Current</a><a>{{lightSensor.SensorValue}} lux</a></li>
-                                <li><a>Min</a><a>{{labFarm.LightLevelLow}} lux</a></li>
+                                <li><a>Max </a><a>{{labFarm.lightLevelHigh}} lux</a></li>
+                                <li><a>Current</a><a>{{lightSensor.sensorValue}} lux</a></li>
+                                <li><a>Min</a><a>{{labFarm.lightLevelLow}} lux</a></li>
                             </ul>
                         </ng-template>
-                        <li class="d-flex justify-content-between align-items-center">{{lightSensor.SensorType.TypeName}}
-                            <span placement="top" [ngbTooltip]="lightValues" class="badge badge-primary badge-pill">{{lightSensor.SensorValue}}
+                        <li class="d-flex justify-content-between align-items-center" *ngIf="lightSensor">Light
+                            <span placement="top" [ngbTooltip]="lightValues" class="badge badge-primary badge-pill">{{lightSensor.sensorValue}}
                                 lux</span></li>
                     </ul>
 
@@ -46,35 +46,35 @@
                     <ul class="list-group">
                         <ng-template #conductivityValues>
                             <ul class="tooltip-container">
-                                <li><a>Max </a><a>{{labFarm.ConductivityLevelHigh}} %</a></li>
-                                <li><a>Current</a><a>{{conductivitySensor.SensorValue}} %</a></li>
-                                <li><a>Min</a><a>{{labFarm.ConductivityLevelLow}} %</a></li>
+                                <li><a>Max </a><a>{{labFarm.conductivityLevelHigh}} %</a></li>
+                                <li><a>Current</a><a>{{conductivitySensor.sensorValue}} %</a></li>
+                                <li><a>Min</a><a>{{labFarm.conductivityLevelLow}} %</a></li>
                             </ul>
                         </ng-template>
-                        <li class="d-flex justify-content-between align-items-center">{{conductivitySensor.SensorType.TypeName}}
-                            <span placement="top" [ngbTooltip]="conductivityValues" class="badge badge-primary badge-pill">{{conductivitySensor.SensorValue}}
+                        <li class="d-flex justify-content-between align-items-center" *ngIf="conductivitySensor">Conductivity
+                            <span placement="top" [ngbTooltip]="conductivityValues" class="badge badge-primary badge-pill">{{conductivitySensor.sensorValue}}
                                 %</span></li>
 
 
                         <ng-template #waterValues>
                             <ul class="tooltip-container">
-                                <li><a>Max </a><a>{{labFarm.MaximumReservoirLevel}} L</a></li>
-                                <li><a>Current</a><a>{{waterSensor.SensorValue}} L</a></li>
-                                <li><a>Min</a><a>{{labFarm.MinimumReservoirLevel}} L</a></li>
+                                <li><a>Max </a><a>{{labFarm.maximumReservoirLevel}} L</a></li>
+                                <li><a>Current</a><a>{{waterSensor.sensorValue}} L</a></li>
+                                <li><a>Min</a><a>{{labFarm.minimumReservoirLevel}} L</a></li>
                             </ul>
                         </ng-template>
-                        <li class="d-flex justify-content-between align-items-center">{{waterSensor.SensorType.TypeName}}
-                            <span placement="top" [ngbTooltip]="waterValues" class="badge badge-primary badge-pill">{{waterSensor.SensorValue}}
+                        <li class="d-flex justify-content-between align-items-center" *ngIf="waterSensor">Water level
+                            <span placement="top" [ngbTooltip]="waterValues" class="badge badge-primary badge-pill">{{waterSensor.sensorValue}}
                                 L</span></li>
                     </ul>
                 </td>
                 <td>
                     <ul class="list-group">
-                        <button type="button" routerLink="/farm/{{labFarm.LabFarmId}}" class="btn btn-outline-light btn-sm">Go
+                        <button type="button" routerLink="/farm/{{labFarm.id}}" class="btn btn-outline-light btn-sm">Go
                             to farm</button>
                         <br>
                         <br>
-                        <span class="updated small italic text-right font-italic font-weight-light">{{humiditySensor.Timestamp}}</span>
+                        <!-- <span class="updated small italic text-right font-italic font-weight-light">{{temperatureSensor.timeStamp}}</span> -->
                     </ul>
                 </td>
                 <td>

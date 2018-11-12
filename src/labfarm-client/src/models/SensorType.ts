@@ -1,4 +1,4 @@
-export class SensorType {
-    public TypeId: number;
-    public TypeName: string;
+export interface SensorType {
+    id: number;
+    name: string;
 }
