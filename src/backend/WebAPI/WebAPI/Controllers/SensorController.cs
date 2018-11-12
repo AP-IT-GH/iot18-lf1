@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Models;
+using ViewModels;
 using Services;
 
 namespace WebAPI
@@ -29,6 +30,12 @@ namespace WebAPI
         public Sensor Get(int id)
         {
             return _service.Get(id);
+        }
+
+        [HttpGet("{id}/values")]
+        public LastSensorValues  Get(int id, int count)
+        {
+            return _service.GetLastValuesBySensor(id,count);
         }
 
         [HttpPut("{id}")]

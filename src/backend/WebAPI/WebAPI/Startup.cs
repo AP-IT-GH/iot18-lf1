@@ -25,14 +25,15 @@ namespace WebAPI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            // Use SQL Database if in Azure, otherwise, use SQLite
-          /*  if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
-                services.AddDbContext<CollectionContext>(options =>
-                        options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
-            else */
-                services.AddDbContext<CollectionContext>(
-                        options => options.UseSqlServer(
-                 Configuration.GetConnectionString("MyDbConnection")));
+
+            //****CHOOSE ONLY ONE CONNECTION STRING****//
+
+            //**USE THIS FOR REMOTE CONNECTION**//
+            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+
+            //**USE THIS FOR LOCAL CONNECTION**//
+            //services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
+
 
             // Automatically perform database migration
             services.BuildServiceProvider().GetService<CollectionContext>().Database.Migrate();
@@ -46,13 +47,14 @@ namespace WebAPI
             services.AddScoped<LabFarmRepository>();
             services.AddScoped<SensorDataRepository>();
             services.AddScoped<PicturesRepository>();
+            services.AddScoped<SensorTypeRepository>();
 
             services.AddScoped<PlantService>();
             services.AddScoped<SensorService>();
             services.AddScoped<LabFarmService>();
             services.AddScoped<PictureService>();
             services.AddScoped<SensorDataService>();
-
+            services.AddScoped<SensorTypeService>();
         }
 
 

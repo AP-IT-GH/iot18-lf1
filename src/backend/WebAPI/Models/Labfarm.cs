@@ -9,15 +9,16 @@ namespace Models
         public string Name { get; set; }
         public string AuthId {get; set;}
         public string PlantSpecies { get; set; }
-        public float OptimalAcidityLevelHigh {get; set;}
-        public float OptimalAcidityLevelLow {get; set;}
-        public float OptimalHumidityLevelHigh {get; set;}
-        public float OptimalHumidityLevelLow {get; set;}
-        public float OptimalLightLevelHigh {get; set;}
-        public float OptimalLightLevelLow {get; set;}
-        public float OptimalConductivityLevelHigh {get; set;}
-        public float OptimalConductivityLevelLow {get; set;}
+        public float DustLevelHigh {get; set;}
+        public float DustLevelLow {get; set;}
+        public float LightLevelHigh {get; set;}
+        public float LightLevelLow {get; set;}
+        public float TemperatureLevelHigh {get; set;}
+        public float TemperatureLevelLow {get; set;}
+        public float ConductivityLevelHigh {get; set;}
+        public float ConductivityLevelLow { get; set;}
         public float MinimumReservoirLevel {get; set;}
+        public float MaximumReservoirLevel { get; set; }
         public bool AutoMode { get; set; }
 
         public ICollection<Plant> Plants { get; set;}

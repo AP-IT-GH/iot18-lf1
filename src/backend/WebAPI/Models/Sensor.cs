@@ -23,6 +23,7 @@ namespace Models
         public LabFarm LabFarm {get; set;}
 
         [ForeignKey("SensorType")]
+        [JsonIgnore]
         public int SensorTypeId { get; set; }
         public SensorType SensorType {get; set;}
 

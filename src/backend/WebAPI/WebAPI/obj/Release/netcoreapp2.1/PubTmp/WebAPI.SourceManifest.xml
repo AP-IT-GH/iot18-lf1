@@ -1,4 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\PubTmp\Out\" />
+  <IisApp path="C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\webAPI\WebAPI\obj\Release\netcoreapp2.1\PubTmp\Out\" />
 </sitemanifest>

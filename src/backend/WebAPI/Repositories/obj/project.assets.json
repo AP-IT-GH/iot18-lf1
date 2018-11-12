@@ -11525,11 +11525,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Repositories\\Repositories.csproj",
+      "projectUniqueName": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\webAPI\\Repositories\\Repositories.csproj",
       "projectName": "Repositories",
-      "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Repositories\\Repositories.csproj",
+      "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\webAPI\\Repositories\\Repositories.csproj",
       "packagesPath": "C:\\Users\\joris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Repositories\\obj\\",
+      "outputPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\webAPI\\Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11548,8 +11548,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\WebAPI\\Models\\Models.csproj"
+            "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\webAPI\\Models\\Models.csproj": {
+              "projectPath": "C:\\Users\\joris\\school\\2019\\IoT\\iot18-lf1\\src\\backend\\webAPI\\Models\\Models.csproj"
             }
           }
         }
