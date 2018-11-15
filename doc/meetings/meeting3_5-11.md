@@ -1,0 +1,21 @@
+Sprint meeting 5 November
+
+- Danny
+    - Verbinding tussen raspberry pi en IOT hub werkt.
+    - LDR werkt
+    - Dust sensor 
+    - Deze sprint
+        - Documentatie sensor data versturen tussen RPi en API
+- Wouter
+    - Zorgen dat de sensor data overeenkomt met de sensor data op de API
+    - Per sensor een ander scriptje, wat aangeroepen wordt vanuit het “hoofdscript”
+- Joris
+    - Gaat API aanpassen
+    - Goede documentatie maken met JSON voorbeelden.
+    - Foto herkenning
+- Robbe
+    - Verder met conductivity sensor
+    - 2e versie van elektrische schema’s en PCB’s 
+- Melvin
+    - Verder met integratie web app naar API
+-Steven is ziek
