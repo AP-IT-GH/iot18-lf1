@@ -77,18 +77,17 @@ namespace Services
            
         }
 
-        public LastSensorValues GetLastValuesBySensor(int id, int count)
+        public Sensor GetLastValuesBySensor(int id, int count)
         {
             var sensor = _sensorRepository.Get(id);
             sensor.SensorValues.OrderByDescending(x => x.TimeStamp).ToList();
-            var d = new LastSensorValues();
-            d.Name = sensor.Name;
-            d.Data = sensor.SensorValues.ToList();
-            if(count < d.Data.Count)
+            var values = sensor.SensorValues.ToList();
+            if(count < sensor.SensorValues.Count)
             {
-                d.Data.RemoveRange(count, d.Data.Count - count);
+                values.RemoveRange(count, sensor.SensorValues.Count - count);
             }
-            return d;
+            sensor.SensorValues = values;
+            return sensor;
         }
 
     }
