@@ -28,21 +28,16 @@ export class LabFarmOverviewComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.labFarm);
         let sensors = this.labFarm.sensors;
         console.log(sensors);
         sensors.forEach(element => {
-            if (element.sensorType.id === 1) this.temperatureSensor = element.sensorValues[0];
-            if (element.sensorType.id === 2) this.dustSensor = element.sensorValues[0];
-            if (element.sensorType.id === 3) this.lightSensor = element.sensorValues[0];
-            if (element.sensorType.id === 4) this.conductivitySensor = element.sensorValues[0];
-            if (element.sensorType.id === 5) this.waterSensor = element.sensorValues[0];
+            if (element.sensorType.name === "TemperatureSensor") this.temperatureSensor = element.sensorValues[0];
+            if (element.sensorType.name === "DustSensor") this.dustSensor = element.sensorValues[0];
+            if (element.sensorType.name === "LightSensor") this.lightSensor = element.sensorValues[0];
+            if (element.sensorType.name === "ConductivitySensor") this.conductivitySensor = element.sensorValues[0];
+            if (element.sensorType.name === "WaterSensor") this.waterSensor = element.sensorValues[0];
         });
-        console.log(this.temperatureSensor);
-        console.log(this.dustSensor);
-        console.log(this.lightSensor);
-        console.log(this.conductivitySensor);
-        console.log(this.waterSensor);
+        
     }
 
 }

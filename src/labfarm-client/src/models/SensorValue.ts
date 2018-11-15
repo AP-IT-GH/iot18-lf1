@@ -1,3 +1,5 @@
+import { SensorType } from "./SensorType";
+
 export interface SensorValue {
     id: number;
     sensorValue: number;
@@ -6,6 +8,9 @@ export interface SensorValue {
 }
 
 export interface LastSensorValues {
+    id: number;
     name: string;
-    data: SensorValue[];
+    labFarmId: number;
+    sensorType: SensorType;
+    sensorValues: SensorValue[];
 }

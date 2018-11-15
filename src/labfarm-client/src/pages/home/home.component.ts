@@ -18,10 +18,6 @@ export class HomeComponent implements OnInit {
     constructor(private labfarmService: LabfarmService) { 
         this.labfarmService.getUserLabFarms().subscribe(data => {
             this.userLabFarms = data;
-            console.log(this.userLabFarms);
-            // data.forEach(element => {
-            //     console.log(element);
-            // });
         }, error => {
             this.serverError = true;
         });

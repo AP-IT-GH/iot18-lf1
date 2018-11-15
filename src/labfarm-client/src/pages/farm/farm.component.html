@@ -5,7 +5,7 @@
 <div class="labfarm-container" *ngIf="labfarm">
 
     <div class="labfarm-body">
-        <app-sensor-graph [Sensor]="sensor" LabfarmId="{{farmId}}" *ngFor="let sensor of sensors"></app-sensor-graph>
+        <app-sensor-graph [sensorId]="sensor.id" LabfarmId="{{farmId}}" *ngFor="let sensor of sensors"></app-sensor-graph>
         <div class="camera-sensor bg-light"> <img src="https://via.placeholder.com/300x150"></div>
     </div>
 
@@ -38,8 +38,7 @@
         
     </div>
 </div>
-<!-- *ngIf="!labfarm" -->
-<app-loading>
+<app-loading *ngIf="!labfarm">
 
     </app-loading>
 <app-error *ngIf="serverError">

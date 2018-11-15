@@ -7,37 +7,37 @@
                     <ul class="list-group">
                         <ng-template #temperatureValues>
                             <ul class="tooltip-container">
-                                <li><a>Max </a><a>{{labFarm.temperatureLevelHigh}} %</a></li>
-                                <li><a>Current</a><a>{{temperatureSensor.sensorValue}} %</a></li>
-                                <li><a>Min</a><a>{{labFarm.temperatureLevelLow}} %</a></li>
+                                <li><a>Max </a><a>{{labFarm.temperatureLevelHigh}} °C</a></li>
+                                <li><a>Current</a><a>{{temperatureSensor ? temperatureSensor.sensorValue : "n/a"}} °C</a></li>
+                                <li><a>Min</a><a>{{labFarm.temperatureLevelLow}} °C</a></li>
                             </ul>
                         </ng-template>
-                        <li class="d-flex justify-content-between align-items-center" *ngIf="temperatureSensor">Temperature
-                            <span placement="top" [ngbTooltip]="temperatureValues" class="badge badge-primary badge-pill">{{temperatureSensor.sensorValue}}
-                                %</span></li>
+                        <li class="d-flex justify-content-between align-items-center">Temperature
+                            <span placement="top" [ngbTooltip]="temperatureValues" class="badge badge-primary badge-pill">{{temperatureSensor ? temperatureSensor.sensorValue : "n/a"}}
+                                °C</span></li>
 
 
                         <ng-template #dustValues>
                             <ul class="tooltip-container">
                                 <li><a>Max </a><a>{{labFarm.dustLevelHigh}} %</a></li>
-                                <li><a>Current</a><a>{{dustSensor.sensorValue}} %</a></li>
-                                <li><a>Min</a><a>{{labFarm.dusLevelLow}} %</a></li>
+                                <li><a>Current</a><a>{{dustSensor ? dustSensor.sensorValue : "n/a"}} %</a></li>
+                                <li><a>Min</a><a>{{labFarm.dustLevelLow}} %</a></li>
                             </ul>
                         </ng-template>
-                        <li class="d-flex justify-content-between align-items-center" *ngIf="dustSensor">Dust
-                            <span placement="top" [ngbTooltip]="dustValues" class="badge badge-primary badge-pill">{{dustSensor.sensorValue}}
+                        <li class="d-flex justify-content-between align-items-center">Dust
+                            <span placement="top" [ngbTooltip]="dustValues" class="badge badge-primary badge-pill">{{dustSensor ? dustSensor.sensorValue : "n/a"}}
                                 %</span></li>
 
 
                         <ng-template #lightValues>
                             <ul class="tooltip-container">
                                 <li><a>Max </a><a>{{labFarm.lightLevelHigh}} lux</a></li>
-                                <li><a>Current</a><a>{{lightSensor.sensorValue}} lux</a></li>
+                                <li><a>Current</a><a>{{lightSensor ? lightSensor.sensorValue : "n/a"}} lux</a></li>
                                 <li><a>Min</a><a>{{labFarm.lightLevelLow}} lux</a></li>
                             </ul>
                         </ng-template>
-                        <li class="d-flex justify-content-between align-items-center" *ngIf="lightSensor">Light
-                            <span placement="top" [ngbTooltip]="lightValues" class="badge badge-primary badge-pill">{{lightSensor.sensorValue}}
+                        <li class="d-flex justify-content-between align-items-center">Light
+                            <span placement="top" [ngbTooltip]="lightValues" class="badge badge-primary badge-pill">{{lightSensor ? lightSensor.sensorValue : "n/a"}}
                                 lux</span></li>
                     </ul>
 
@@ -47,24 +47,24 @@
                         <ng-template #conductivityValues>
                             <ul class="tooltip-container">
                                 <li><a>Max </a><a>{{labFarm.conductivityLevelHigh}} %</a></li>
-                                <li><a>Current</a><a>{{conductivitySensor.sensorValue}} %</a></li>
+                                <li><a>Current</a><a>{{conductivitySensor ? conductivitySensor.sensorValue : "n/a"}} %</a></li>
                                 <li><a>Min</a><a>{{labFarm.conductivityLevelLow}} %</a></li>
                             </ul>
                         </ng-template>
-                        <li class="d-flex justify-content-between align-items-center" *ngIf="conductivitySensor">Conductivity
-                            <span placement="top" [ngbTooltip]="conductivityValues" class="badge badge-primary badge-pill">{{conductivitySensor.sensorValue}}
+                        <li class="d-flex justify-content-between align-items-center">Conductivity
+                            <span placement="top" [ngbTooltip]="conductivityValues" class="badge badge-primary badge-pill">{{conductivitySensor ? conductivitySensor.sensorValue : "n/a"}}
                                 %</span></li>
 
 
                         <ng-template #waterValues>
                             <ul class="tooltip-container">
                                 <li><a>Max </a><a>{{labFarm.maximumReservoirLevel}} L</a></li>
-                                <li><a>Current</a><a>{{waterSensor.sensorValue}} L</a></li>
+                                <li><a>Current</a><a>{{waterSensor ? waterSensor.sensorValue : "n/a"}} L</a></li>
                                 <li><a>Min</a><a>{{labFarm.minimumReservoirLevel}} L</a></li>
                             </ul>
                         </ng-template>
-                        <li class="d-flex justify-content-between align-items-center" *ngIf="waterSensor">Water level
-                            <span placement="top" [ngbTooltip]="waterValues" class="badge badge-primary badge-pill">{{waterSensor.sensorValue}}
+                        <li class="d-flex justify-content-between align-items-center">Water level
+                            <span placement="top" [ngbTooltip]="waterValues" class="badge badge-primary badge-pill">{{waterSensor ? waterSensor.sensorValue : "n/a"}}
                                 L</span></li>
                     </ul>
                 </td>

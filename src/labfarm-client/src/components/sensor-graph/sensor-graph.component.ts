@@ -15,13 +15,12 @@ import { Sensor } from 'src/models/Sensor';
 })
 export class SensorGraphComponent implements OnInit {
 
-    @Input() Sensor: Sensor;
+    @Input() sensorId: number;
     @Input() LabfarmId;
-
-
 
     public chart = [];
     public sensorType: SensorType;
+    public sensorNotation: string;
     public sensorValues: SensorValue[] = [];
 
     public sensorDatas: SensorData[];
@@ -33,41 +32,64 @@ export class SensorGraphComponent implements OnInit {
     }
 
     ngOnInit() {
-        //getSensorValues(this.Sensor.id);
+        this.labfarmService.getSensorValues(this.sensorId, 12).subscribe(data => {
+            let latestSensorValues: LastSensorValues = data;
 
-        this.labfarmService.getSensorValues(this.LabfarmId).subscribe(data => {
-            let latestSensorValues = data;
 
-            latestSensorValues.forEach(element => {
-                element.data.forEach(e => {
-                    if (e.sensorId == this.Sensor.id) {
-                        console.log("SensorValue: " + e.sensorId + " is the same as " + this.Sensor.id);
 
-                        let date = new Date(e.timeStamp);
-                        let dateString = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-
-                        this.sensorDataTime.push(dateString);
-                        this.sensorDataValue.push(e.sensorValue);
-                    }
-                });
-            });
-
+            this.setSensorNotation(latestSensorValues.sensorType);
+            this.setSensorValues(latestSensorValues);
             this.initSensorGraph();
         });
+    }
+    setSensorNotation(sensorType: SensorType) {
 
+        this.sensorType = sensorType;
+        
+        let _sensorNotation;
+        switch (sensorType.name) {
+            case "TemperatureSensor":
+                _sensorNotation = "°C";
+                break;
+            case "DustSensor":
+                _sensorNotation = "%";
+                break;
+            case "LightSensor":
+                _sensorNotation = "lux";
+                break;
+            case "ConductivitySensor":
+                _sensorNotation = "%";
+                break;
+            case "WaterSensor":
+                _sensorNotation = "L"
+                break;
+            default:
+                _sensorNotation = "n/a";
+                break;
+        }
+        this.sensorNotation = _sensorNotation;
 
+    }
 
+    setSensorValues(lastSensorValues: LastSensorValues){
+        lastSensorValues.sensorValues.forEach(e => {
+            let date = new Date(e.timeStamp);
+            let dateString = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+
+            this.sensorDataTime.push(dateString);
+            this.sensorDataValue.push(e.sensorValue);
+        });
     }
 
     initSensorGraph() {
 
-        this.chart = new Chart('sensor-chart-' + this.Sensor.id, {
+        this.chart = new Chart('sensor-chart-' + this.sensorId, {
             type: 'line',
             data: {
                 labels: this.sensorDataTime,
                 datasets: [
                     {
-                        label: 'label',
+                        label: 'value',
                         data: this.sensorDataValue,
                         borderColor: "#3cba9f",
                         fill: false
@@ -77,7 +99,7 @@ export class SensorGraphComponent implements OnInit {
             options: {
                 title: {
                     display: true,
-                    text: this.Sensor.sensorType ? this.Sensor.sensorType.name : "No type specified"
+                    text: this.sensorType ? this.sensorType.name : "No type specified"
                 },
                 legend: {
                     display: false
@@ -95,7 +117,7 @@ export class SensorGraphComponent implements OnInit {
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: "Value in %"
+                            labelString: "Value in " + this.sensorNotation
                         }
                     }],
                 }
