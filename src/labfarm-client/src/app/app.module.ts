@@ -22,6 +22,7 @@ import { AuthenticationService } from 'src/providers/authentication/authenticati
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorComponent } from '../components/error/error.component';
 import { LoadingComponent } from '../components/loading/loading.component';
+import { NewLabfarmComponent } from '../pages/new-labfarm/new-labfarm.component';
 
 @NgModule({
     declarations: [
@@ -34,13 +35,15 @@ import { LoadingComponent } from '../components/loading/loading.component';
         LabFarmOverviewComponent,
         SensorGraphComponent,
         ErrorComponent,
-        LoadingComponent
+        LoadingComponent,
+        NewLabfarmComponent
     ],
     imports: [
         RouterModule.forRoot([
             { path: 'home', component: HomeComponent },
             { path: 'farm/:id', component: FarmComponent },
             { path: 'options', component: OptionsComponent },
+            { path: 'new', component: NewLabfarmComponent },
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: "**", component: PageNotFoundComponent }
         ], { useHash: true }),
