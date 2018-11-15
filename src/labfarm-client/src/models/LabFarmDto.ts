@@ -7,7 +7,7 @@ export interface LabFarmDto {
     authId: string;
     plantSpecies: string;
     dustLevelHigh: number;
-    dusLevelLow: number;
+    dustLevelLow: number;
     lightLevelHigh: number;
     lightLevelLow: number;
     temperatureLevelHigh: number;

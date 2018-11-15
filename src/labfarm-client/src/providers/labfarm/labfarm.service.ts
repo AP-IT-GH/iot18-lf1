@@ -41,7 +41,7 @@ export class LabfarmService {
         return this.http.get<LabFarmDto[]>(queryString);
     }
 
-    getLabFarm(id: number): Observable<LabFarmDto> {
+    getLabFarmById(id: number): Observable<LabFarmDto> {
         console.log("Getting labfarm with id: ${id}");
         let queryString = this.baseUrl;
         queryString += "/labfarm";
@@ -50,7 +50,6 @@ export class LabfarmService {
         return this.http.get<LabFarmDto>(queryString);
     }
 
-    // getSensorValues(sensorId: number)
     getSensorValues(sensorId: number, amount: number = 12): Observable<LastSensorValues> {
         console.log("Getting last " + amount + " values for sensor #" + sensorId);
         let queryString = this.baseUrl;
@@ -60,6 +59,14 @@ export class LabfarmService {
         queryString += "?count=" + amount;
 
         return this.http.get<LastSensorValues>(queryString);
+    }
+
+    putLabFarm(newLabfarm: LabFarmDto): Observable<LabFarmDto>{
+        console.log("Saving new labfarm " + newLabfarm.name + " to the API");
+        let queryString = this.baseUrl;
+        queryString += "/labfarm";
+
+        return this.http.post<LabFarmDto>(queryString, newLabfarm);
     }
 
     public getLatestSensorData(): SensorData[] {
