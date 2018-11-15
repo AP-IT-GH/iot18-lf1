@@ -35,11 +35,10 @@ export class SensorGraphComponent implements OnInit {
         this.labfarmService.getSensorValues(this.sensorId, 12).subscribe(data => {
             let latestSensorValues: LastSensorValues = data;
 
-
-
             this.setSensorNotation(latestSensorValues.sensorType);
             this.setSensorValues(latestSensorValues);
             this.initSensorGraph();
+            
         });
     }
     setSensorNotation(sensorType: SensorType) {

@@ -24,12 +24,12 @@ export class LabFarmOverviewComponent implements OnInit {
     public waterSensor: SensorValue;
 
     constructor(private labfarmService: LabfarmService) {
-
+        
     }
 
     ngOnInit() {
         let sensors = this.labFarm.sensors;
-        console.log(sensors);
+        
         sensors.forEach(element => {
             if (element.sensorType.name === "TemperatureSensor") this.temperatureSensor = element.sensorValues[0];
             if (element.sensorType.name === "DustSensor") this.dustSensor = element.sensorValues[0];

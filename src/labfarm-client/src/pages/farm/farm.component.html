@@ -1,6 +1,6 @@
-<div class="labfarm-header col-md-8 offset-2" *ngIf="labfarm">
-    <h3>Lab Farm #{{farmId}}</h3>
-    <a class="updated small italic text-right font-italic font-weight-light" *ngIf="humiditySensor">Updated: </a>
+<div class="labfarm-header" *ngIf="labfarm">
+    <h3>{{labfarm.name}}</h3>
+    <a class="updated small italic text-right font-italic font-weight-light">Updated: {{labfarm.sensors[0].sensorValues[0].timeStamp | date:'full'}}</a>
 </div>
 <div class="labfarm-container" *ngIf="labfarm">
 
@@ -30,7 +30,7 @@
                 </div>
                 <div class="lf-options">
                     <a class="updated small italic text-right font-italic font-weight-light">Updated:
-                        time</a>
+                        {{labfarm.sensors[0].sensorValues[0].timeStamp | date:'short'}}</a>
                     <button type="button" class="btn bg-dark text-light">Save</button>
                 </div>
             </div>

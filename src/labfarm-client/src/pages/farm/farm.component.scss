@@ -1,20 +1,20 @@
 
 @media only screen and (min-width: 1500px){
-    .labfarm-container {
+    .labfarm-container, .labfarm-header {
         padding-left: 10%;
         padding-right: 10%;
     }
 }
-.labfarm-container {
+.labfarm-container, .labfarm-header {
     display: flex;
     justify-content: space-evenly;
     margin: 40px;
 }
 
 .labfarm-header {
-    // display: flex;
+    display: block;
     // align-items: center;
-    // justify-content: space-between;
+    justify-content: space-between;
     margin-top: 60px;
 }
 .labfarm-header a {

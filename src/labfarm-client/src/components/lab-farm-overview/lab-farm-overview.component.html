@@ -1,4 +1,4 @@
-<span class="labfarm-label bg-dark text-light" *ngIf="labFarm">Lab Farm #{{labFarm.LabFarmId}}</span>
+<span class="labfarm-label bg-dark text-light" *ngIf="labFarm">{{labFarm.name}}</span>
 <div class="labfarm-overview bg-dark text-light" *ngIf="labFarm">
     <table class="table">
         <tbody>
@@ -74,7 +74,8 @@
                             to farm</button>
                         <br>
                         <br>
-                        <!-- <span class="updated small italic text-right font-italic font-weight-light">{{temperatureSensor.timeStamp}}</span> -->
+                        <!-- <span class="updated small italic text-right font-italic font-weight-light" *ngIf="labfarm">{{labfarm.sensors[0].sensorValues[0].timeStamp | date:'medium'}}</span> -->
+                        
                     </ul>
                 </td>
                 <td>
