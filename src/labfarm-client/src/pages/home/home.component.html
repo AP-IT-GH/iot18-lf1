@@ -1,11 +1,10 @@
-<!-- *ngIf="userLabFarms" -->
-<div class="labfarm-container">
+<div class="labfarm-container" *ngIf="userLabFarms">
     <app-lab-farm-overview *ngFor="let labfarm of userLabFarms" [labFarm]="labfarm">
 
     </app-lab-farm-overview>
-    <div class="new-lab-container">
+    <div class="new-lab-container bg-dark text-light">
         <p>Got a <strong>new</strong> lab farm delivered to your home?<br><strong>Click</strong> the button on the <strong>right</strong> to start</p>
-        <button class="btn bg-dark text-light" routerLink="/new">Start</button>
+        <button class="btn bg-dark text-light btn-outline-light" routerLink="/new">Start</button>
     </div>
 </div>
 <app-loading *ngIf="!userLabFarms">

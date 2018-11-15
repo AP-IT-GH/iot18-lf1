@@ -36,7 +36,7 @@ export class FarmComponent implements OnInit {
 
     ngOnInit() {
         this.farmId = parseInt(this.route.snapshot.paramMap.get("id"));
-        this.labfarmService.getLabFarm(this.farmId).subscribe(data => {
+        this.labfarmService.getLabFarmById(this.farmId).subscribe(data => {
             this.labfarm = data;
             this.sensors = data.sensors;
         }, error => {
