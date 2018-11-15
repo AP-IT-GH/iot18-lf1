@@ -33,7 +33,7 @@ namespace WebAPI
         }
 
         [HttpGet("{id}/values")]
-        public LastSensorValues  Get(int id, int count)
+        public Sensor  Get(int id, int count)
         {
             return _service.GetLastValuesBySensor(id,count);
         }

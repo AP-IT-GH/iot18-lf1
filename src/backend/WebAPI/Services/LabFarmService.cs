@@ -97,21 +97,28 @@ namespace Services
                                                 .ThenBy(x => x.TimeStamp.Date)
                                                     .ThenBy(x => x.TimeStamp.Year)
                                                         .ToList();
-                    var picture = pictures[0]; // get latest picture
-                    p.Pictures.Clear();
-                    p.Pictures.Add(picture);
 
+                    if(pictures.Count != 0)
+                    {
+                        var picture = pictures[0]; // get latest picture
+                        p.Pictures.Clear();
+                        p.Pictures.Add(picture);
+                    }
+         
                 }
 
                 foreach(Sensor s in l.Sensors)
-                {
+                {                   
                     var values = s.SensorValues.OrderByDescending(x => x.TimeStamp.TimeOfDay)
                                                 .ThenBy(x => x.TimeStamp.Date)
                                                     .ThenBy(x => x.TimeStamp.Year)
                                                         .ToList();
-                    var value = values[0];
-                    s.SensorValues.Clear();
-                    s.SensorValues.Add(value);
+                    if(values.Count != 0)
+                    {
+                        var value = values[0];
+                        s.SensorValues.Clear();
+                        s.SensorValues.Add(value);
+                    }
                 }
             }
 
