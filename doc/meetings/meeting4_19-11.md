@@ -10,6 +10,7 @@ Spring meeting 19 November:
   * Connectie van voor naar achter
   * Probe maken voor conductivity sensor
   * Testen pompaansturing
+  * Converteren van rawe sensordata naar logiche groot-/eenheden
 * Robbe: 
   * PCB's afprinten tegen volgende week
   * Lijst van alle elektronische componenten tegen volgende week
