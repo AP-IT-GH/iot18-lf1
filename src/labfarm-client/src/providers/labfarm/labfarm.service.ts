@@ -4,9 +4,10 @@ import { SensorType } from 'src/models/SensorType';
 import { SensorData } from 'src/models/SensorData';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LabFarmDto } from 'src/models/LabFarmDto';
 import { SensorValue, LastSensorValues } from 'src/models/SensorValue';
+import { NewLabfarm } from 'src/models/NewLabfarm';
 
 @Injectable({
     providedIn: 'root'
@@ -15,12 +16,13 @@ export class LabfarmService {
 
     private baseUrl = "http://labfarmwebapp.azurewebsites.net/api/v1";
     private authid: string;
-    // private httpOptions = {
-    //     headers: new HttpHeaders({
-    //         'Content-Type': 'application/json',
-    //         'Authorization': `Bearer ${this.auth.access_token}`
-    //     })
-    // }
+    
+    private httpOptions = {
+        headers: new HttpHeaders({
+            'Content-Type': 'application/json'
+            // 'Authorization': `Bearer ${this.auth.access_token}`
+        })
+    }
 
 
     private userLabFarms: LabFarm[];
@@ -61,12 +63,13 @@ export class LabfarmService {
         return this.http.get<LastSensorValues>(queryString);
     }
 
-    putLabFarm(newLabfarm: LabFarmDto): Observable<LabFarmDto>{
-        console.log("Saving new labfarm " + newLabfarm.name + " to the API");
+    putLabFarm(newLabfarm: NewLabfarm): Observable<NewLabfarm>{
+        console.log("Saving new labfarm " + newLabfarm.Name + " to the API");
         let queryString = this.baseUrl;
         queryString += "/labfarm";
 
-        return this.http.post<LabFarmDto>(queryString, newLabfarm);
+        console.log(queryString);
+        return this.http.post<NewLabfarm>(queryString, newLabfarm, this.httpOptions);
     }
 
     public getLatestSensorData(): SensorData[] {
