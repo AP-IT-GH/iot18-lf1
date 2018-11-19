@@ -18,6 +18,7 @@ namespace Repositories
         public DbSet<SensorData> SensorValues { get; set; }
         public DbSet<Picture> Pictures { get; set; }
         public DbSet<Plant> Plants { get; set; }
+        public DbSet<PlantDataSet> DataSets { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
