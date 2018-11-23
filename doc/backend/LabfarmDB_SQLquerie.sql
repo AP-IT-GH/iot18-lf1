@@ -5,17 +5,32 @@ CREATE TABLE [dbo].[LabFarms] (
     [AuthId]                       NVARCHAR (MAX) NULL,
     [PlantSpecies]                 NVARCHAR (MAX) NOT NULL,
     [DustLevelHigh]                REAL           NOT NULL,
-    [DustlevelLow]                 REAL           NOT NULL,
+    [DustLevelLow]                 REAL           NOT NULL,
     [LightLevelHigh]	           REAL           NOT NULL,
     [LightLevelLow]                REAL           NOT NULL,
-    [TemperatureLevelhigh]         REAL           NOT NULL,
+    [TemperatureLevelHigh]         REAL           NOT NULL,
     [TemperatureLevelLow]          REAL           NOT NULL,
     [ConductivityLevelHigh]        REAL           NOT NULL,
     [ConductivityLevelLow]         REAL           NOT NULL,
-	[MinimumReservoirLevel]        REAL           NOT NULL,
+    [MinimumReservoirLevel]        REAL           NOT NULL,
     [MaximumReservoirLevel]        REAL           NOT NULL,
     [AutoMode]                     BIT            NULL,
     CONSTRAINT [PK_LabFarms] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+CREATE TABLE [dbo].[DataSets] (
+    [Id]                           INT            IDENTITY (1, 1) NOT NULL,
+    [PlantSpecies]                 NVARCHAR (MAX) NOT NULL,
+    [DustLevelHigh]                REAL           NOT NULL,
+    [DustLevelLow]                 REAL           NOT NULL,
+    [LightLevelHigh]	           REAL           NOT NULL,
+    [LightLevelLow]                REAL           NOT NULL,
+    [TemperatureLevelHigh]         REAL           NOT NULL,
+    [TemperatureLevelLow]          REAL           NOT NULL,
+    [ConductivityLevelHigh]        REAL           NOT NULL,
+    [ConductivityLevelLow]         REAL           NOT NULL,
+    [MinimumReservoirLevel]        REAL           NOT NULL,
+    [MaximumReservoirLevel]        REAL           NOT NULL,
 );
 
 CREATE TABLE [dbo].[Plants] (
