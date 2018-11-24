@@ -1,15 +1,15 @@
 <div class="labfarm-header" *ngIf="labfarm">
     <h3>{{labfarm.name}}</h3>
-    <a class="updated small italic text-right font-italic font-weight-light">Updated: {{labfarm.sensors[0].sensorValues[0].timeStamp | date:'full'}}</a>
+    <a class="updated small italic text-right font-italic font-weight-light">Updated:
+        {{labfarm.sensors[0].sensorValues[0].timeStamp | date:'full'}}</a>
 </div>
 <div class="labfarm-container" *ngIf="labfarm">
-
     <div class="labfarm-body">
         <app-sensor-graph [sensorId]="sensor.id" LabfarmId="{{farmId}}" *ngFor="let sensor of sensors"></app-sensor-graph>
         <div class="camera-sensor bg-light"> <img src="https://via.placeholder.com/300x150"></div>
     </div>
 
-    <div class="labfarm-options-container">
+    <div class="labfarm-options-container" *ngIf="labfarm.sensors">
 
         <div class="card">
             <div class="card-header bg-dark text-light">Lab farm options</div>
@@ -35,12 +35,12 @@
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>
 <app-loading *ngIf="!labfarm">
 
-    </app-loading>
+</app-loading>
 <app-error *ngIf="serverError">
 
 </app-error>
