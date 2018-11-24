@@ -27,6 +27,7 @@ export class NewLabfarmComponent implements OnInit {
 
     private labfarmForm: FormGroup;
 
+    private savingLabfarm: boolean = false;
     private inputError: boolean = false;
 
     constructor(private authService: AuthenticationService, private labfarmService: LabfarmService, private router: Router) {
@@ -97,7 +98,8 @@ export class NewLabfarmComponent implements OnInit {
         }
         console.log(JSON.stringify(newLabFarm));
 
-        this.labfarmService.putLabFarm(newLabFarm).subscribe(success => {
+        this.savingLabfarm = true;
+        this.labfarmService.postLabFarm(newLabFarm).subscribe(success => {
             console.log(success);
             this.router.navigate(['/home']);
         }, error => {

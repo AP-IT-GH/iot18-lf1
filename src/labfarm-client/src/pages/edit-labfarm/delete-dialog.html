@@ -1,0 +1,23 @@
+<style>
+    h5 {
+        text-align: center;
+    }
+    .button-group {
+        margin-top: 50px;
+    }
+    .delete-btn {
+        float: left;
+    }
+    .cancel-btn {
+        float: right;
+    }
+    
+    
+    </style>
+<div>
+    <h5>Are you sure you want to delete this labfarm?</h5>
+    <div class="button-group">
+        <button class="btn btn-danger delete-btn" type="button" (click)="delete()">Delete</button>
+        <button class="btn bg-dark text-light cancel-btn" type="submit" (click)="cancel()">Cancel</button>
+    </div>
+</div>

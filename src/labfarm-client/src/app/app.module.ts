@@ -12,7 +12,7 @@ import { LabFarmOverviewComponent } from '../components/lab-farm-overview/lab-fa
 import { SensorGraphComponent } from '../components/sensor-graph/sensor-graph.component';
 import { UiSwitchModule } from 'ngx-toggle-switch';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule, MatSliderModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatSliderModule, MatDialogModule } from '@angular/material';
 import 'hammerjs';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 import { SensorDataService } from 'src/providers/sensor-data/sensor-data.service';
@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ErrorComponent } from '../components/error/error.component';
 import { LoadingComponent } from '../components/loading/loading.component';
 import { NewLabfarmComponent } from '../pages/new-labfarm/new-labfarm.component';
+import { EditLabfarmComponent, DeleteDialog } from '../pages//edit-labfarm/edit-labfarm.component';
 
 @NgModule({
     declarations: [
@@ -36,12 +37,15 @@ import { NewLabfarmComponent } from '../pages/new-labfarm/new-labfarm.component'
         SensorGraphComponent,
         ErrorComponent,
         LoadingComponent,
-        NewLabfarmComponent
+        NewLabfarmComponent,
+        EditLabfarmComponent,
+        DeleteDialog
     ],
     imports: [
         RouterModule.forRoot([
             { path: 'home', component: HomeComponent },
             { path: 'farm/:id', component: FarmComponent },
+            { path: 'farm/:id/edit', component: EditLabfarmComponent},
             { path: 'options', component: OptionsComponent },
             { path: 'new', component: NewLabfarmComponent },
             { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -54,13 +58,17 @@ import { NewLabfarmComponent } from '../pages/new-labfarm/new-labfarm.component'
         MatCheckboxModule,
         MatSliderModule,
         HttpClientModule,
-        NgbModule
+        NgbModule,
+        MatDialogModule
     ],
     providers: [
         LabfarmService,
         SensorDataService,
         CookieService,
         AuthenticationService
+    ],
+    entryComponents: [
+        DeleteDialog
     ],
     bootstrap: [AppComponent]
 })

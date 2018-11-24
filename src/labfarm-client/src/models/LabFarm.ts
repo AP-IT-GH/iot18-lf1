@@ -2,7 +2,7 @@ import { Plant } from "./Plant";
 import { Sensor } from "./Sensor";
 
 export interface LabFarm {
-    id: number,
+    id: number;
     name: string;
     authId: string;
     plantSpecies: string;

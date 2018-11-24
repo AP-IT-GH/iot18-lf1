@@ -3,7 +3,7 @@ import { LabFarm } from 'src/models/LabFarm';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from 'src/providers/authentication/authentication.service';
-import { LabFarmDto } from 'src/models/LabFarmDto';
+
 
 @Component({
     selector: 'app-home',
@@ -13,7 +13,7 @@ import { LabFarmDto } from 'src/models/LabFarmDto';
 export class HomeComponent implements OnInit {
 
     private serverError: boolean = false;
-    private userLabFarms: LabFarmDto[];
+    private userLabFarms: LabFarm[];
 
     constructor(private labfarmService: LabfarmService) { 
         this.labfarmService.getUserLabFarms().subscribe(data => {

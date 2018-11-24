@@ -2,6 +2,7 @@
     <h3>{{labfarm.name}}</h3>
     <a class="updated small italic text-right font-italic font-weight-light">Updated:
         {{labfarm.sensors[0].sensorValues[0].timeStamp | date:'full'}}</a>
+    <button type="button" class="btn bg-dark text-light" (click)="editLabfarm()">Edit labfarm</button>
 </div>
 <div class="labfarm-container" *ngIf="labfarm">
     <div class="labfarm-body">

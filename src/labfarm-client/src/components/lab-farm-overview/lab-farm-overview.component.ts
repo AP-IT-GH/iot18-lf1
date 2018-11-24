@@ -3,7 +3,6 @@ import { LabFarm } from 'src/models/LabFarm';
 import { SensorData } from 'src/models/SensorData';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { LabFarmDto } from 'src/models/LabFarmDto';
 import { SensorValue } from 'src/models/SensorValue';
 
 
@@ -15,7 +14,7 @@ import { SensorValue } from 'src/models/SensorValue';
 export class LabFarmOverviewComponent implements OnInit {
 
 
-    @Input() labFarm: LabFarmDto;
+    @Input() labFarm: LabFarm;
 
     public temperatureSensor: SensorValue;
     public dustSensor: SensorValue;

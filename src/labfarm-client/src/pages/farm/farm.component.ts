@@ -4,8 +4,7 @@ import * as hammerjs from 'hammerjs/hammer';
 import { LabFarm } from 'src/models/LabFarm';
 import { SensorData } from 'src/models/SensorData';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
-import { ActivatedRoute } from '@angular/router';
-import { LabFarmDto } from 'src/models/LabFarmDto';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Sensor } from 'src/models/Sensor';
 
 @Component({
@@ -20,7 +19,7 @@ export class FarmComponent implements OnInit {
     public autoMode = true;
 
     public farmId: number;
-    public labfarm: LabFarmDto;
+    public labfarm: LabFarm;
 
     public lightLevel = 160;
     public lightDisabled = true;
@@ -30,7 +29,7 @@ export class FarmComponent implements OnInit {
     public labFarm: LabFarm;
     public sensors: Sensor[];
 
-    constructor(private route: ActivatedRoute, private labfarmService: LabfarmService) {
+    constructor(private route: ActivatedRoute, private labfarmService: LabfarmService, private router: Router) {
 
     }
 
@@ -49,4 +48,7 @@ export class FarmComponent implements OnInit {
         this.conductivityDisabled = !this.autoMode;
     }
 
+    editLabfarm() {
+        this.router.navigate(['/farm/' + this.farmId + '/edit'])
+    }
 }
