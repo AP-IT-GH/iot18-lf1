@@ -29,14 +29,14 @@ namespace WebAPI
             //****CHOOSE ONLY ONE CONNECTION STRING****//
 
             //**USE THIS FOR REMOTE CONNECTION**//
-            //services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
 
             //**USE THIS FOR LOCAL CONNECTION**//
-            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
+            //services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
 
 
             // Automatically perform database migration
-            //services.BuildServiceProvider().GetService<CollectionContext>().Database.Migrate();
+            services.BuildServiceProvider().GetService<CollectionContext>().Database.Migrate();
 
             services.AddCors();
             services.AddMvc();
@@ -49,6 +49,7 @@ namespace WebAPI
             services.AddScoped<PicturesRepository>();
             services.AddScoped<SensorTypeRepository>();
             services.AddScoped<DataSetRepository>();
+            services.AddScoped<ConfigurationRepository>();
 
             services.AddScoped<PlantService>();
             services.AddScoped<SensorService>();
@@ -58,6 +59,7 @@ namespace WebAPI
             services.AddScoped<SensorTypeService>();
             services.AddScoped<PlantRepository>();
             services.AddScoped<DataSetService>();
+            services.AddScoped<ConfigurationService>();
         }
 
 
