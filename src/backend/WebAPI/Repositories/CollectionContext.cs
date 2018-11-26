@@ -19,6 +19,7 @@ namespace Repositories
         public DbSet<Picture> Pictures { get; set; }
         public DbSet<Plant> Plants { get; set; }
         public DbSet<PlantDataSet> DataSets { get; set; }
+        public DbSet<Configuration> Configurations { get; set }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -52,6 +53,10 @@ namespace Repositories
                  .WithMany(s => s.Sensors)
                 .HasForeignKey(s => s.SensorTypeId);
 
+            //one-to-one
+            modelBuilder.Entity<Configuration>()
+                .HasOne(s => s.Labfarm)
+                .WithOne(s => s.Config);
         }
 
 

@@ -25,7 +25,9 @@ namespace Repositories
                                                 .Include(d => d.Sensors)
                                                     .ThenInclude(d => d.SensorValues)
                                                         .Include(d => d.Sensors)
-                                                            .ThenInclude(d => d.SensorType).ToList();
+                                                            .ThenInclude(d => d.SensorType)
+                                                                .Include(d => d.Config)
+                                                                    .ToList();
                 }
                 catch (Exception ex)
                 {
@@ -42,7 +44,9 @@ namespace Repositories
                                                 .Include(d => d.Sensors)
                                                     .ThenInclude(d => d.SensorValues)
                                                         .Include(d => d.Sensors)
-                                                            .ThenInclude(d => d.SensorType).SingleOrDefault(d => d.Id == id);
+                                                            .ThenInclude(d => d.SensorType)
+                                                                .Include(d => d.Config)
+                                                                    .SingleOrDefault(d => d.Id == id);
                 }
                 catch (Exception ex)
                 {
