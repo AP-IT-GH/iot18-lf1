@@ -77,6 +77,15 @@ CREATE TABLE [dbo].[SensorValues] (
     CONSTRAINT [FK_SensorValues_Sensors_SensorId] FOREIGN KEY ([SensorId]) REFERENCES [dbo].[Sensors] ([Id]) ON DELETE CASCADE
 );
 
+CREATE TABLE [dbo].[Configurations] (
+    [Id]        INT IDENTITY (1, 1) NOT NULL,
+    [Valve]     BIT NULL,
+    [Pump]      INT NULL,
+    [LabfarmId] INT NOT NULL,
+    CONSTRAINT [PK_Configurations] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_Configurations_LabFarms_LabfarmId] FOREIGN KEY ([LabfarmId]) REFERENCES [dbo].[LabFarms] ([Id]) ON DELETE CASCADE
+);
+
 GO
 CREATE NONCLUSTERED INDEX [IX_Pictures_PlantId]
     ON [dbo].[Pictures]([PlantId] ASC);
@@ -96,3 +105,7 @@ CREATE NONCLUSTERED INDEX [IX_Sensors_SensorTypeId]
 GO
 CREATE NONCLUSTERED INDEX [IX_SensorValues_SensorId]
     ON [dbo].[SensorValues]([SensorId] ASC);
+
+GO
+CREATE UNIQUE NONCLUSTERED INDEX [IX_Configurations_LabfarmId]
+    ON [dbo].[Configurations]([LabfarmId] ASC);

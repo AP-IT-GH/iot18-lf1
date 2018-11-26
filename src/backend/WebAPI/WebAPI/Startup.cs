@@ -29,14 +29,14 @@ namespace WebAPI
             //****CHOOSE ONLY ONE CONNECTION STRING****//
 
             //**USE THIS FOR REMOTE CONNECTION**//
-            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+            //services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
 
             //**USE THIS FOR LOCAL CONNECTION**//
-            //services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
+            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
 
 
             // Automatically perform database migration
-            services.BuildServiceProvider().GetService<CollectionContext>().Database.Migrate();
+            //services.BuildServiceProvider().GetService<CollectionContext>().Database.Migrate();
 
             services.AddCors();
             services.AddMvc();

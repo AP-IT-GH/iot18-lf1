@@ -19,7 +19,7 @@ namespace Repositories
         public DbSet<Picture> Pictures { get; set; }
         public DbSet<Plant> Plants { get; set; }
         public DbSet<PlantDataSet> DataSets { get; set; }
-        public DbSet<Configuration> Configurations { get; set }
+        public DbSet<Configuration> Configurations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
