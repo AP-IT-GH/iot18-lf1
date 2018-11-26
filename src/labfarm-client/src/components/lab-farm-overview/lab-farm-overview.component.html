@@ -13,7 +13,8 @@
                             </ul>
                         </ng-template>
                         <li class="d-flex justify-content-between align-items-center">Temperature
-                            <span placement="top" [ngbTooltip]="temperatureValues" class="badge badge-primary badge-pill">{{temperatureSensor ? temperatureSensor.sensorValue : "n/a"}}
+                            <span placement="top" [ngbTooltip]="temperatureValues" class="badge badge-primary badge-pill">{{temperatureSensor
+                                ? temperatureSensor.sensorValue : "n/a"}}
                                 °C</span></li>
 
 
@@ -25,7 +26,8 @@
                             </ul>
                         </ng-template>
                         <li class="d-flex justify-content-between align-items-center">Dust
-                            <span placement="top" [ngbTooltip]="dustValues" class="badge badge-primary badge-pill">{{dustSensor ? dustSensor.sensorValue : "n/a"}}
+                            <span placement="top" [ngbTooltip]="dustValues" class="badge badge-primary badge-pill">{{dustSensor
+                                ? dustSensor.sensorValue : "n/a"}}
                                 %</span></li>
 
 
@@ -37,7 +39,8 @@
                             </ul>
                         </ng-template>
                         <li class="d-flex justify-content-between align-items-center">Light
-                            <span placement="top" [ngbTooltip]="lightValues" class="badge badge-primary badge-pill">{{lightSensor ? lightSensor.sensorValue : "n/a"}}
+                            <span placement="top" [ngbTooltip]="lightValues" class="badge badge-primary badge-pill">{{lightSensor
+                                ? lightSensor.sensorValue : "n/a"}}
                                 lux</span></li>
                     </ul>
 
@@ -52,7 +55,8 @@
                             </ul>
                         </ng-template>
                         <li class="d-flex justify-content-between align-items-center">Conductivity
-                            <span placement="top" [ngbTooltip]="conductivityValues" class="badge badge-primary badge-pill">{{conductivitySensor ? conductivitySensor.sensorValue : "n/a"}}
+                            <span placement="top" [ngbTooltip]="conductivityValues" class="badge badge-primary badge-pill">{{conductivitySensor
+                                ? conductivitySensor.sensorValue : "n/a"}}
                                 %</span></li>
 
 
@@ -64,7 +68,8 @@
                             </ul>
                         </ng-template>
                         <li class="d-flex justify-content-between align-items-center">Water level
-                            <span placement="top" [ngbTooltip]="waterValues" class="badge badge-primary badge-pill">{{waterSensor ? waterSensor.sensorValue : "n/a"}}
+                            <span placement="top" [ngbTooltip]="waterValues" class="badge badge-primary badge-pill">{{waterSensor
+                                ? waterSensor.sensorValue : "n/a"}}
                                 L</span></li>
                     </ul>
                 </td>
@@ -75,12 +80,13 @@
                         <br>
                         <br>
                         <!-- <span class="updated small italic text-right font-italic font-weight-light" *ngIf="labfarm">{{labfarm.sensors[0].sensorValues[0].timeStamp | date:'medium'}}</span> -->
-                        
+
                     </ul>
                 </td>
                 <td>
                     <div>
-                        <img src="../../assets/images/plant.jpg" class="rounded">
+                        <img src="data:image/png;base64,{{lastPicture}}" class="rounded" *ngIf="lastPicture">
+                        <img src="../../assets/images/plant.jpg" class="rounded" *ngIf="!lastPicture">
                     </div>
                 </td>
             </tr>

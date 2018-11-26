@@ -22,6 +22,8 @@ export class LabFarmOverviewComponent implements OnInit {
     public conductivitySensor: SensorValue;
     public waterSensor: SensorValue;
 
+    public lastPicture: string;
+
     constructor(private labfarmService: LabfarmService) {
         
     }
@@ -36,6 +38,10 @@ export class LabFarmOverviewComponent implements OnInit {
             if (element.sensorType.name === "ConductivitySensor") this.conductivitySensor = element.sensorValues[0];
             if (element.sensorType.name === "WaterSensor") this.waterSensor = element.sensorValues[0];
         });
+
+        if(this.labFarm.plants[0])
+            if(this.labFarm.plants[0].pictures)
+                    this.lastPicture = this.labFarm.plants[0].pictures[0].content;
         
     }
 

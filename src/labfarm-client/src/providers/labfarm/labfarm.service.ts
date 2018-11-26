@@ -14,6 +14,7 @@ import { NewLabfarm } from 'src/models/NewLabfarm';
 export class LabfarmService {
 
     private baseUrl = "http://labfarmwebapp.azurewebsites.net/api/v1";
+    // private baseUrl = "http://labfarm-iot-hub-v3.azurewebsites.net/api/v1";
     private authid: string;
     
     private httpOptions = {

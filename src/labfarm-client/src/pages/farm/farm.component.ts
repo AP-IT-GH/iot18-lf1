@@ -4,7 +4,7 @@ import * as hammerjs from 'hammerjs/hammer';
 import { LabFarm } from 'src/models/LabFarm';
 import { SensorData } from 'src/models/SensorData';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Sensor } from 'src/models/Sensor';
 
 @Component({
@@ -29,7 +29,10 @@ export class FarmComponent implements OnInit {
     public labFarm: LabFarm;
     public sensors: Sensor[];
 
-    constructor(private route: ActivatedRoute, private labfarmService: LabfarmService, private router: Router) {
+    public lastUpdate: Date;
+    public lastPicture: string;
+
+    constructor(private route: ActivatedRoute, private labfarmService: LabfarmService) {
 
     }
 
@@ -38,9 +41,29 @@ export class FarmComponent implements OnInit {
         this.labfarmService.getLabFarmById(this.farmId).subscribe(data => {
             this.labfarm = data;
             this.sensors = data.sensors;
+
+            this.setLastUpdated();
+            this.setPictures();
+
         }, error => {
             this.serverError = true;
         });
+
+    }
+
+    setLastUpdated() {
+        this.lastUpdate = new Date();
+        if (this.labfarm.sensors[0])
+            if (this.labfarm.sensors[0].sensorValues[0])
+                this.lastUpdate = this.labfarm.sensors[0].sensorValues[0].timeStamp
+
+    }
+
+    setPictures() {
+        if (this.labfarm.plants[0])
+            if (this.labfarm.plants[0].pictures)
+                this.lastPicture = this.labfarm.plants[0].pictures[0].content;
+
     }
 
     autoModeChanged() {
@@ -48,7 +71,4 @@ export class FarmComponent implements OnInit {
         this.conductivityDisabled = !this.autoMode;
     }
 
-    editLabfarm() {
-        this.router.navigate(['/farm/' + this.farmId + '/edit'])
-    }
 }
