@@ -4,7 +4,7 @@ import * as hammerjs from 'hammerjs/hammer';
 import { LabFarm } from 'src/models/LabFarm';
 import { SensorData } from 'src/models/SensorData';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Sensor } from 'src/models/Sensor';
 
 @Component({
@@ -32,7 +32,7 @@ export class FarmComponent implements OnInit {
     public lastUpdate: Date;
     public lastPicture: string;
 
-    constructor(private route: ActivatedRoute, private labfarmService: LabfarmService) {
+    constructor(private router: Router, private route: ActivatedRoute, private labfarmService: LabfarmService) {
 
     }
 
@@ -69,6 +69,10 @@ export class FarmComponent implements OnInit {
     autoModeChanged() {
         this.lightDisabled = !this.autoMode;
         this.conductivityDisabled = !this.autoMode;
+    }
+
+    editLabfarm() {
+        this.router.navigate(['/farm/' + this.farmId + '/edit']);
     }
 
 }
