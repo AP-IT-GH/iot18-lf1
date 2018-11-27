@@ -3,6 +3,7 @@
 
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
+@import "~angular-vertical-timeline/dist/vertical-timeline.css";
 
 
 .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label, .mat-accent .mat-slider-track-fill {
@@ -16,5 +17,29 @@
 .tooltip-inner { 
     background: #464545;
     border-radius: 3px;
+}
 
+/* Timeline */
+.timeline-img {
+    // background: #343a40 !important;
+    background: #f8f9fa !important;
+    // margin-top: 70px !important;
+    p {
+        color: #343a40 !important;
+    }
+}
+.timeline-content .date {
+    background: none !important;
+
+    p {
+        text-align: center !important;
+        color: #343a40 !important;
+        padding: 6px 20px;
+    }
+}
+.timeline::before {
+    border: 1px dashed #C5CAE9;
+    border-width: 0 0 0 1px !important;
+    width: 0px !important;
+    background: none !important;
 }

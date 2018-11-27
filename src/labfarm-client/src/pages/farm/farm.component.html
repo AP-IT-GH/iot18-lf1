@@ -8,7 +8,19 @@
     <div class="labfarm-body">
         <app-sensor-graph [sensorId]="sensor.id" LabfarmId="{{farmId}}" *ngFor="let sensor of sensors"></app-sensor-graph>
         <div class="camera-sensor bg-light">
-            <img src="data:image/png;base64,{{lastPicture}}" class="rounded" *ngIf="lastPicture">
+            <ng-template #pictureModal let-modal>
+                <app-picture-timeline [labfarm]="labfarm" [modal]="modal">
+
+                </app-picture-timeline>
+            </ng-template>
+            <ng-template #imgTooltip>
+                <div class="tooltip-container">
+                    <p>Click to see the rest of the images</p>
+                </div>
+            </ng-template>
+            <img src="data:image/png;base64,{{lastPicture}}" [ngbTooltip]="imgTooltip" (click)="openPictureModal(pictureModal)" class="rounded"
+                *ngIf="lastPicture">
+            <h3 *ngIf="!lastPicture">No pictures available</h3>
         </div>
     </div>
 
@@ -41,6 +53,7 @@
 
     </div>
 </div>
+
 <app-loading *ngIf="!labfarm">
 
 </app-loading>

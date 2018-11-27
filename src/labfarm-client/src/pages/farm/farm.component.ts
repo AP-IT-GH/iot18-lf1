@@ -6,6 +6,8 @@ import { SensorData } from 'src/models/SensorData';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Sensor } from 'src/models/Sensor';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { PictureTimelineComponent } from 'src/components/picture-timeline/picture-timeline.component';
 
 @Component({
     selector: 'app-farm',
@@ -32,8 +34,14 @@ export class FarmComponent implements OnInit {
     public lastUpdate: Date;
     public lastPicture: string;
 
-    constructor(private router: Router, private route: ActivatedRoute, private labfarmService: LabfarmService) {
+    public modalCloseResult: string;
 
+    constructor(
+        private router: Router,
+        private route: ActivatedRoute,
+        private labfarmService: LabfarmService,
+        private modalService: NgbModal
+    ) {
     }
 
     ngOnInit() {
@@ -73,6 +81,29 @@ export class FarmComponent implements OnInit {
 
     editLabfarm() {
         this.router.navigate(['/farm/' + this.farmId + '/edit']);
+    }
+
+    
+
+    openPictureModal(content) {
+        // let pictureModal: PictureTimelineComponent = new PictureTimelineComponent(this.labFarm);
+        this.modalService.open(content, {
+            'size': 'lg'
+        }).result.then((result) => {
+            this.modalCloseResult = `Closed with: ${result}`;
+        }, (reason) => {
+            this.modalCloseResult = `Dismissed ${this.getDismissReason(reason)}`;
+        });
+    }
+
+    private getDismissReason(reason: any): string {
+        if (reason === ModalDismissReasons.ESC) {
+            return 'by pressing ESC';
+        } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+            return 'by clicking on a backdrop';
+        } else {
+            return `with: ${reason}`;
+        }
     }
 
 }

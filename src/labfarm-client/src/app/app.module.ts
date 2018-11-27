@@ -25,6 +25,10 @@ import { LoadingComponent } from '../components/loading/loading.component';
 import { NewLabfarmComponent } from '../pages/new-labfarm/new-labfarm.component';
 import { EditLabfarmComponent, DeleteDialog } from '../pages//edit-labfarm/edit-labfarm.component';
 import { PictureviewerComponent } from '../pages/pictureviewer/pictureviewer.component';
+import { PictureGalleryComponent } from '../components/picture-gallery/picture-gallery.component';
+import { NgxGalleryModule } from 'ngx-gallery';
+import { PictureTimelineComponent } from '../components/picture-timeline/picture-timeline.component';
+import { VerticalTimelineModule } from 'angular-vertical-timeline';
 
 @NgModule({
     declarations: [
@@ -41,7 +45,9 @@ import { PictureviewerComponent } from '../pages/pictureviewer/pictureviewer.com
         NewLabfarmComponent,
         EditLabfarmComponent,
         DeleteDialog,
-        PictureviewerComponent
+        PictureviewerComponent,
+        PictureGalleryComponent,
+        PictureTimelineComponent
     ],
     imports: [
         RouterModule.forRoot([
@@ -62,7 +68,9 @@ import { PictureviewerComponent } from '../pages/pictureviewer/pictureviewer.com
         MatSliderModule,
         HttpClientModule,
         NgbModule,
-        MatDialogModule
+        MatDialogModule,
+        NgxGalleryModule,
+        VerticalTimelineModule
     ],
     providers: [
         LabfarmService,
