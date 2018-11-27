@@ -24,6 +24,7 @@ import { ErrorComponent } from '../components/error/error.component';
 import { LoadingComponent } from '../components/loading/loading.component';
 import { NewLabfarmComponent } from '../pages/new-labfarm/new-labfarm.component';
 import { EditLabfarmComponent, DeleteDialog } from '../pages//edit-labfarm/edit-labfarm.component';
+import { PictureviewerComponent } from '../pages/pictureviewer/pictureviewer.component';
 
 @NgModule({
     declarations: [
@@ -39,7 +40,8 @@ import { EditLabfarmComponent, DeleteDialog } from '../pages//edit-labfarm/edit-
         LoadingComponent,
         NewLabfarmComponent,
         EditLabfarmComponent,
-        DeleteDialog
+        DeleteDialog,
+        PictureviewerComponent
     ],
     imports: [
         RouterModule.forRoot([
@@ -47,6 +49,7 @@ import { EditLabfarmComponent, DeleteDialog } from '../pages//edit-labfarm/edit-
             { path: 'farm/:id', component: FarmComponent },
             { path: 'farm/:id/edit', component: EditLabfarmComponent},
             { path: 'options', component: OptionsComponent },
+            { path: 'pictureviewer', component: PictureviewerComponent },
             { path: 'new', component: NewLabfarmComponent },
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: "**", component: PageNotFoundComponent }

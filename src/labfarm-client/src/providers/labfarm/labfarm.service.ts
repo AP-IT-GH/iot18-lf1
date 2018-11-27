@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SensorValue, LastSensorValues } from 'src/models/SensorValue';
 import { NewLabfarm } from 'src/models/NewLabfarm';
+import { Picture } from 'src/models/Picture';
 
 @Injectable({
     providedIn: 'root'
@@ -82,11 +83,34 @@ export class LabfarmService {
     }
 
     deleteLabFarm(labfarmId: number): Observable<Boolean> {
-        console.log("Deleteing labfarm with ID: " + labfarmId);
+        console.log("Deleting labfarm with ID: " + labfarmId);
         let queryString = this.baseUrl;
         queryString += "/labfarm/" + labfarmId;
 
         return this.http.delete<Boolean>(queryString, this.httpOptions);
+    }
+
+    getPictures(): Observable<Picture[]> {
+        console.log("Getting all pictures");
+        let queryString = this.baseUrl;
+        queryString += "/picture";
+
+        return this.http.get<Picture[]>(queryString, this.httpOptions);
+    }
+
+    updatePicture(p: Picture): Observable<Picture> {
+        console.log("Updating picture with ID " + p.id);
+        let queryString = this.baseUrl;
+        queryString += "/picture/" + p.id;
+
+        return this.http.put<Picture>(queryString, this.httpOptions);
+    }
+    deletePicture(p: Picture): Observable<Picture> {
+        console.log("Deleting picture with ID " + p.id);
+        let queryString = this.baseUrl;
+        queryString += "/picture/" + p.id;
+
+        return this.http.delete<Picture>(queryString, this.httpOptions);
     }
 
     public getLatestSensorData(): SensorData[] {

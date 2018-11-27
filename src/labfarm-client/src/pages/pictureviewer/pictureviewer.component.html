@@ -1,0 +1,27 @@
+<div class="picture-container bg-dark text-light" *ngFor="let picture of pictures">
+    <div class="image-container">
+        <img src="data:image/png;base64,{{picture.content}}" alt="Corrupted image" class="rounded">
+    </div>
+    <div class="input-container">
+        <div class="form-group">
+            <label>Timestamp</label>
+            <input type="text" class="form-control" [ngModel]="picture.timeStamp">
+        </div>
+        <div class="form-group">
+            <label>Plant ID</label>
+            <input type="number" class="form-control" [ngModel]="picture.plantId">
+        </div>
+    </div>
+    <div class="button-container">
+        <p>ID: {{picture.id}}</p>
+        <button class="btn btn-primary btn-update" (click)="savePicture(picture)">Save</button>
+        <button class="btn btn-danger btn-delete" (click)="deletePicture(picture)">Delete</button>
+    </div>
+</div>
+
+<app-loading *ngIf="!pictures">
+
+</app-loading>
+<app-error *ngIf="error">
+
+</app-error>
