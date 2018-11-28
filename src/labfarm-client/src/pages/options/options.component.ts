@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PushNotificationsService } from 'src/providers/push-notifications/push-notifications.service';
 import { CookieService } from 'ngx-cookie-service';
+import { AuthenticationService } from 'src/providers/authentication/authentication.service';
 
 @Component({
     selector: 'app-options',
@@ -16,13 +17,13 @@ export class OptionsComponent implements OnInit {
 
     private cookieValue = "UNKNOWN";
 
-    constructor(private notificationService: PushNotificationsService, private cookieService: CookieService) {
+    constructor(private notificationService: PushNotificationsService, private cookieService: CookieService, private authService: AuthenticationService) {
         this.cookieService.set('Test', 'HELLO WORLD!');
     }
 
     ngOnInit() {
         this.cookieValue = this.cookieService.get('Test');
-
+        this.authService.logout();
     }
 
     notify() {

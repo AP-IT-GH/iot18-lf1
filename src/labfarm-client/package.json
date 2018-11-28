@@ -25,6 +25,7 @@
     "@ng-bootstrap/ng-bootstrap": "^3.3.1",
     "angular-timeline": "^1.7.0",
     "angular-vertical-timeline": "^0.6.0",
+    "auth0-js": "^9.8.2",
     "bootstrap": "^4.1.3",
     "chart.js": "^2.7.2",
     "core-js": "^2.5.4",

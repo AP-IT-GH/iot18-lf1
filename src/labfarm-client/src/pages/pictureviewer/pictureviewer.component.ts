@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 import { Picture } from 'src/models/Picture';
+import { AuthenticationService } from 'src/providers/authentication/authentication.service';
 
 @Component({
     selector: 'app-pictureviewer',
@@ -13,7 +14,10 @@ export class PictureviewerComponent implements OnInit {
 
     public error: boolean = false;
 
-    constructor(private labfarmService: LabfarmService) {
+    constructor(private labfarmService: LabfarmService, private authService: AuthenticationService) {
+
+        this.authService.login();
+
         labfarmService.getPictures().subscribe(data => {
             this.pictures = data;
         }, error => {
