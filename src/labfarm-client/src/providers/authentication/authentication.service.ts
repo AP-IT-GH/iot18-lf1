@@ -10,7 +10,7 @@ export class AuthenticationService {
         domain: 'melvinb.eu.auth0.com',
         responseType: 'token id_token',
         // audience: 'https://localhost:4200',
-        redirectUri: 'http://localhost:4200/#/callback',
+        redirectUri: 'http://localhost:4200/callback',
         scope: 'openid'
     });
 
@@ -36,6 +36,7 @@ export class AuthenticationService {
         localStorage.removeItem('access_token');
         localStorage.removeItem('id_token');
         localStorage.removeItem('expires_at');
+        localStorage.removeitem('auth_id');
         // Go back to the home route
         this.router.navigate(['/']);
     }
@@ -46,6 +47,7 @@ export class AuthenticationService {
         localStorage.setItem('access_token', authResult.accessToken);
         localStorage.setItem('id_token', authResult.idToken);
         localStorage.setItem('expires_at', expiresAt);
+        localStorage.setItem('auth_id', authResult.idTokenPayload.sub);
     }
 
     public handleAuthentication(): void {
