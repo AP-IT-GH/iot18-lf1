@@ -59,7 +59,7 @@ Example url (GET labfarms): http://labfarmwebapp.azurewebsites.net/api/v1/labfar
 
 * [SQL query](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/backend/LabfarmDB_SQLquerie.sql)
 
-* [Endpoint documentation](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/backend/Labfarm%20API%20endpoint%20documentation.pdf)
+* [Endpoint documentation](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/backend/API%20endpoint%20documentatie.pdf)
 
 ### Sensoren
 
