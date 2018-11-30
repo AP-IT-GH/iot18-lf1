@@ -8,10 +8,12 @@ import { AuthenticationService } from 'src/providers/authentication/authenticati
 })
 export class CallbackComponent implements OnInit {
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService) { 
+      
+  }
 
   ngOnInit() {
-      
+    this.authService.handleAuthentication();  
   }
 
 }

@@ -15,8 +15,7 @@ export class PictureviewerComponent implements OnInit {
     public error: boolean = false;
 
     constructor(private labfarmService: LabfarmService, private authService: AuthenticationService) {
-
-        this.authService.login();
+        // this.authService.login();
 
         labfarmService.getPictures().subscribe(data => {
             this.pictures = data;
@@ -42,6 +41,10 @@ export class PictureviewerComponent implements OnInit {
             console.log(failed);
         })
 
+    }
+
+    login() {
+        this.authService.login();
     }
 
 }

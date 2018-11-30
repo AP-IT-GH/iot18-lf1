@@ -73,7 +73,7 @@ import { FarmComponent } from '../pages/farm/farm.component';
             { path: 'new', component: NewLabfarmComponent },
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: "**", component: PageNotFoundComponent }
-        ], { useHash: true }),
+        ], { useHash: false }),
         BrowserModule,
         UiSwitchModule,
         BrowserAnimationsModule,
