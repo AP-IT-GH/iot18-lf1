@@ -39,7 +39,11 @@ namespace WebAPI
         {
             return _labfarmService.GetList(authId);
         }
-
+        [HttpGet("{id:int}/configuration")]
+        public Configuration GetConfiguration(int id)
+        {
+            return _labfarmService.GetConfiguration(id);
+        }
         [HttpPut("{id}")]
         public LabFarm Put([FromBody]LabFarm labfarm,int id)
         {
@@ -50,6 +54,11 @@ namespace WebAPI
         public LabFarm Post([FromBody]LabFarm labfarm)
         {
             return _labfarmService.Create(labfarm);
+        }
+        [HttpPost("{id:int}/configuration")]
+        public Configuration GetConfiguration([FromBody]Configuration config,int id)
+        {
+            return _labfarmService.PostConfiguration(config,id);
         }
 
         [HttpDelete("{id}")]

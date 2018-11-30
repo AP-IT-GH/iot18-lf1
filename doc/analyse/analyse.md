@@ -349,6 +349,9 @@ Frontend + End Nodes:
 	* C#  
 	* Python3 (if using raspberryPi)  
 
+## Software prototyping
+https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/img/mockups
+
 ## Test document
 
 ## Verdediging
