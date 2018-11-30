@@ -5,6 +5,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>WebAPI</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>labfarmWebApp - Web Deploy</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>labfarm-iot-hub-v3 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
