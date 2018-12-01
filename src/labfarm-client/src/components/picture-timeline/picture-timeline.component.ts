@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Picture } from 'src/models/Picture';
 import { LabFarm } from 'src/models/LabFarm';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-picture-timeline',
@@ -16,7 +16,10 @@ export class PictureTimelineComponent implements OnInit {
 
     private pictures: Picture[];
 
-    constructor() {
+
+    constructor(
+        
+    ) {
     }
     ngOnInit() {
         this.pictures = [];
@@ -40,21 +43,6 @@ export class PictureTimelineComponent implements OnInit {
             return 1;
 
         return 0;
-    }
-
-    getTimeString(date: Date): string {
-        let d = new Date(date);
-        let hours = d.getUTCHours() + 1;
-        let mins = d.getUTCMinutes();
-        // let secs = d.getUTCSeconds();
-
-        return `${this.timify(hours)}:${this.timify(mins)}`;
-        // return `${this.timify(hours)}:${this.timify(mins)}:${this.timify(secs)}`;
-    }
-
-    timify(n: number): string {
-        let s = n.toString();
-        return s.length == 2 ? s : `0${s}`;
     }
 
 }

@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
             this.userLabFarms = data;
         }, error => {
             this.serverError = true;
+            console.log(error);
         });
 
     }

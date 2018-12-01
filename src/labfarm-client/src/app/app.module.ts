@@ -22,8 +22,10 @@ import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 
 /* COMPONENTS */
 import { EditLabfarmComponent, DeleteDialog } from '../pages//edit-labfarm/edit-labfarm.component';
+import { PictureThumbnailComponent } from '../components/picture-thumbnail/picture-thumbnail.component';
 import { LabFarmOverviewComponent } from '../components/lab-farm-overview/lab-farm-overview.component';
 import { PictureTimelineComponent } from '../components/picture-timeline/picture-timeline.component';
+import { PicturePreviewComponent } from '../components/picture-preview/picture-preview.component';
 import { PictureGalleryComponent } from '../components/picture-gallery/picture-gallery.component';
 import { SensorGraphComponent } from '../components/sensor-graph/sensor-graph.component';
 import { LfNavbarComponent } from '../components/lf-navbar/lf-navbar.component';
@@ -38,6 +40,7 @@ import { CallbackComponent } from '../pages/callback/callback.component';
 import { OptionsComponent } from '../pages/options/options.component';
 import { HomeComponent } from '../pages/home/home.component';
 import { FarmComponent } from '../pages/farm/farm.component';
+
 
 
 
@@ -60,7 +63,9 @@ import { FarmComponent } from '../pages/farm/farm.component';
         PictureviewerComponent,
         PictureGalleryComponent,
         PictureTimelineComponent,
-        CallbackComponent
+        CallbackComponent,
+        PictureThumbnailComponent,
+        PicturePreviewComponent
     ],
     imports: [
         RouterModule.forRoot([

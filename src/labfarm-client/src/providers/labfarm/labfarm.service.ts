@@ -14,8 +14,8 @@ import { Picture } from 'src/models/Picture';
 })
 export class LabfarmService {
 
-    private baseUrl = "http://labfarmwebapp.azurewebsites.net/api/v1";
-    // private baseUrl = "http://labfarm-iot-hub-v3.azurewebsites.net/api/v1";
+    // private baseUrl = "http://labfarmwebapp.azurewebsites.net/api/v1";
+    private baseUrl = "http://labfarm-iot-hub-v3.azurewebsites.net/api/v1";
     private authid: string;
     
     private httpOptions = {
@@ -40,7 +40,7 @@ export class LabfarmService {
         queryString += "/labfarm";
         queryString += "?authid=" + this.authid;
 
-        // console.log(queryString);
+        console.log(queryString);
         return this.http.get<LabFarm[]>(queryString);
     }
 

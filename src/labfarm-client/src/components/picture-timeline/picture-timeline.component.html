@@ -1,17 +1,7 @@
 <div class="modal-container">
-
     <div class="modal-body">
-        <!-- <img src="data:image/png;base64,{{picture.content}}" class="rounded" *ngFor="let picture of pictures"> -->
-        <vertical-timeline>
+        <app-picture-thumbnail [picture]="picture" *ngFor="let picture of pictures">
 
-            <vertical-timeline-card *ngFor="let picture of pictures" [dateValue]="picture.timeStamp" [timeString]="getTimeString(picture.timeStamp)">
-                <img src="data:image/png;base64,{{picture.content}}" class="rounded" width="220px">
-            </vertical-timeline-card>
-
-
-        </vertical-timeline>
+        </app-picture-thumbnail>
     </div>
-
-
-
 </div>

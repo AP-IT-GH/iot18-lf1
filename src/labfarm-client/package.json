@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
     "@ng-bootstrap/ng-bootstrap": "^3.3.1",
+    "angular-editable-text": "^2.0.12",
     "angular-timeline": "^1.7.0",
     "angular-vertical-timeline": "^0.6.0",
     "auth0-js": "^9.8.2",
