@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Models;
 using Services;
 using System.Linq;
+using System;
 
 namespace WebAPI
 {
@@ -34,9 +35,19 @@ namespace WebAPI
 
         [Route("{id}/pictures")]
         [HttpGet]
-        public List<Picture> GetCameraPictures(int id)
+        public List<Picture> GetCameraPictures(int id,int? skip, int? take)
         {
-            return _plantService.Get(id).Pictures.ToList();
+            if(skip == null || take == null)
+            {
+                return _plantService.Get(id).Pictures.ToList();
+            }
+            else
+            {
+                var _skip = Convert.ToInt32(skip);
+                var _take = Convert.ToInt32(take);
+                return _plantService.Get(id).Pictures.Skip(_skip).Take(_take).ToList();
+            }
+
         }
 
         [HttpPut("{id}")]
