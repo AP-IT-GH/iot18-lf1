@@ -14,14 +14,14 @@ import { Picture } from 'src/models/Picture';
 })
 export class LabfarmService {
 
-    // private baseUrl = "http://labfarmwebapp.azurewebsites.net/api/v1";
-    private baseUrl = "http://labfarm-iot-hub-v3.azurewebsites.net/api/v1";
+    private baseUrl = "http://labfarmwebapp.azurewebsites.net/api/v1";
+    // private baseUrl = "http://labfarm-iot-hub-v3.azurewebsites.net/api/v1";
     private authid: string;
     
     private httpOptions = {
         headers: new HttpHeaders({
             'Content-Type': 'application/json'
-            // 'Authorization': `Bearer ${this.auth.access_token}`
+            // 'Authorization': `Bearer ${this.authenticationService.getAccessToken()}`
         })
     }
 
@@ -90,11 +90,15 @@ export class LabfarmService {
         return this.http.delete<Boolean>(queryString, this.httpOptions);
     }
 
-    getPictures(): Observable<Picture[]> {
-        console.log("Getting all pictures");
+    getPictures(plantId: number, pictureCount: number, pageSize: number, pageCount: number): Observable<Picture[]> {
+        console.log(`Getting ${pictureCount} pictures of plant ${plantId}`);
         let queryString = this.baseUrl;
-        queryString += "/picture";
-
+        let startDate = new Date();
+        startDate.setDate(15);
+        startDate.setMonth(11);
+        startDate.setHours(0);
+        queryString += `/plant/${plantId}/pictures?startDate=${startDate.getTime()}&hours=${pictureCount}&page=${pageCount}&pageSize=${pageSize}`;
+        console.log(queryString);
         return this.http.get<Picture[]>(queryString, this.httpOptions);
     }
 

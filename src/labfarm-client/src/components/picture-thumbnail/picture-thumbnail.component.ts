@@ -23,8 +23,6 @@ export class PictureThumbnailComponent implements OnInit {
     }
 
     openPictureDetail(content: PictureThumbnailComponent) {
-        // let pictureModal: PictureTimelineComponent = new PictureTimelineComponent(this.labFarm);
-        // console.log(content.picture);
         let modal = this.modalService.open(content, {
             'size': 'sm',
             'centered': true

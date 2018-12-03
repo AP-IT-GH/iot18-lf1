@@ -5,6 +5,8 @@
 
 @import "~angular-vertical-timeline/dist/vertical-timeline.css";
 
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
 
 .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label, .mat-accent .mat-slider-track-fill {
     background-color: #45C48B !important;
@@ -54,4 +56,17 @@
 
 .modal-content {
     background: none;
+}
+
+.winkel-calendar {
+    display: inline-block;
+
+    margin: 0 10px -10px 10px;
+}
+.wc-date-container {
+    width: 250px !important;
+    padding-left: 10px !important;
+    i {
+        padding: 0 6px 0 8px;
+    }
 }

@@ -1,9 +1,43 @@
+.modal-container {
+    background:#343a40 !important;
+    width: 100%;
+    min-width: 677px;
+    border-radius: 5px;
+
+    width: 80%;
+    height: 80%;
+    margin: 10%;
+}
+.modal-head {
+    padding: 24px 24px 0px 24px;
+    color: white;
+    font-size: 17px;
+    line-height: 40px;
+    * {
+        display: inline;
+    }
+
+    input {
+        border-radius: 5px;
+        border: none;
+        margin: 0 10px;
+    }
+    input[type="number"] {
+        padding-left: 10px;
+        width: 50px;
+    }
+    input[type="button"] {
+        float: right;
+    }
+}
+.modal-hr {
+    border-color: #58636d;
+    width: 98%;
+}
 .modal-body {
     // width: 1200px;
     // height: calc(100% + 100px);
-    background:#343a40 !important;
     display: flex;
-    width: 100%;
+    
     flex-wrap:  wrap;
 }
-

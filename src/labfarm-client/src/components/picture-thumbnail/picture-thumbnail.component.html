@@ -1,11 +1,9 @@
 <div class="picture-container">
-    <!-- <img src="data:image/png;base64,{{picture.content}}" width="200px" height="160px" (click)="openPictureDetail(this)"> -->
-
     <ng-template #pictureModal let-modal>
         <app-picture-preview [picture]="picture" [modal]="modal">
 
         </app-picture-preview>
     </ng-template>
     <span>{{getTimeString(picture.timeStamp)}}</span>
-    <img src="../../assets/images/plant.jpg" width="200px" height="160px" (click)="openPictureDetail(pictureModal)">
+    <img src="data:image/png;base64,{{picture.content}}" width="200px" height="auto" (click)="openPictureDetail(pictureModal)">
 </div>

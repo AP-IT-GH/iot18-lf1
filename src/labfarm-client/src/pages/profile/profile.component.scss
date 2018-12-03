@@ -1,0 +1,14 @@
+.profile-container { 
+    min-width: 200px;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 100px;
+
+    .card-element {
+        margin-bottom: 20px;
+    }
+
+    .card-element span, .card-element input {
+        float: right;
+    }
+}
