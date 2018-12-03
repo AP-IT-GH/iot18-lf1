@@ -19,9 +19,11 @@
         <app-picture-thumbnail [picture]="picture" *ngFor="let picture of pictures">
 
         </app-picture-thumbnail>
+        <img src="../../assets/images/plant.jpg" *ngFor="let i of ps" height="200px" >
     </div>
     <hr class="modal-hr">
     <div class="modal-foot">
+        <p class="results">Total results: {{pictures.length}}</p>
         <input type="button" value="<" class="btn" id="btnPrev" (click)="previousPage()">
         <p>Page {{pageCount}} of {{maxPages}}</p>
         <input type="button" value=">" class="btn" id="btnNext" (click)="nextPage()">

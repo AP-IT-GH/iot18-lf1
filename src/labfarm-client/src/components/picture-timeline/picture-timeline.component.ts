@@ -22,6 +22,7 @@ export class PictureTimelineComponent implements OnInit {
     private pageSize = 6;
     private pageCount = 1;
 
+    private ps = [1,2,3,4,5,6];
 
     private date: Date = new Date();
 

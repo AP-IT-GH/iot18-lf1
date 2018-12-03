@@ -43,9 +43,15 @@
     display: flex;
     
     flex-wrap:  wrap;
+
+    img {
+        height: 200px;
+        margin: 28px;
+    }
 }
 .modal-foot {
     text-align: center;
+    margin-bottom: 10px;
     * {
         display: inline-block;
     }
@@ -53,5 +59,10 @@
         color: white;
         font-size: 17px;
         width: 120px;
+    }
+
+    .results {
+        position: fixed;
+        left : calc(10% + 25px);
     }
 }
