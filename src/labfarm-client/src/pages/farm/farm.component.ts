@@ -86,8 +86,7 @@ export class FarmComponent implements OnInit {
     
 
     openPictureModal(content) {
-        // let pictureModal: PictureTimelineComponent = new PictureTimelineComponent(this.labFarm);
-        this.modalService.open(content, {
+        let modal = this.modalService.open(content, {
             'size': 'lg'
         }).result.then((result) => {
             this.modalCloseResult = `Closed with: ${result}`;

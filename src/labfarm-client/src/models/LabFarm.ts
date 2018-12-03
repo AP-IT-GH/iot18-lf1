@@ -19,4 +19,5 @@ export interface LabFarm {
     autoMode: boolean;
     plants: Plant[];
     sensors: Sensor[];
+    config: any;
 }

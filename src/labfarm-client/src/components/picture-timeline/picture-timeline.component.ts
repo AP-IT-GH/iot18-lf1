@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Picture } from 'src/models/Picture';
 import { LabFarm } from 'src/models/LabFarm';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 
 @Component({
     selector: 'app-picture-timeline',
@@ -16,20 +17,45 @@ export class PictureTimelineComponent implements OnInit {
 
     private pictures: Picture[];
 
-    constructor() {
+    private pictureCount = 24;
+    private pageSize = 24;
+    private pageCount = 1;
+
+
+    private date: Date = new Date();
+
+    settings = {
+        bigBanner: true,
+        timePicker: true,
+        format: 'dd-MM-yyyy HH:mm',
+        defaultOpen: false
+    }
+
+
+    constructor(
+        private labfarmService: LabfarmService
+    ) {
     }
     ngOnInit() {
         this.pictures = [];
 
-        this.labfarm.plants.forEach(plants => {
-            plants.pictures.forEach(picture => {
-                this.pictures.push(picture);
+        this.date.setDate(this.date.getDate() - 1);
+        // this.date.setHours(0);
+        // this.date.setMinutes(0);
 
+        if (!this.labfarm)
+            return;
+
+
+        this.labfarm.plants.forEach(plant => {
+            this.labfarmService.getPictures(plant.id, this.pictureCount, this.pageSize, this.pageCount).subscribe(data => {
+                data.forEach(picture => {
+                    this.pictures.push(picture);
+                });
             })
         });
 
-        if (this.pictures)
-            this.pictures = this.pictures.sort(this.pictureSort);
+        this.pictures = this.pictures.sort(this.pictureSort);
     }
 
     pictureSort(p1: Picture, p2: Picture): number {
@@ -40,21 +66,6 @@ export class PictureTimelineComponent implements OnInit {
             return 1;
 
         return 0;
-    }
-
-    getTimeString(date: Date): string {
-        let d = new Date(date);
-        let hours = d.getUTCHours() + 1;
-        let mins = d.getUTCMinutes();
-        // let secs = d.getUTCSeconds();
-
-        return `${this.timify(hours)}:${this.timify(mins)}`;
-        // return `${this.timify(hours)}:${this.timify(mins)}:${this.timify(secs)}`;
-    }
-
-    timify(n: number): string {
-        let s = n.toString();
-        return s.length == 2 ? s : `0${s}`;
     }
 
 }

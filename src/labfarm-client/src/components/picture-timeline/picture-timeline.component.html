@@ -1,17 +1,21 @@
 <div class="modal-container">
+    <div class="modal-head">
+        <p>I want to see plant pictures of my labfarm from </p>
 
-    <div class="modal-body">
-        <!-- <img src="data:image/png;base64,{{picture.content}}" class="rounded" *ngFor="let picture of pictures"> -->
-        <vertical-timeline>
+        <angular2-date-picker [(ngModel)]="date" [settings]="settings"></angular2-date-picker>
+        
+        <p> for the next </p>
 
-            <vertical-timeline-card *ngFor="let picture of pictures" [dateValue]="picture.timeStamp" [timeString]="getTimeString(picture.timeStamp)">
-                <img src="data:image/png;base64,{{picture.content}}" class="rounded" width="220px">
-            </vertical-timeline-card>
+        <input type="number" [(ngModel)]="pictureCount" placeholder="24"> 
 
-
-        </vertical-timeline>
+        <p> hours</p>
+        
+        <input type="button" class="btn btn-light " (click)="loadPictures()" value="Load pictures">
     </div>
+    <hr class="modal-hr">
+    <div class="modal-body">
+        <app-picture-thumbnail [picture]="picture" *ngFor="let picture of pictures">
 
-
-
+        </app-picture-thumbnail>
+    </div>
 </div>

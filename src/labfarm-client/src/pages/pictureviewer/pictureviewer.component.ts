@@ -17,12 +17,14 @@ export class PictureviewerComponent implements OnInit {
     constructor(private labfarmService: LabfarmService, private authService: AuthenticationService) {
         // this.authService.login();
 
-        labfarmService.getPictures().subscribe(data => {
-            this.pictures = data;
-        }, error => {
-            this.error = true;
-            console.log(error);
-        });
+        // labfarmService.getPictures().subscribe(data => {
+        //     this.pictures = data;
+        // }, error => {
+        //     this.error = true;
+        //     console.log(error);
+        // });
+
+        this.pictures = [];
     }
 
     ngOnInit() {

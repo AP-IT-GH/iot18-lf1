@@ -9,7 +9,7 @@ export class AuthenticationService {
         clientID: 'PECk3b50RvqOmI67NRkI017KaJ2pVfPp',
         domain: 'melvinb.eu.auth0.com',
         responseType: 'token id_token',
-        redirectUri: 'http://localhost:4200/#/callback',
+        redirectUri: 'http://localhost:4200/callback',
         scope: 'openid'
     });
 
@@ -17,12 +17,17 @@ export class AuthenticationService {
 
     }
 
-    public static get_auth_token(): string {
+    public getAccessToken(): string {
         return localStorage.getItem('access_token');
     }
 
     public getAuthId(): string {
         return "Test admin";
+        // return "admin";
+    }
+    
+    public getRealAuthId(): string {
+        return localStorage.getItem('auth_id');
     }
 
     public handleAuthentication(): void {
@@ -35,11 +40,15 @@ export class AuthenticationService {
             } else if (err) {
                 console.log(err);
             }
-            this.router.navigate(['/home']);
+            let url = localStorage.getItem('lastPage') ? localStorage.getItem('lastPage') : '/home';
+
+            this.router.navigate([url]);
         });
     }
 
     public login(): void {
+        localStorage.setItem('lastPage', this.router.url);
+        console.log(localStorage.getItem('lastPage'));
         this.auth0.authorize();
     }
 
@@ -48,7 +57,7 @@ export class AuthenticationService {
         localStorage.removeItem('access_token');
         localStorage.removeItem('id_token');
         localStorage.removeItem('expires_at');
-        localStorage.removeitem('auth_id');
+        localStorage.removeItem('auth_id');
         // Go back to the home route
         this.router.navigate(['/']);
     }
