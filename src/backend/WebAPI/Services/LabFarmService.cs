@@ -13,12 +13,14 @@ namespace Services
         private LabFarmRepository _labfarmRepository;
         private SensorTypeRepository _sensorTypeRepository;
         private SensorRepository _sensorRepository;
+        private ConfigurationService _configService;
 
-        public LabFarmService(LabFarmRepository labfarmRepository, SensorTypeRepository sensorTypeRepository, SensorRepository sensorRepository)
+        public LabFarmService(LabFarmRepository labfarmRepository, SensorTypeRepository sensorTypeRepository, SensorRepository sensorRepository, ConfigurationService configService)
         {
             _labfarmRepository = labfarmRepository;
             _sensorTypeRepository = sensorTypeRepository;
             _sensorRepository = sensorRepository;
+            _configService = configService; 
         }
 
         public LabFarm Create(LabFarm labfarm)
@@ -97,21 +99,28 @@ namespace Services
                                                 .ThenBy(x => x.TimeStamp.Date)
                                                     .ThenBy(x => x.TimeStamp.Year)
                                                         .ToList();
-                    var picture = pictures[0]; // get latest picture
-                    p.Pictures.Clear();
-                    p.Pictures.Add(picture);
 
+                    if(pictures.Count != 0)
+                    {
+                        var picture = pictures[0]; // get latest picture
+                        p.Pictures.Clear();
+                        p.Pictures.Add(picture);
+                    }
+         
                 }
 
                 foreach(Sensor s in l.Sensors)
-                {
+                {                   
                     var values = s.SensorValues.OrderByDescending(x => x.TimeStamp.TimeOfDay)
                                                 .ThenBy(x => x.TimeStamp.Date)
                                                     .ThenBy(x => x.TimeStamp.Year)
                                                         .ToList();
-                    var value = values[0];
-                    s.SensorValues.Clear();
-                    s.SensorValues.Add(value);
+                    if(values.Count != 0)
+                    {
+                        var value = values[0];
+                        s.SensorValues.Clear();
+                        s.SensorValues.Add(value);
+                    }
                 }
             }
 
@@ -132,6 +141,16 @@ namespace Services
 
                 _sensorRepository.Post(sensor);
             };
+        }
+        public Configuration GetConfiguration(int id)
+        {
+            var labfarm = GetById(id);
+            return labfarm.Config;
+        }
+        public Configuration PostConfiguration(Configuration config, int id)
+        {
+            config.LabfarmId = id;
+            return _configService.Create(config);
         }
 
     }

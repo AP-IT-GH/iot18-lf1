@@ -48,6 +48,8 @@ namespace WebAPI
             services.AddScoped<SensorDataRepository>();
             services.AddScoped<PicturesRepository>();
             services.AddScoped<SensorTypeRepository>();
+            services.AddScoped<DataSetRepository>();
+            services.AddScoped<ConfigurationRepository>();
 
             services.AddScoped<PlantService>();
             services.AddScoped<SensorService>();
@@ -55,6 +57,9 @@ namespace WebAPI
             services.AddScoped<PictureService>();
             services.AddScoped<SensorDataService>();
             services.AddScoped<SensorTypeService>();
+            services.AddScoped<PlantRepository>();
+            services.AddScoped<DataSetService>();
+            services.AddScoped<ConfigurationService>();
         }
 
 
