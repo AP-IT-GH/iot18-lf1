@@ -1,15 +1,17 @@
 <div class="modal-container">
     <div class="modal-head">
-        <p>I want to see plant pictures of my labfarm from </p>
+        <div class="filter-content">
+            <p>I want to see plant pictures of my labfarm from </p>
 
-        <angular2-date-picker [(ngModel)]="date" [settings]="settings"></angular2-date-picker>
-        
-        <p> for the next </p>
+            <angular2-date-picker [(ngModel)]="date" [settings]="settings"></angular2-date-picker>
 
-        <input type="number" [(ngModel)]="pictureCount" placeholder="24"> 
+            <p> for the next </p>
 
-        <p> hours</p>
-        
+            <input type="number" [(ngModel)]="pictureCount" placeholder="24">
+
+            <p> hours</p>
+        </div>
+
         <input type="button" class="btn btn-light " (click)="loadPictures()" value="Load pictures">
     </div>
     <hr class="modal-hr">
@@ -17,5 +19,11 @@
         <app-picture-thumbnail [picture]="picture" *ngFor="let picture of pictures">
 
         </app-picture-thumbnail>
+    </div>
+    <hr class="modal-hr">
+    <div class="modal-foot">
+        <input type="button" value="<" class="btn" id="btnPrev" (click)="previousPage()">
+        <p>Page {{pageCount}} of {{maxPages}}</p>
+        <input type="button" value=">" class="btn" id="btnNext" (click)="nextPage()">
     </div>
 </div>

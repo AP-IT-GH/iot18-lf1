@@ -16,6 +16,8 @@
     * {
         display: inline;
     }
+    display: flex;
+    justify-content: space-between;
 
     input {
         border-radius: 5px;
@@ -28,6 +30,7 @@
     }
     input[type="button"] {
         float: right;
+        max-height: 40px;
     }
 }
 .modal-hr {
@@ -40,4 +43,15 @@
     display: flex;
     
     flex-wrap:  wrap;
+}
+.modal-foot {
+    text-align: center;
+    * {
+        display: inline-block;
+    }
+    p {
+        color: white;
+        font-size: 17px;
+        width: 120px;
+    }
 }
