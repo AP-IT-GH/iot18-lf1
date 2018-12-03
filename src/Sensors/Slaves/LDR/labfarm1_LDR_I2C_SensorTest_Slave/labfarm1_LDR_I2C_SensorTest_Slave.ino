@@ -14,12 +14,11 @@ void setup()
 }
 
 void loop() {
-  delay(100);
+  sensorValue = analogRead(sensorPin); // read the value from the sensor
 }
 
 void requestEvent()
 {
-  sensorValue = analogRead(sensorPin); // read the value from the sensor
   TinyWire.send(sensorValue); //send data [1 byte]
 }
 
