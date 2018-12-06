@@ -27,7 +27,7 @@ void loop() {
   if ((millis()-startTime) >= sampletime_ms) //if the sample time >= 30s
   {
     ratio = lowPulseOccupancy/(sampletime_ms*10.0);  
-    concentration = 1.1*pow(ratio,3)-3.8*pow(ratio,2)+520*ratio+0.62;    
+    concentration = 1.1*pow(ratio,3)-3.8*pow(ratio,2)+520*ratio+0.62; //Concentration in pcs/0.01cf
     lowPulseOccupancy = 0;
     startTime = millis();
   }
@@ -38,3 +38,7 @@ void requestEvent()
   TinyWire.send(concentration); //send data [1 byte]
 }
 
+//0-500 pcs/0.01cf = a clear room
+//500-1500 pcs/0.01cf = a “fairly” clean room
+//1500-4000 pcs/0.01cf = a room in need of dusting (but not super dusty)
+//4000+ pcs/0.01cf = if you have allergies you may notice the room
