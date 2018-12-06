@@ -24,5 +24,7 @@ namespace Models
         public ICollection<Plant> Plants { get; set;}
         public ICollection<Sensor> Sensors {get; set;}
 
+        public Configuration Config { get; set; }
+
     }
 }

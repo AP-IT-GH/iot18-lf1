@@ -29,7 +29,7 @@ namespace WebAPI
             //****CHOOSE ONLY ONE CONNECTION STRING****//
 
             //**USE THIS FOR REMOTE CONNECTION**//
-            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnectionV3")));
 
             //**USE THIS FOR LOCAL CONNECTION**//
             //services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
@@ -49,6 +49,7 @@ namespace WebAPI
             services.AddScoped<PicturesRepository>();
             services.AddScoped<SensorTypeRepository>();
             services.AddScoped<DataSetRepository>();
+            services.AddScoped<ConfigurationRepository>();
 
             services.AddScoped<PlantService>();
             services.AddScoped<SensorService>();
@@ -58,6 +59,7 @@ namespace WebAPI
             services.AddScoped<SensorTypeService>();
             services.AddScoped<PlantRepository>();
             services.AddScoped<DataSetService>();
+            services.AddScoped<ConfigurationService>();
         }
 
 

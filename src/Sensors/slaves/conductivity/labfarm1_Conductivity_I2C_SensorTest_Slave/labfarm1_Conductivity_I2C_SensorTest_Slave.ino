@@ -14,13 +14,12 @@ void setup()
 }
 
 void loop() {
-  delay(100);
+  sensorValue = analogRead(sensorPin); // read the value from the sensor
+  //sensorValue = sensorValue*(5.0/1023.0); //Convert to voltage drop across the probe
 }
 
 void requestEvent()
 {
-  sensorValue = analogRead(sensorPin); // read the value from the sensor
-  sensorValue = sensorValue*(5.0/1024.0); //Convert to voltage
   TinyWire.send(sensorValue); //send data [1 byte]
 }
 

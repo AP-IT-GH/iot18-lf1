@@ -13,7 +13,7 @@ namespace Repositories
             //create db if not yet exists
             context.Database.EnsureCreated();
 
-           if(!context.SensorTypes.Any()) //check if database.sensortypes is empty
+           if(!context.LabFarms.Any()) //check if database.sensortypes is empty
             {
 
                 //initialize 4 base sensorTypes

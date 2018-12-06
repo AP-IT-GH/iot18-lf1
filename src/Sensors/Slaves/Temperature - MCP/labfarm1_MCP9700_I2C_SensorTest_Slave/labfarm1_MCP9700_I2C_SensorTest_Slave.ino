@@ -14,14 +14,14 @@ void setup()
 }
 
 void loop() {
-  delay(100);
+  sensorValue = analogRead(sensorPin)*5/1024.0; // read the value from the sensor
+  sensorValue -= 0.5; //Convert to Fahrenheit
+  sensorValue = sensorValue / 0.01;
+  sensorValue = (sensorValue - 32) * 5/9; //Convert to Celcius  
 }
 
 void requestEvent()
 {
-  sensorValue = analogRead(sensorPin)*5/1024.0; // read the value from the sensor
-  sensorValue -= 0.5; //Convert to Fahrenheit
-  sensorValue = sensorValue / 0.01;
   TinyWire.send(sensorValue); //send data [1 byte]
 }
 
