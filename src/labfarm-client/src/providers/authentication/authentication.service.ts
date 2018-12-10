@@ -22,8 +22,8 @@ export class AuthenticationService {
     }
 
     public getAuthId(): string {
-        return "Test admin";
-        // return "admin";
+        // return "Test admin";
+        return "admin";
     }
     
     public getRealAuthId(): string {

@@ -5,7 +5,7 @@ import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VerticalTimelineModule } from 'angular-vertical-timeline';
 import { RouterModule, Routes } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -19,7 +19,6 @@ import 'hammerjs';
 
 /* SERVICES */
 import { AuthenticationService } from 'src/providers/authentication/authentication.service';
-import { SensorDataService } from 'src/providers/sensor-data/sensor-data.service';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 
 /* COMPONENTS */
@@ -43,6 +42,7 @@ import { OptionsComponent } from '../pages/options/options.component';
 import { ProfileComponent } from '../pages/profile/profile.component';
 import { HomeComponent } from '../pages/home/home.component';
 import { FarmComponent } from '../pages/farm/farm.component';
+import { InterceptorService } from 'src/providers/interceptor/interceptor.service';
 
 
 
@@ -102,9 +102,14 @@ import { FarmComponent } from '../pages/farm/farm.component';
     ],
     providers: [
         LabfarmService,
-        SensorDataService,
         CookieService,
-        AuthenticationService
+        AuthenticationService,
+        InterceptorService,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: InterceptorService,
+            multi: true
+        }
     ],
     entryComponents: [
         DeleteDialog

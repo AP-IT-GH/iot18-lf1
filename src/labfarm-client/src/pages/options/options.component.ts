@@ -23,7 +23,6 @@ export class OptionsComponent implements OnInit {
 
     ngOnInit() {
         this.cookieValue = this.cookieService.get('Test');
-        this.authService.logout();
     }
 
     notify() {

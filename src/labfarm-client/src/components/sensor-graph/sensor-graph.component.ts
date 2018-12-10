@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Chart } from 'chart.js';
-import { SensorDataService } from 'src/providers/sensor-data/sensor-data.service';
 import { SensorData } from 'src/models/SensorData';
 import { SensorType } from 'src/models/SensorType';
 import { SensorValue, LastSensorValues } from 'src/models/SensorValue';
