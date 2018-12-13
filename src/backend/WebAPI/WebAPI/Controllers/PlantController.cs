@@ -35,18 +35,12 @@ namespace WebAPI
 
         [Route("{id}/pictures")]
         [HttpGet]
-        public List<Picture> GetCameraPictures(int id,int? skip, int? take)
+        public List<Picture> GetCameraPictures(int id,DateTime startDate,int hours = 24,int page = 1, int pageSize = 24)
         {
-            if(skip == null || take == null)
-            {
-                return _plantService.Get(id).Pictures.ToList();
-            }
-            else
-            {
-                var _skip = Convert.ToInt32(skip);
-                var _take = Convert.ToInt32(take);
-                return _plantService.Get(id).Pictures.Skip(_skip).Take(_take).ToList();
-            }
+            DateTime endDate = startDate.AddHours(hours);
+            
+            return _plantService.Get(id).Pictures.Where( x=> x.TimeStamp >= startDate).Where(x => x.TimeStamp <= endDate).Skip((page-1)*pageSize).Take(pageSize).ToList();
+            
 
         }
 
