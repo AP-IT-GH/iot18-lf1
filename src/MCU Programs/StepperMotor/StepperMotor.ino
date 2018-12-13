@@ -1,93 +1,89 @@
-//////////////////////////////////////////////////////////////////
-//©2011 bildr
-//Released under the MIT License – Please reuse change and share
-//Using the easy stepper with your arduino
-//use rotate and/or rotateDeg to controll stepper motor
-//spd is any number from .01 -> 1 with 1 being fastest –
-//Slower spd == Stronger movement
-/////////////////////////////////////////////////////////////////
-//modified by Steven De Keuster
-/////////////////////////////////////////////////////////////////
+/****************************************************************************** 
+SparkFun Easy Driver Basic Demo
+Toni Klopfenstein @ SparkFun Electronics
+March 2015
+https://github.com/sparkfun/Easy_Driver
 
-int DIR_PINS[] = {2, 2, 2};
-int STEP_PINS[] = {3, 3, 3};
+Simple demo sketch to demonstrate how 5 digital pins can drive a bipolar stepper motor,
+using the Easy Driver (https://www.sparkfun.com/products/12779). Also shows the ability to change
+microstep size, and direction of motor movement.
 
-int motor1 = 0;
-int motor2 = 1;
-int motor3 = 2;
+Development environment specifics:
+Written in Arduino 1.6.0
 
+This code is beerware; if you see me (or any other SparkFun employee) at the local, and you've found our code helpful, please buy us a round!
+Distributed as-is; no warranty is given.
 
+Example based off of demos by Brian Schmalz (designer of the Easy Driver).
+http://www.schmalzhaus.com/EasyDriver/Examples/EasyDriverExamples.html
+******************************************************************************/
+
+#define stp 2
+#define dir 3
+#define MS1 4
+#define MS2 5
+#define EN  6
+
+//Declare variables for functions
+char user_input;
+int x;
+int y;
+int state;
+int s = 53;
+boolean fb = true;
 void setup() {
-  pinMode(DIR_PINS, OUTPUT);
-  pinMode(STEP_PINS, OUTPUT);
+  pinMode(stp, OUTPUT);
+  pinMode(dir, OUTPUT);
+  pinMode(MS1, OUTPUT);
+  pinMode(MS2, OUTPUT);
+  pinMode(EN, OUTPUT);
+  //reset pins
+  digitalWrite(stp, LOW);
+  digitalWrite(dir, LOW);
+  digitalWrite(MS1, LOW);
+  digitalWrite(MS2, LOW);
+  digitalWrite(EN, HIGH);
+  Serial.begin(9600); //Open Serial connection for debugging
 }
 
-void loop(){
+//Main loop
+void loop() {
 
-  //rotate a specific number of degrees
-  rotateDeg(motor1, 360, 1);
-  delay(1000);
-
-  rotateDeg(motor1, -360, .1); //reverse
-  delay(1000);
-
-  //rotate a specific number of microsteps (8 microsteps per step)
-  //a 200 step stepper would take 1600 micro steps for one full revolution
-  rotate(motor1, 1600, .5);
-  delay(1000);
-
-  rotate(motor1, -1600, .25); //reverse
-  delay(1000);
 }
 
-
-void reotateAll(int steps, float spd){
-  int dir = (steps > 0)? HIGH:LOW;
-  steps = abs(steps);
-
-  digitalWrite(DIR_PINS,dir);
-
-  float usDelay = (1/spd) * 70;
-
-  for(int i=0; i < steps; i++){
-    digitalWrite(STEP_PINS, HIGH);
-    delayMicroseconds(usDelay);
-    digitalWrite(STEP_PINS, LOW);
-    delayMicroseconds(usDelay);
+// dir = 1 => forward
+void MoveInCm(float cm){ // 10 => 10cm vooruit | -10 => 10cm achteruit
+  //Pull enable pin low to allow motor control
+  digitalWrite(EN, LOW); 
+  //change direction
+  if(cm > 0){
+     digitalWrite(dir, LOW); 
   }
-}
-
-void rotate(int motor, int steps, float spd){
-  //rotate a specific number of microsteps (8 microsteps per step) – (negitive for reverse movement)
-  //spd is any number from .01 -> 1 with 1 being fastest – Slower is stronger
-  int dir = (steps > 0)? HIGH:LOW;
-  steps = abs(steps);
-
-  digitalWrite(DIR_PINS[motor],dir);
-
-  float usDelay = (1/spd) * 70;
-
-  for(int i=0; i < steps; i++){
-    digitalWrite(STEP_PINS[motor], HIGH);
-    delayMicroseconds(usDelay);
-    digitalWrite(STEP_PINS[motor], LOW);
-    delayMicroseconds(usDelay);
+  else{
+     digitalWrite(dir, HIGH);
   }
-}
-
-void rotateDeg(int motor, float deg, float spd){
-  //rotate a specific number of degrees (negitive for reverse movement)
-  //spd is any number from .01 -> 1 with 1 being fastest – Slower is stronger
-  int dir = (deg > 0)? HIGH:LOW;
-  digitalWrite(DIR_PINS[motor],dir);
-
-  int steps = abs(deg)*(1/0.225);
-  float usDelay = (1/spd) * 70;
-
-  for(int i=0; i < steps; i++){
-    digitalWrite(STEP_PINS[motor], HIGH);
-    delayMicroseconds(usDelay);
-    digitalWrite(STEP_PINS[motor], LOW);
-    delayMicroseconds(usDelay);
+  cm = abs(cm);
+  //Pull MS1, and MS2 high to set logic to 1/8th microstep resolution
+  digitalWrite(MS1, HIGH);
+  digitalWrite(MS2, LOW);
+  // 0.9° rotation for one step => 400 steps = 360°
+  // 10cm => 25 steps with half step mode
+  cm /= 10;
+  cm *= 25;
+  cm *= 400;
+  int steps = round(cm);
+  for(int x= 0; x<steps; x++){
+    // give pulse
+    digitalWrite(stp,HIGH);
+    delay(1);
+    digitalWrite(stp,LOW); 
+    delay(1);
   }
+  //reset pins
+  digitalWrite(stp, LOW);
+  digitalWrite(dir, LOW);
+  digitalWrite(MS1, LOW);
+  digitalWrite(MS2, LOW);
+  digitalWrite(EN, HIGH);
 }
+
