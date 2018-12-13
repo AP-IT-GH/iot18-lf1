@@ -17,6 +17,7 @@ Distributed as-is; no warranty is given.
 Example based off of demos by Brian Schmalz (designer of the Easy Driver).
 http://www.schmalzhaus.com/EasyDriver/Examples/EasyDriverExamples.html
 ******************************************************************************/
+#include <Wire.h>
 
 #define stp 2
 #define dir 3
@@ -25,12 +26,8 @@ http://www.schmalzhaus.com/EasyDriver/Examples/EasyDriverExamples.html
 #define EN  6
 
 //Declare variables for functions
-char user_input;
-int x;
-int y;
-int state;
-int s = 53;
-boolean fb = true;
+byte I2c_address;
+
 void setup() {
   pinMode(stp, OUTPUT);
   pinMode(dir, OUTPUT);
@@ -43,12 +40,22 @@ void setup() {
   digitalWrite(MS1, LOW);
   digitalWrite(MS2, LOW);
   digitalWrite(EN, HIGH);
+
+  Wire.begin(I2c_address);                // join i2c bus with address #8
+  Wire.onReceive(receiveEvent); // register event
+  
   Serial.begin(9600); //Open Serial connection for debugging
 }
 
 //Main loop
 void loop() {
 
+}
+void receiveEvent(int howMany) {
+  while (1 < Wire.available()) { 
+    char c = Wire.read(); // receive byte as a character
+    Serial.print(c);         
+  }      
 }
 
 // dir = 1 => forward
