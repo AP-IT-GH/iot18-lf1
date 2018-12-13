@@ -70,3 +70,24 @@
         padding: 0 6px 0 8px;
     }
 }
+
+
+.notification-popover {
+    top: 57px !important;
+    left: unset !important;
+    right: 10% !important;
+    width: 400px !important;
+    max-width: 400px !important;
+
+    -webkit-box-shadow: 7px 6px 31px -12px rgba(0,0,0,0.76);
+    -moz-box-shadow: 7px 6px 31px -12px rgba(0,0,0,0.76);
+    box-shadow: 7px 6px 31px -12px rgba(0,0,0,0.76);
+    .arrow {
+        left: unset !important;
+        right: calc(10% - 7px);
+    }
+    .popover-header {
+        color: #343a40;
+        padding: 0.75rem !important;
+    }
+}

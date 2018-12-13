@@ -19,6 +19,8 @@ import 'hammerjs';
 
 /* SERVICES */
 import { AuthenticationService } from 'src/providers/authentication/authentication.service';
+import { NotificationsService } from 'src/providers/notifications/notifications.service';
+import { InterceptorService } from 'src/providers/interceptor/interceptor.service';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 
 /* COMPONENTS */
@@ -28,6 +30,7 @@ import { LabFarmOverviewComponent } from '../components/lab-farm-overview/lab-fa
 import { PictureTimelineComponent } from '../components/picture-timeline/picture-timeline.component';
 import { PicturePreviewComponent } from '../components/picture-preview/picture-preview.component';
 import { PictureGalleryComponent } from '../components/picture-gallery/picture-gallery.component';
+import { NotificationComponent } from '../components/notification/notification.component';
 import { SensorGraphComponent } from '../components/sensor-graph/sensor-graph.component';
 import { LfNavbarComponent } from '../components/lf-navbar/lf-navbar.component';
 import { LoadingComponent } from '../components/loading/loading.component';
@@ -42,7 +45,9 @@ import { OptionsComponent } from '../pages/options/options.component';
 import { ProfileComponent } from '../pages/profile/profile.component';
 import { HomeComponent } from '../pages/home/home.component';
 import { FarmComponent } from '../pages/farm/farm.component';
-import { InterceptorService } from 'src/providers/interceptor/interceptor.service';
+
+
+
 
 
 
@@ -69,7 +74,8 @@ import { InterceptorService } from 'src/providers/interceptor/interceptor.servic
         CallbackComponent,
         PictureThumbnailComponent,
         PicturePreviewComponent,
-        ProfileComponent
+        ProfileComponent,
+        NotificationComponent
     ],
     imports: [
         RouterModule.forRoot([
@@ -104,6 +110,7 @@ import { InterceptorService } from 'src/providers/interceptor/interceptor.servic
         LabfarmService,
         CookieService,
         AuthenticationService,
+        NotificationsService,
         InterceptorService,
         {
             provide: HTTP_INTERCEPTORS,

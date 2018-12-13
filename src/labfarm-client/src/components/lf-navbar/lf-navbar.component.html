@@ -12,10 +12,13 @@
         <a routerLink="/home" routerLinkActive="active-link">Home</a>
         <a routerLink="/options" routerLinkActive="active-link">Preferences</a>
         <a routerLink="/profile" routerLinkActive="active-link">Profile</a>
-        <a class="notification-icon">
+        <ng-template #notificationPopup>
+            <app-notification [notification]="notification" *ngFor="let notification of notificationService.GetNotifications()">Test</app-notification>
+        </ng-template>
+        <a class="notification-icon" placement="bottom" [ngbPopover]="notificationPopup" popoverTitle="Notifications" popoverClass="notification-popover">
             <i class="fa fa-bell" aria-hidden="true"></i>
             <span class="circle">
-                <i>4</i>
+                <i>{{notificationService.GetNotifications().length}}</i>
             </span>
         </a>
     </nav>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PushNotificationsService } from 'src/providers/push-notifications/push-notifications.service';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthenticationService } from 'src/providers/authentication/authentication.service';
 
@@ -17,7 +16,7 @@ export class OptionsComponent implements OnInit {
 
     private cookieValue = "UNKNOWN";
 
-    constructor(private notificationService: PushNotificationsService, private cookieService: CookieService, private authService: AuthenticationService) {
+    constructor(private cookieService: CookieService, private authService: AuthenticationService) {
         this.cookieService.set('Test', 'HELLO WORLD!');
     }
 
@@ -32,11 +31,10 @@ export class OptionsComponent implements OnInit {
             'alertContent': 'Be wary, the light intensity level of Labfarm 123 is low!'
         });
 
-        this.notificationService.generateNotification(data);
     }
 
     toggleNotifications(event) {
-        this.notificationService.requestPermission();
+        
     }
 
     savePreferences() {
