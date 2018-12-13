@@ -22,3 +22,27 @@ C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\obj\Release\n
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.dll
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.pdb
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\WebAPI.deps.json
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\WebAPI.runtimeconfig.json
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\WebAPI.runtimeconfig.dev.json
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\WebAPI.dll
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\WebAPI.pdb
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\Models.dll
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\Repositories.dll
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\Services.dll
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\ViewModels.dll
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\Models.pdb
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\Repositories.pdb
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\Services.pdb
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\bin\Release\netcoreapp2.1\ViewModels.pdb
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.csprojAssemblyReference.cache
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.csproj.CoreCompileInputs.cache
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.RazorAssemblyInfo.cache
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.RazorAssemblyInfo.cs
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.AssemblyInfoInputs.cache
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.AssemblyInfo.cs
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.csproj.CopyComplete
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.dll
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\WebAPI\obj\Release\netcoreapp2.1\WebAPI.pdb

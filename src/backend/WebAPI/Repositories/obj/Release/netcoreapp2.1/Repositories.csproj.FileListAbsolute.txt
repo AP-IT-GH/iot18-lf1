@@ -12,3 +12,17 @@ C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Repositories\obj\Rel
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Repositories\obj\Release\netcoreapp2.1\Repositories.csproj.CopyComplete
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Repositories\obj\Release\netcoreapp2.1\Repositories.dll
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Repositories\obj\Release\netcoreapp2.1\Repositories.pdb
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\bin\Release\netcoreapp2.1\Repositories.deps.json
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\bin\Release\netcoreapp2.1\Repositories.runtimeconfig.json
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\bin\Release\netcoreapp2.1\Repositories.runtimeconfig.dev.json
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\bin\Release\netcoreapp2.1\Repositories.dll
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\bin\Release\netcoreapp2.1\Repositories.pdb
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\bin\Release\netcoreapp2.1\Models.dll
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\bin\Release\netcoreapp2.1\Models.pdb
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\obj\Release\netcoreapp2.1\Repositories.csprojAssemblyReference.cache
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\obj\Release\netcoreapp2.1\Repositories.csproj.CoreCompileInputs.cache
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\obj\Release\netcoreapp2.1\Repositories.AssemblyInfoInputs.cache
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\obj\Release\netcoreapp2.1\Repositories.AssemblyInfo.cs
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\obj\Release\netcoreapp2.1\Repositories.csproj.CopyComplete
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\obj\Release\netcoreapp2.1\Repositories.dll
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Repositories\obj\Release\netcoreapp2.1\Repositories.pdb
