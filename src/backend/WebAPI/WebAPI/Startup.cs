@@ -29,7 +29,7 @@ namespace WebAPI
             //****CHOOSE ONLY ONE CONNECTION STRING****//
 
             //**USE THIS FOR REMOTE CONNECTION**//
-            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnectionV3")));
 
             //**USE THIS FOR LOCAL CONNECTION**//
             //services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
@@ -38,7 +38,7 @@ namespace WebAPI
             // Automatically perform database migration
             services.BuildServiceProvider().GetService<CollectionContext>().Database.Migrate();
 
-            services.AddCors();
+            services.AddCors();           
             services.AddMvc();
 
             //dependency injection
@@ -71,8 +71,10 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            
+
             app.UseCors(builder =>
-                       builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                       builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());          
 
             app.UseMvc();
 
