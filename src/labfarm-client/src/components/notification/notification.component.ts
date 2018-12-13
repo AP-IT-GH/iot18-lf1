@@ -23,7 +23,10 @@ export class NotificationComponent implements OnInit {
 
     private remove() {
         this.loadingRemoval = true;
-        document.getElementById('notification' + this.notification.id).classList.add("disabled-notification");
+        let notificationElement = document.getElementById('notification' + this.notification.id);
+
+        if (notificationElement)
+            notificationElement.classList.add("disabled-notification");
 
         this.notificationService.remove(this.notification).subscribe(() => {
             this.popover.open();
@@ -31,7 +34,7 @@ export class NotificationComponent implements OnInit {
                 this.popover.open();
             });
         });
-       
+
     }
 
 
