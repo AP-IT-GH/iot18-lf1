@@ -1,84 +1,116 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { NotificationUrgency } from 'src/models/NotificationUrgency';
 import { Notification } from 'src/models/Notification';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { P } from '@angular/core/src/render3';
+import { NewNotification } from 'src/models/NewNotification';
 
 @Injectable({
     providedIn: 'root'
 })
-export class NotificationsService {
+export class NotificationsService implements OnInit {
 
     private notifications: Notification[] = [];
 
 
     constructor(private http: HttpClient, private auth: AuthenticationService) {
-        this.initDemoNotifications();
+        // this.initDemoNotifications();
+        this.getRealNotifications().subscribe(data => {
+            console.log(`Got ${data.length} notifications`);
+            this.notifications = data;
+            this.notifications = this.notifications.sort(this.notificationSort);
+        })
+    }
+
+    ngOnInit() {
+        console.log("Init")
+        
     }
 
     public initDemoNotifications() {
-        this.notifications.push({
-            id: 1,
-            authId: "admin",
-            title: "Notification 1 header",
-            body: "Notification with low urgency, we're adding some extra text to see what it looks like when this hits another line",
-            linkToUrl: "/home",
-            urgency: NotificationUrgency.Low
+        this.addNotification({
+            AuthId: "admin",
+            Title: "Notification 1 header",
+            Body: "Notification with low urgency, we're adding some extra text to see what it looks like when this expands to other lines",
+            LinkToUrl: "/home",
+            Urgency: NotificationUrgency.Low
+        }).subscribe(success => {
+            console.log(success);
+        }, error => {
+            console.log(error);
         });
-
-        this.notifications.push({
-            id: 2,
-            authId: "admin",
-            title: "Notification 2 header",
-            body: "Notification with normal urgency",
+        this.addNotification({
+            AuthId: "admin",
+            Title: "Notification 2 header",
+            Body: "Notification with normal urgency",
             // linkToUrl: "/home",
-            linkToUrl: null,
-            urgency: NotificationUrgency.Normal
+            LinkToUrl: null,
+            Urgency: NotificationUrgency.Normal
+        }).subscribe(success => {
+            console.log(success);
+        }, error => {
+            console.log(error);
         });
-
-        this.notifications.push({
-            id: 3,
-            authId: "admin",
-            title: "Notification 3 header",
-            body: "Notification with high urgency",
-            linkToUrl: "/home",
-            urgency: NotificationUrgency.High
+        this.addNotification({
+            AuthId: "admin",
+            Title: "Notification 3 header",
+            Body: "Notification with high urgency",
+            LinkToUrl: "/home",
+            Urgency: NotificationUrgency.High
+        }).subscribe(success => {
+            console.log(success);
+        }, error => {
+            console.log(error);
         });
-        this.notifications.push({
-            id: 4,
-            authId: "admin",
-            title: "Notification 4 header",
-            body: "Notification with extreme urgency",
+        this.addNotification({
+            AuthId: "admin",
+            Title: "Notification 4 header",
+            Body: "Notification with extreme urgency",
             //   linkToUrl: "/home",
-            linkToUrl: null,
-            urgency: NotificationUrgency.Extreme
+            LinkToUrl: null,
+            Urgency: NotificationUrgency.Extreme
+        }).subscribe(success => {
+            console.log(success);
+        }, error => {
+            console.log(error);
         });
-        // this.notifications.push({
-        //     id: 5,
-        //     authId: "admin",
-        //     title: "Notification 5 header",
-        //     body: "Notification with normal urgency",
-        //     linkToUrl: "/home",
-        //     // linkToUrl: null,
-        //     urgency: NotificationUrgency.Normal
-        // });
+        this.addNotification({
+            AuthId: "admin",
+            Title: "Notification 5 header",
+            Body: "Notification with extreme urgency",
+            //   linkToUrl: "/home",
+            LinkToUrl: null,
+            Urgency: NotificationUrgency.Extreme
+        }).subscribe(success => {
+            console.log(success);
+        }, error => {
+            console.log(error);
+        });
+        this.addNotification({
+            AuthId: "admin",
+            Title: "Notification 6 header",
+            Body: "Notification with normal urgency",
+            // linkToUrl: "/home",
+            LinkToUrl: null,
+            Urgency: NotificationUrgency.Normal
+        }).subscribe(success => {
+            console.log(success);
+        }, error => {
+            console.log(error);
+        });
 
-        // this.notifications.push({
-        //     id: 6,
-        //     authId: "admin",
-        //     title: "Notification 6 header",
-        //     body: "Notification with normal urgency",
-        //     // linkToUrl: "/home",
-        //     linkToUrl: null,
-        //     urgency: NotificationUrgency.Normal
-        // });
+        
     }
 
     public initNotifications() {
         this.notifications.forEach(n => {
-            this.addNotification(n);
+            this.addNotification(n).subscribe(success => {
+
+            }, error => {
+                console.log(error);
+            });
         })
     }
 
@@ -98,7 +130,7 @@ export class NotificationsService {
         return this.http.delete<boolean>(`/notification/${id}`);
     }
 
-    public addNotification(n: Notification): Observable<Notification> {
+    public addNotification(n: NewNotification): Observable<Notification> {
         console.log("Adding a new notification for user " + this.auth.getAuthId());
 
         return this.http.post<Notification>(`/notification`, n);
@@ -107,11 +139,22 @@ export class NotificationsService {
     public remove(notification: Notification): Observable<boolean> {
         console.log("Removing notification from the list");
 
-        let observable = this.deleteNotification(notification.id);
+        let observable = this.deleteNotification(notification.Id);
         observable.subscribe(data => {
             this.notifications.splice(this.notifications.indexOf(notification), 1);
         })
         return observable;
+    }
+
+    notificationSort(n1: Notification, n2: Notification): number {
+        // console.log("sorting")
+        if (n1.Urgency < n2.Urgency)
+            return -1;
+
+        if (n1.Urgency > n1.Urgency)
+            return 1;
+
+        return 0;
     }
 
 

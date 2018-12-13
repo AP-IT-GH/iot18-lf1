@@ -13,12 +13,12 @@
         <a routerLink="/options" routerLinkActive="active-link">Preferences</a>
         <a routerLink="/profile" routerLinkActive="active-link">Profile</a>
         <ng-template #notificationPopup>
-            <app-notification [notification]="notification" [popover]="p" *ngFor="let notification of notificationService.getNotifications()">Test</app-notification>
+            <app-notification [notification]="notification" [popover]="p" *ngFor="let notification of notificationService.notifications">Test</app-notification>
         </ng-template>
         <a class="notification-icon" placement="bottom" [ngbPopover]="notificationPopup" [autoClose]="'outside'" #p="ngbPopover" popoverTitle="Notifications" popoverClass="notification-popover">
             <i class="fa fa-bell" aria-hidden="true"></i>
             <span class="circle">
-                <i>{{notificationService.getNotifications().length}}</i>
+                <i>{{notificationService.notifications.length}}</i>
             </span>
         </a>
     </nav>

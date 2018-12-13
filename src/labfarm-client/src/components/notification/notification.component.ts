@@ -15,7 +15,8 @@ export class NotificationComponent implements OnInit {
 
     private loadingRemoval: boolean = false;
 
-    constructor(private notificationService: NotificationsService) { }
+    constructor(private notificationService: NotificationsService) { 
+    }
 
     ngOnInit() {
 
@@ -23,7 +24,7 @@ export class NotificationComponent implements OnInit {
 
     private remove() {
         this.loadingRemoval = true;
-        let notificationElement = document.getElementById('notification' + this.notification.id);
+        let notificationElement = document.getElementById('notification' + this.notification.Id);
 
         if (notificationElement)
             notificationElement.classList.add("disabled-notification");

@@ -11,6 +11,7 @@ export class LfNavbarComponent implements OnInit {
     constructor(private notificationService: NotificationsService) { }
 
     ngOnInit() {
+
     }
 
 }

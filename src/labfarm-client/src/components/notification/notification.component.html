@@ -1,4 +1,4 @@
-<div class="notification-container urgency{{notification.urgency}}" id="notification{{notification.id}}">
+<div class="notification-container urgency{{notification.urgency}}" id="notification{{notification.id}}" *ngIf="notification">
     <div class="content-block">
         <h6 class="notification-title">{{notification.title}}</h6>
         <i class="fa fa-close notification-close" aria-hidden="true" (click)="remove()"></i>
