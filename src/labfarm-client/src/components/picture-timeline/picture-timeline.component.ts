@@ -22,15 +22,14 @@ export class PictureTimelineComponent implements OnInit {
     private pageSize = 6;
     private pageCount = 1;
 
-    private ps = [1,2,3,4,5,6];
-
-    private date: Date = new Date();
+    private startDate: Date = new Date();
 
     settings = {
         bigBanner: true,
         timePicker: true,
         format: 'dd-MM-yyyy HH:mm',
-        defaultOpen: false
+        defaultOpen: false,
+        closeOnSelect: true
     }
 
 
@@ -41,7 +40,7 @@ export class PictureTimelineComponent implements OnInit {
     ngOnInit() {
         this.pictures = [];
 
-        this.date.setDate(this.date.getDate() - 1);
+        this.startDate.setDate(this.startDate.getDate() - 1);
         // this.date.setHours(0);
         // this.date.setMinutes(0);
 
@@ -63,7 +62,7 @@ export class PictureTimelineComponent implements OnInit {
         this.pictures = [];
         if (this.labfarm)
             this.labfarm.plants.forEach(plant => {
-                this.labfarmService.getPictures(plant.id, this.pictureCount, this.pageSize, this.pageCount).subscribe(data => {
+                this.labfarmService.getPictures(plant.id, this.startDate, this.pictureCount, this.pageSize, this.pageCount).subscribe(data => {
                     data.forEach(picture => {
                         this.pictures.push(picture);
                     });

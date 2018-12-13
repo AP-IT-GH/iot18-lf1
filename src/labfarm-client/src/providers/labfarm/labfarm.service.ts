@@ -63,14 +63,13 @@ export class LabfarmService {
         return this.http.delete<Boolean>(`/labfarm/${labfarmId}`);
     }
 
-    getPictures(plantId: number, pictureCount: number, pageSize: number, pageCount: number): Observable<Picture[]> {
+    getPictures(plantId: number, startDate: Date, pictureCount: number, pageSize: number, pageCount: number): Observable<Picture[]> {
         console.log(`Getting ${pictureCount} pictures of plant ${plantId}`);
 
-        let startDate = new Date();
-        startDate.setDate(15);
-        startDate.setMonth(11);
-        startDate.setHours(0);
-        let queryString = `/plant/${plantId}/pictures?startDate=${startDate.getTime()}&hours=${pictureCount}&page=${pageCount}&pageSize=${pageSize}`;
+        let tempDate = new Date(startDate);
+
+        let queryString = `/plant/${plantId}/pictures?startDate=${tempDate.getTime()}&hours=${pictureCount}&page=${pageCount}&pageSize=${pageSize}`;
+        // let queryString = `/plant/${plantId}/pictures?skip=${pageCount - 1}&take=${pageSize}`;
 
         console.log(queryString);
 

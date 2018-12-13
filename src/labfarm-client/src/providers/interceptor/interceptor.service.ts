@@ -7,7 +7,7 @@ export class InterceptorService implements HttpInterceptor {
 
     private apiVersion = '1.1';
     // private baseUrl = "http://labfarmwebapp.azurewebsites.net/api/v1";
-    private baseUrl = "http://labfarm-iot-hub-v3.azurewebsites.net/api/v1";
+    private baseUrl = "http://labfarm-iot-hub-v4.azurewebsites.net/api/v1";
 
     constructor(
     ) { }
