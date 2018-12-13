@@ -13,6 +13,8 @@ export class NotificationComponent implements OnInit {
     @Input() notification: Notification;
     @Input() popover: NgbPopover;
 
+    private loadingRemoval: boolean = false;
+
     constructor(private notificationService: NotificationsService) { }
 
     ngOnInit() {
@@ -20,11 +22,16 @@ export class NotificationComponent implements OnInit {
     }
 
     private remove() {
-        this.notificationService.remove(this.notification);
-        this.popover.open();
-        setTimeout(() => {
+        this.loadingRemoval = true;
+        document.getElementById('notification' + this.notification.id).classList.add("disabled-notification");
+
+        this.notificationService.remove(this.notification).subscribe(() => {
             this.popover.open();
+            setTimeout(() => {
+                this.popover.open();
+            });
         });
+       
     }
 
 

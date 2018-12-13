@@ -4,6 +4,7 @@ import { Notification } from 'src/models/Notification';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthenticationService } from '../authentication/authentication.service';
+import { P } from '@angular/core/src/render3';
 
 @Injectable({
     providedIn: 'root'
@@ -22,7 +23,7 @@ export class NotificationsService {
             id: 1,
             authId: "admin",
             title: "Notification 1 header",
-            body: "Notification with low urgency",
+            body: "Notification with low urgency, we're adding some extra text to see what it looks like when this hits another line",
             linkToUrl: "/home",
             urgency: NotificationUrgency.Low
         });
@@ -76,7 +77,9 @@ export class NotificationsService {
     }
 
     public initNotifications() {
-
+        this.notifications.forEach(n => {
+            this.addNotification(n);
+        })
     }
 
     public getNotifications(): Notification[] {
@@ -89,15 +92,26 @@ export class NotificationsService {
         return this.http.get<Notification[]>(`/notification/${this.auth.getAuthId()}`);
     }
 
-    public deleteNotification(id: number): Observable<boolean>{
+    public deleteNotification(id: number): Observable<boolean> {
         console.log("Deleting notification with ID: " + id);
 
         return this.http.delete<boolean>(`/notification/${id}`);
     }
 
-    public remove(notification: Notification): boolean {
-        this.notifications.splice(this.notifications.indexOf(notification), 1);
-        return true;
+    public addNotification(n: Notification): Observable<Notification> {
+        console.log("Adding a new notification for user " + this.auth.getAuthId());
+
+        return this.http.post<Notification>(`/notification`, n);
+    }
+
+    public remove(notification: Notification): Observable<boolean> {
+        console.log("Removing notification from the list");
+
+        let observable = this.deleteNotification(notification.id);
+        observable.subscribe(data => {
+            this.notifications.splice(this.notifications.indexOf(notification), 1);
+        })
+        return observable;
     }
 
 

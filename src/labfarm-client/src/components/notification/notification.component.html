@@ -7,4 +7,7 @@
         <p class="notification-body">{{notification.body}}</p>
         <a class="notification-link" routerLink="{{notification.linkToUrl}}" *ngIf="notification.linkToUrl" (click)="popover.close()">Show me</a>
     </div>
+    <span class="removal-loading" *ngIf="loadingRemoval">
+        <img src="../../assets/images/loading.gif">
+    </span>
 </div>

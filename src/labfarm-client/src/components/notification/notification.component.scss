@@ -32,13 +32,18 @@
          }
     }
 
-    
-
-
     .notification-body {
         // display: inline-block;
         
     }
+}
+
+.disabled-notification {
+    opacity: 0.5;
+}
+.disabled-notification:hover {
+    margin: 0 -0.75rem !important;
+    border-radius: 0 !important;
 }
 
 .notification-container:hover {
@@ -48,6 +53,18 @@
     -moz-box-shadow: 7px 6px 31px -12px rgba(0,0,0,0.5);
     box-shadow: 7px 6px 31px -12px rgba(0,0,0,0.5);
 
+}
+
+.removal-loading {
+    position: fixed;
+    width: 400px;
+    margin-left: -18px;
+    margin-top: -80px;
+
+    img {
+        height: 80px;
+        margin-left: calc(50% - 40px);
+    }
 }
 
 .urgency1 {
