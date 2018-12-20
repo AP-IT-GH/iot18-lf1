@@ -28,6 +28,8 @@ http://www.schmalzhaus.com/EasyDriver/Examples/EasyDriverExamples.html
 //Declare variables for functions
 byte I2c_address;
 
+int received;
+
 void setup() {
   pinMode(stp, OUTPUT);
   pinMode(dir, OUTPUT);
@@ -49,13 +51,19 @@ void setup() {
 
 //Main loop
 void loop() {
-
+if(1 < Wire.available()(
+receiveEvent(1);
+MoveInCm(received);
+received = 0;
 }
-void receiveEvent(int howMany) {
-  while (1 < Wire.available()) { 
+}
+void receiveEvent(int howmany ) {
+  /* while (1 < Wire.available()) { 
     char c = Wire.read(); // receive byte as a character
     Serial.print(c);         
-  }      
+  }*/
+  received = Wire.read();    // receive byte as an integer
+  Serial.println(x);
 }
 
 // dir = 1 => forward
