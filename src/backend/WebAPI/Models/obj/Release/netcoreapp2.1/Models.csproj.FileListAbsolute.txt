@@ -9,3 +9,14 @@ C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Models\obj\Release\n
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Models\obj\Release\netcoreapp2.1\Models.AssemblyInfo.cs
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Models\obj\Release\netcoreapp2.1\Models.dll
 C:\Users\joris\school\2019\IoT\iot18-lf1\src\backend\WebAPI\Models\obj\Release\netcoreapp2.1\Models.pdb
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Models\bin\Release\netcoreapp2.1\Models.deps.json
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Models\bin\Release\netcoreapp2.1\Models.runtimeconfig.json
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Models\bin\Release\netcoreapp2.1\Models.runtimeconfig.dev.json
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Models\bin\Release\netcoreapp2.1\Models.dll
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Models\bin\Release\netcoreapp2.1\Models.pdb
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Models\obj\Release\netcoreapp2.1\Models.csprojAssemblyReference.cache
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Models\obj\Release\netcoreapp2.1\Models.csproj.CoreCompileInputs.cache
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Models\obj\Release\netcoreapp2.1\Models.AssemblyInfoInputs.cache
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Models\obj\Release\netcoreapp2.1\Models.AssemblyInfo.cs
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Models\obj\Release\netcoreapp2.1\Models.dll
+C:\Users\denny\Desktop\Internet of Things\iot1819--iot18lf1\src\backend\WebAPI\Models\obj\Release\netcoreapp2.1\Models.pdb
