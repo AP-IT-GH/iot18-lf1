@@ -89,6 +89,8 @@ Updates betreffende de camera zal u in deze map kunnen vinden:
 
 ### Online Platform 
 
+Labfarm online Angular web app op Azure: https://labfarm.azurewebsites.net
+
 Natuurlijk maken we, voor ons project, ook gebruik van een online platform. Belangrijke informatie kan u vinden via volgende link:
 
 * [Online Platform](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/labfarm-client)
