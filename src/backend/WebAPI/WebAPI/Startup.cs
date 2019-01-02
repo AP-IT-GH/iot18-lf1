@@ -25,7 +25,7 @@ namespace WebAPI {
             //****CHOOSE ONLY ONE CONNECTION STRING****//
 
             //**USE THIS FOR REMOTE CONNECTION**//
-            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnectionV3")));
+            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnectionV7")));
 
             //**USE THIS FOR LOCAL CONNECTION**//
             //services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
