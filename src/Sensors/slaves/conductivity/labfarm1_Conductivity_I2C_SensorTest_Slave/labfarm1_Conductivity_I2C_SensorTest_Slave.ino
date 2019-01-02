@@ -3,7 +3,7 @@
 byte own_address = 0x12;
 
 //Global Sensor
-int sensorPin = A2; 
+int sensorPin = PB1; 
 float sensorValue = 0; 
 
 void setup() 

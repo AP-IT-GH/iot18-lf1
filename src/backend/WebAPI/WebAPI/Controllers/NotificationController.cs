@@ -5,9 +5,10 @@ using Services;
 using Models;
 
 
-namespace WebAPI.Controllers {
+namespace WebAPI {
 
-    public class NotificationController {
+    [Route("api/v1/notification")]
+    public class NotificationController : Controller {
 
         private NotificationService _service;
 
