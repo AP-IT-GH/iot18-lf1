@@ -1,28 +1,25 @@
 using Microsoft.EntityFrameworkCore;
 using Models;
 
-namespace Repositories
-{
-    public class CollectionContext : DbContext
-    {
+namespace Repositories {
+    public class CollectionContext : DbContext {
         public CollectionContext(DbContextOptions<CollectionContext> options)
-            : base(options)
-        {
+            : base(options) {
 
         }
         //add database tables
-       
-        public DbSet<LabFarm> LabFarms {get; set;}
-        public DbSet<Sensor> Sensors {get; set;}
-        public DbSet<SensorType> SensorTypes {get; set;}
+
+        public DbSet<LabFarm> LabFarms { get; set; }
+        public DbSet<Sensor> Sensors { get; set; }
+        public DbSet<SensorType> SensorTypes { get; set; }
         public DbSet<SensorData> SensorValues { get; set; }
         public DbSet<Picture> Pictures { get; set; }
         public DbSet<Plant> Plants { get; set; }
         public DbSet<PlantDataSet> DataSets { get; set; }
         public DbSet<Configuration> Configurations { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
+        protected override void OnModelCreating(ModelBuilder modelBuilder) {
             // configure one-to-many relationship
             modelBuilder.Entity<Picture>()
                 .HasOne(s => s.Plant)

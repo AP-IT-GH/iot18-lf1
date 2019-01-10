@@ -12,24 +12,20 @@ using Models;
 using Repositories;
 using Services;
 
-namespace WebAPI
-{
-    public class Startup
-    {
-        public Startup(IConfiguration configuration)
-        {
+namespace WebAPI {
+    public class Startup {
+        public Startup(IConfiguration configuration) {
             Configuration = configuration;
         }
         public IConfiguration Configuration { get; }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
-        {
+        public void ConfigureServices(IServiceCollection services) {
 
             //****CHOOSE ONLY ONE CONNECTION STRING****//
 
             //**USE THIS FOR REMOTE CONNECTION**//
-            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnectionV3")));
+            services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyDbConnectionV7")));
 
             //**USE THIS FOR LOCAL CONNECTION**//
             //services.AddDbContext<CollectionContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LocalConnection")));
@@ -38,7 +34,7 @@ namespace WebAPI
             // Automatically perform database migration
             services.BuildServiceProvider().GetService<CollectionContext>().Database.Migrate();
 
-            services.AddCors();           
+            services.AddCors();
             services.AddMvc();
 
             //dependency injection
@@ -50,6 +46,7 @@ namespace WebAPI
             services.AddScoped<SensorTypeRepository>();
             services.AddScoped<DataSetRepository>();
             services.AddScoped<ConfigurationRepository>();
+            services.AddScoped<NotificationRepository>();
 
             services.AddScoped<PlantService>();
             services.AddScoped<SensorService>();
@@ -60,21 +57,20 @@ namespace WebAPI
             services.AddScoped<PlantRepository>();
             services.AddScoped<DataSetService>();
             services.AddScoped<ConfigurationService>();
+            services.AddScoped<NotificationService>();
         }
 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, CollectionContext collectionContext)
-        {
-            if (env.IsDevelopment())
-            {
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, CollectionContext collectionContext) {
+            if (env.IsDevelopment()) {
                 app.UseDeveloperExceptionPage();
             }
 
-            
+
 
             app.UseCors(builder =>
-                       builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());          
+                       builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseMvc();
 
