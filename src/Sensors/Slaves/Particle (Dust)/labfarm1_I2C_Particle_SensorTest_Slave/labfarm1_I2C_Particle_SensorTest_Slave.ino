@@ -11,7 +11,7 @@ unsigned long lowPulseOccupancy = 0;
 float ratio = 0;
 float concentration = 0;
 
-int sensorPin = A2; 
+int sensorPin = PB1; 
 
 void setup() 
 {
