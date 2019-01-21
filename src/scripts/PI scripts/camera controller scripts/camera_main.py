@@ -7,7 +7,7 @@ import base64
 import requests
 import os
 import RPi.GPIO as GPIO
-from pictureconfig import *
+from camera_config import *
 
 #setup camera
 camera = PiCamera()
