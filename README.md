@@ -113,4 +113,14 @@ Deze gebruiken hetzelfde design, alleen was er bij de tweede presentatie meer du
 * [Finale Presentatie](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/presentations/Leave_It_Final.pptx)
 
 
+### Extra Documentatie
+
+* [Plantherkenning](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/camera%20analyses)
+
+* [Voordelen van Azure IoT Hub](https://azure.microsoft.com/en-us/blog/benefits-of-using-the-azure-iot-sdks-in-your-azure-iot-solution/)
+Deze bron legt uit wat de voordelen zijn van het gebruiken van de SDKs in IoT Hub.
+
+* [Azure Deployment Walkthrough]() Coming soon! Deze zal Denny Matthijs nog zo snel mogelijk maken na de presentatie. Zo kan een eventuele volgende groep die gebruik maakt van IoT Hub toch al wat hulp krijgen. 
+
+
 
