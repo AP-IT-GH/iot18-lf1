@@ -37,6 +37,7 @@
     "ng-pick-datetime": "^6.0.16",
     "ngx-cookie-service": "^1.0.10",
     "ngx-gallery": "^5.9.0",
+    "ngx-toastr": "^9.1.1",
     "ngx-toggle-switch": "^2.0.5",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"

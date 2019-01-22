@@ -9,7 +9,7 @@ export class AuthenticationService {
         clientID: 'PECk3b50RvqOmI67NRkI017KaJ2pVfPp',
         domain: 'melvinb.eu.auth0.com',
         responseType: 'token id_token',
-        redirectUri: 'http://localhost:4200/callback',
+        redirectUri: 'https://labfarm.azurewebsites.net/callback',
         scope: 'openid'
     });
 

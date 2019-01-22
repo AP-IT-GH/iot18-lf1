@@ -7,6 +7,20 @@
 
 @import "~ng-pick-datetime/assets/style/picker.min.css";
 
+// regular style toast 
+@import '~ngx-toastr/toastr.css';
+ 
+// bootstrap style toast 
+// or import a bootstrap 4 alert styled design (SASS ONLY) 
+// should be after your bootstrap imports, it uses bs4 variables, mixins, functions 
+@import '~ngx-toastr/toastr-bs4-alert';
+ 
+// if you'd like to use it without importing all of bootstrap it requires 
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~ngx-toastr/toastr-bs4-alert';
+
 
 .mat-accent .mat-slider-thumb, .mat-accent .mat-slider-thumb-label, .mat-accent .mat-slider-track-fill {
     background-color: #45C48B !important;
@@ -90,5 +104,16 @@
         color: #343a40;
         padding: 0.75rem !important;
         text-align: center;
+    }
+}
+
+.toast-container {
+    top: 25px !important;
+
+    .toast-title{
+        color: #343a40;
+    }
+    .toast-message{
+        color: #343a40;
     }
 }

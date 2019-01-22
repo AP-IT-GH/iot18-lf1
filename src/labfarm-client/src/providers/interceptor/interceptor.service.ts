@@ -7,7 +7,7 @@ export class InterceptorService implements HttpInterceptor {
 
     private apiVersion = '1.1';
     // private baseUrl = "http://labfarmwebapp.azurewebsites.net/api/v1";
-    private baseUrl = "http://labfarm-iot-hub-v4.azurewebsites.net/api/v1";
+    private baseUrl = "https://labfarm-iot.azurewebsites.net/api/v1";
 
     constructor(
     ) { }
@@ -18,7 +18,9 @@ export class InterceptorService implements HttpInterceptor {
             'Access-Control-Allow-Origin': '*'
         });
 
-        request = request.clone({ url: `${this.baseUrl}${request.url}`, headers: headers });
+        if(!request.url.includes("/assets/"))
+            request = request.clone({ url: `${this.baseUrl}${request.url}`, headers: headers });
+
         return next.handle(request);
     }
 }

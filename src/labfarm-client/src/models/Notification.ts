@@ -1,7 +1,7 @@
 import { NotificationUrgency } from "./NotificationUrgency";
 
 export interface Notification {
-    Id: number,
+    id: number,
     AuthId: string,
     Title: string,
     Body: string,

@@ -7,20 +7,10 @@
         <div class="card-body">
             <div>
                 <span>
-                    <h5 class="card-title">Lab Farm #123</h5>
+                    <h5 class="card-title">Labfarm notifications</h5>
                     <p class="card-text">
-                        <ui-switch [(ngModel)]="preferences_lf123" (change)="toggleNotifications($event)" size="small"></ui-switch>
-                        <a>Notify me when something is wrong</a>
-                    </p>
-                </span>
-            </div>
-
-            <div>
-                <span>
-                    <h5 class="card-title">Lab Farm #124</h5>
-                    <p class="card-text">
-                        <ui-switch [(ngModel)]="preferences_lf124" (change)="toggleNotifications($event)" size="small"></ui-switch>
-                        <a>Notify me when something is wrong</a>
+                        <ui-switch [(ngModel)]="preferences" (change)="toggleNotifications($event)" size="small"></ui-switch>
+                        <a>Send me notifications when there's something happening with my labfarms</a>
                     </p>
                 </span>
             </div>

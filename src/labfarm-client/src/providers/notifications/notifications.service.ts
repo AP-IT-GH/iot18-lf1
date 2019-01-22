@@ -6,27 +6,30 @@ import { Observable } from 'rxjs';
 import { AuthenticationService } from '../authentication/authentication.service';
 import { P } from '@angular/core/src/render3';
 import { NewNotification } from 'src/models/NewNotification';
+import { environment } from 'src/environments/environment';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
     providedIn: 'root'
 })
-export class NotificationsService implements OnInit {
+export class NotificationsService  {
 
     private notifications: Notification[] = [];
 
+    public notificationsToggled: boolean = true;
 
-    constructor(private http: HttpClient, private auth: AuthenticationService) {
+
+    constructor(private http: HttpClient, private auth: AuthenticationService, private cookieService: CookieService) {
         // this.initDemoNotifications();
-        this.getRealNotifications().subscribe(data => {
-            console.log(`Got ${data.length} notifications`);
-            this.notifications = data;
-            this.notifications = this.notifications.sort(this.notificationSort);
-        })
+        this.checkForPreferences();
     }
 
-    ngOnInit() {
-        console.log("Init")
-        
+    public checkForPreferences() {
+        this.notificationsToggled =  JSON.parse(this.cookieService.get('receiveNotifications'));
+
+        if(this.notificationsToggled)
+            this.checkForNotifications();
+
     }
 
     public initDemoNotifications() {
@@ -114,6 +117,14 @@ export class NotificationsService implements OnInit {
         })
     }
 
+    public checkForNotifications() {
+        this.getRealNotifications().subscribe(data => {
+            console.log(`Got ${data.length} notifications`);
+            this.notifications = data;
+            this.notifications = this.notifications.sort(this.notificationSort);
+        })
+    }
+
     public getNotifications(): Notification[] {
         return this.notifications;
     }
@@ -126,7 +137,7 @@ export class NotificationsService implements OnInit {
 
     public deleteNotification(id: number): Observable<boolean> {
         console.log("Deleting notification with ID: " + id);
-
+        
         return this.http.delete<boolean>(`/notification/${id}`);
     }
 
@@ -138,12 +149,9 @@ export class NotificationsService implements OnInit {
 
     public remove(notification: Notification): Observable<boolean> {
         console.log("Removing notification from the list");
-
-        let observable = this.deleteNotification(notification.Id);
-        observable.subscribe(data => {
-            this.notifications.splice(this.notifications.indexOf(notification), 1);
-        })
-        return observable;
+        console.log(notification);
+        this.notifications.splice(this.notifications.indexOf(notification), 1);
+        return this.deleteNotification(notification.id);
     }
 
     notificationSort(n1: Notification, n2: Notification): number {

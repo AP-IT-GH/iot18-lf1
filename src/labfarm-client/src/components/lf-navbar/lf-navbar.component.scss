@@ -25,6 +25,20 @@
         float: left;
         margin-right: 10%;
 
+        h6 {
+            width: 80%;
+            margin-left: 10%;
+            text-align: center;
+
+            span {
+                color: #007bff;
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+
         a {
             padding: 14px 24px;
             color: #e7e7e7;

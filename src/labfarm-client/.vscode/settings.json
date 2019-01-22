@@ -1,3 +1,5 @@
 {
-    "editor.detectIndentation": false
+    "editor.detectIndentation": false,
+    "appService.defaultWebAppToDeploy": "/subscriptions/c88116be-db35-4ed2-94d3-29121660f1aa/resourceGroups/labfarm/providers/Microsoft.Web/sites/labfarm",
+    "appService.deploySubpath": "dist/labfarm-client"
 }

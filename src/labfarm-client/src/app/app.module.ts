@@ -14,12 +14,14 @@ import { NgModule } from '@angular/core';
 /* 3RD PARTY LIBRARIES */
 import { UiSwitchModule } from 'ngx-toggle-switch';
 import { CookieService } from 'ngx-cookie-service';
+import { ToastrModule } from 'ngx-toastr';
 import { AppComponent } from './app.component';
 import 'hammerjs';
 
 /* SERVICES */
 import { AuthenticationService } from 'src/providers/authentication/authentication.service';
 import { NotificationsService } from 'src/providers/notifications/notifications.service';
+import { LabfarmConfigService } from 'src/providers/labfarm-config/labfarm-config.service';
 import { InterceptorService } from 'src/providers/interceptor/interceptor.service';
 import { LabfarmService } from 'src/providers/labfarm/labfarm.service';
 
@@ -45,6 +47,7 @@ import { OptionsComponent } from '../pages/options/options.component';
 import { ProfileComponent } from '../pages/profile/profile.component';
 import { HomeComponent } from '../pages/home/home.component';
 import { FarmComponent } from '../pages/farm/farm.component';
+
 
 
 
@@ -105,6 +108,7 @@ import { FarmComponent } from '../pages/farm/farm.component';
         OwlDateTimeModule,
         OwlNativeDateTimeModule,
         AngularDateTimePickerModule,
+        ToastrModule.forRoot() // ToastrModule added
     ],
     providers: [
         LabfarmService,
@@ -112,6 +116,7 @@ import { FarmComponent } from '../pages/farm/farm.component';
         AuthenticationService,
         NotificationsService,
         InterceptorService,
+        LabfarmConfigService,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: InterceptorService,

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthenticationService } from 'src/providers/authentication/authentication.service';
+import { LabfarmConfigService } from 'src/providers/labfarm-config/labfarm-config.service';
+import { environment } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     selector: 'app-options',
@@ -11,26 +14,18 @@ export class OptionsComponent implements OnInit {
 
     private notificationTitle: string = "Browser Push Notifications!";
 
-    private preferences_lf123: boolean = false;
-    private preferences_lf124: boolean = false;
-
     private cookieValue = "UNKNOWN";
 
-    constructor(private cookieService: CookieService, private authService: AuthenticationService) {
-        this.cookieService.set('Test', 'HELLO WORLD!');
+    private preferences: boolean;
+
+    constructor(private cookieService: CookieService, private authService: AuthenticationService, private toastr: ToastrService) {
     }
 
     ngOnInit() {
-        this.cookieValue = this.cookieService.get('Test');
-    }
+        let preferencesCookie = this.cookieService.get('receiveNotifications');
 
-    notify() {
-        let data: Array<any> = [];
-        data.push({
-            'title': 'Lab farm warning!',
-            'alertContent': 'Be wary, the light intensity level of Labfarm 123 is low!'
-        });
-
+        if (preferencesCookie)
+            this.preferences = JSON.parse(preferencesCookie);
     }
 
     toggleNotifications(event) {
@@ -38,7 +33,12 @@ export class OptionsComponent implements OnInit {
     }
 
     savePreferences() {
-        this.notify();
+        this.cookieService.set('receiveNotifications', "" + this.preferences);
+        this.toastr.success('Successfully saved preferences', 'Success!', {
+            easeTime: 300,
+            positionClass: 'toast-top-center',
+            // disableTimeOut: true
+        });
     }
 
 }
