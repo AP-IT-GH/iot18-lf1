@@ -12,7 +12,9 @@ After some testing and playing around with the API we found out the service prov
 
 #### Idea #2:
 After realising that popular Computer vision API solutions don't give us what we needed we had to dig deeper. We found a tool called [PlantCV](https://plantcv.danforthcenter.org/) which builds upon [OpenCV](https://opencv.org/). From the site "PlantCV is an imaging processing package specific for plants that is built upon open-source software platforms OpenCV, NumPy, and MatPlotLib". 
-[img](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/img/PlantCV1.JPG)
+
+![img](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/img/PlantCV1.JPG)
+
 One possible issue here was the following: "The initial releases of PlantCV have been designed for processing images from visible spectrum cameras **('VIS')**, near-infrared cameras **('NIR')**, and excitation imaging fluorometers". However we did not own any of these and we would be taking the pictures with a normal PiCam as discussed above. With some more reading we found out it wouldn't be that big of an issue for the things we wanted to do with it, so we continued and tried installing it.
 Now the installation process is where the second problem occured. PlantCV isn't an API like Azure's Computer Vision API so the software has to run somewhere else. In our project we use 2 Raspberry Pi's, one as a central controller for our entire 'Leave-It', and the other one for taking pictures with the PiCam. Our idea was to let the software run on the Raspberry Pi used for taking pictures since it didn't do anything other than that. This would be a great idea since the Pi's processing power wasn't used anyways. But after hours and hours of trying to find compatible versions for each of the software libraries used we just didn't manage to get through all of the build errors.
 So we decided to stop investing any more time into it because we had still plenty of other things to do. 
@@ -20,7 +22,9 @@ In conclusion I wouldn't reccomend trying this out unless you are very experienc
 
 #### Idea #3
 The last thing we tried was writing our own Python script using OpenCV.
-[img](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/img/OpenCV1.JPG)
+
+![img](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/img/OpenCV1.JPG)
+
 Although the script above doesn't directly measure the growth of a plant, it does analyse **colors**. Our idea here was to measure a plant's growth with the amount of color inside an image. We made a solid white background for our plants with the PiCam set up in a way it would only see the plant and the background. The script will filter out a range of colors. Obviously we let it filter out the white. 
 But the process only succeeded with very abstract colors only and it never processed any of the pictures taken with our own PiCam.
 
