@@ -9,21 +9,21 @@ Melvin Boetsgezel
 
 ## Teamrollen
 
-2 Personen Conditionering : Wouter & Denny
+**2 Personen Conditionering : Wouter & Denny**
 * Sensoren: conductiviteit, temperatuur + omgevingstemperatuur, omgevingslicht en fijnstofsensor 
 * Data verstuurd naar database (master programma, Azure IoT Hub)
 * Zorgen voor juiste sensor data 
 * Initieel ontwerp dataset
 * Plantherkenning analyse & software
 
-1 Persoon beeldherkenning: Joris
+**1 Persoon beeldherkenning: Joris**
 * Programma voor het trekken van foto’s van een plant en versturen naar database
 * Centraal programma (samenhang van het project)
 * Backend
 * Verder ontwerp van dataset en model
   
     
-2 Personen Plant Robot: Robbe & Steven
+**2 Personen Plant Robot: Robbe & Steven**
 * Toevoer water, stroom, voedingsstoffen
 * Hardware connecties sensoren
 * PCB-ontwerp
@@ -31,7 +31,7 @@ Melvin Boetsgezel
 * Transformator / Optocoupler oplossing
 * Vermogenlijst
 
-1 Persoon PM / Web development: Melvin
+**1 Persoon PM / Web development: Melvin**
 * Volledig Web Dashboard (proces, notificaties, …)
 * Project management
 
@@ -106,5 +106,11 @@ De presentaties kan u hier terugvinden:
 * [Presentatie 1 & 2](https://prezi.com/view/gqtpL6frQNvXV23dgvv2) 
 Deze gebruiken hetzelfde design, alleen was er bij de tweede presentatie meer duidelijkheid over wat we allemaal gingen gebruiken. Het is daaraan ook aangepast. Onze excuses voor geen kopie te nemen van de eerste presentatie apart.
 
-* [Presentatie 3]() Komt er aan wanneer we de presentatie gegeven hebben. No spoilers! 
+* [Presentatie 3](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/presentations/Leave_It_v3.pptx)
+
+* [Presentatie 4](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/presentations/Leave_It_v4.pptx)
+
+* [Finale Presentatie](https://github.com/AP-Elektronica-ICT/iot18-LF1/blob/master/doc/presentations/Leave_It_Final.pptx)
+
+
 
