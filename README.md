@@ -9,27 +9,31 @@ Melvin Boetsgezel
 
 ## Teamrollen
 
-2 Personen Conditioning : Wouter & Denny  
-* Sensoren: Vochtigheidsgraad, temperatuur, pH-Waarde v/d grond + omgevingstemperatuur, omgevingslicht,  
-* Data verstuurd naar database  
-* Zorgen voor juiste sensor data  
-* Ontwerp Dataset/backend web  
+2 Personen Conditionering : Wouter & Denny
+* Sensoren: conductiviteit, temperatuur + omgevingstemperatuur, omgevingslicht en fijnstofsensor 
+* Data verstuurd naar database (master programma, Azure IoT Hub)
+* Zorgen voor juiste sensor data 
+* Initieel ontwerp dataset
+* Plantherkenning analyse & software
 
 1 Persoon beeldherkenning: Joris
-* Foto’s trekken van plant en versturen naar database  
-* Herkennen welke plant in de bak zit  
-* Plant analyseren a.d.h.v. getrokken foto’s  
+* Programma voor het trekken van foto’s van een plant en versturen naar database
+* Centraal programma (samenhang van het project)
+* Backend
+* Verder ontwerp van dataset en model
+  
     
 2 Personen Plant Robot: Robbe & Steven
-* Toevoer water, stroom, voedingsstoffen  
-* Hardware connecties sensoren  
-* PCB-ontwerp  
-* Design plantenbak  
-    
-1 Persoon Project Manager/Web development: Melvin  
-* Frontend web  
-* Project management  
+* Toevoer water, stroom, voedingsstoffen
+* Hardware connecties sensoren
+* PCB-ontwerp
+* Design plantenbak
+* Transformator / Optocoupler oplossing
+* Vermogenlijst
 
+1 Persoon PM / Web development: Melvin
+* Volledig Web Dashboard (proces, notificaties, …)
+* Project management
 
 ## Documentatie
 
@@ -75,7 +79,7 @@ Voor het verkrijgen van de data vanuit de sensoren gebruiken we een Raspberry Pi
 
 Meer informatie over de hardware alsook de elektrische schema's kan u vinden via volgende links:
 
-* [Hardware tekeningen](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/doc/Drawings)
+* [Hardware tekeningen](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/Drawings)
 
 * [Elektrische schema's](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/Electrical%20Designs)
 
@@ -83,13 +87,13 @@ Meer informatie over de hardware alsook de elektrische schema's kan u vinden via
 
 ### Camera
 
-Updates betreffende de camera zal u in deze map kunnen vinden:
+Updates betreffende de scripts van de camera zal u in deze map kunnen vinden:
 
-* [Camera](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/cameras)
+* [Camera](https://github.com/AP-Elektronica-ICT/iot18-LF1/tree/master/src/scripts/PI%20scripts/camera%20controller%20scripts)
 
 ### Online Platform 
 
-Labfarm online Angular web app op Azure: https://labfarm.azurewebsites.net
+Labfarm online Angular web app op Azure: https://labfarm-iot.azurewebsites.net
 
 Natuurlijk maken we, voor ons project, ook gebruik van een online platform. Belangrijke informatie kan u vinden via volgende link:
 
