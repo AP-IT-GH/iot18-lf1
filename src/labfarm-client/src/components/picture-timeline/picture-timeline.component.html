@@ -1,0 +1,33 @@
+<div class="modal-container">
+    <div class="modal-head">
+        <div class="filter-content">
+            <p>I want to see plant pictures of my labfarm from </p>
+
+            <angular2-date-picker [(ngModel)]="startDate" [settings]="settings"></angular2-date-picker>
+
+            <p> for the next </p>
+
+            <input type="number" [(ngModel)]="pictureCount" placeholder="24">
+
+            <p> hours</p>
+        </div>
+
+        <input type="button" class="btn btn-light " (click)="loadPictures()" value="Load pictures">
+    </div>
+    <hr class="modal-hr">
+    <div class="modal-body">
+        <app-picture-thumbnail [picture]="picture" *ngFor="let picture of pictures">
+
+        </app-picture-thumbnail>
+        <app-loading *ngIf="!pictures">
+
+        </app-loading>
+    </div>
+    <hr class="modal-hr">
+    <div class="modal-foot">
+        <p class="results">Total results: {{pictures.length}}</p>
+        <input type="button" value="<" class="btn" id="btnPrev" (click)="previousPage()">
+        <p>Page {{pageCount}} of {{maxPages}}</p>
+        <input type="button" value=">" class="btn" id="btnNext" (click)="nextPage()">
+    </div>
+</div>

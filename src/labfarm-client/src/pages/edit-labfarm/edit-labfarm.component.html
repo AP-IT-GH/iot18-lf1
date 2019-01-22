@@ -1,0 +1,142 @@
+<div class="edit-labfarm-container" *ngIf="labfarm && !savingLabfarm">
+    <div class="edit-labfarm-content">
+        <div class="card">
+            <div class="card-header bg-dark text-light">
+                <a>Edit lab farm</a>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <div class="alert alert-danger" *ngIf="inputError">
+                        <strong>Warning</strong> The input you have submitted isn't quite right. Every field is
+                        required, <strong>Lab farm name</strong> and <strong>Plant species</strong> require a minimum
+                        length of <strong>4 characters</strong>.
+                    </div>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label>Lab farm name</label>
+                        <input type="text" class="form-control" id="inputLabfarmName" name="name" placeholder="My labfarm"
+                            [(ngModel)]="labfarm.name" required minlength="4">
+                    </div>
+                    <div class="form-group">
+                        <label>Plant species</label>
+                        <input type="text" class="form-control" id="inputPlantSpecies" name="plantSpecies" placeholder="Cucumber"
+                            [(ngModel)]="labfarm.plantSpecies" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Dust levels</label>
+                        <div class="row">
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputDustLevelMin" name="dustLow"
+                                    placeholder="Min" [(ngModel)]="labfarm.dustLevelLow" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">%</span>
+                                </div>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputDustLevelHigh" name="dustHigh"
+                                    placeholder="Max" [(ngModel)]="labfarm.dustLevelHigh" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Light levels</label>
+                        <div class="row">
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputLightLevelLow" name="lightLow"
+                                    placeholder="Min" [(ngModel)]="labfarm.lightLevelLow" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">lux</span>
+                                </div>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputLightLevelHigh" name="lightHigh"
+                                    placeholder="Max" [(ngModel)]="labfarm.lightLevelHigh">
+                                <div class="input-group-append" required>
+                                    <span class="input-group-text" id="basic-addon2">lux</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Temperature levels</label>
+                        <div class="row">
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputTemperatureLevelLow" name="tempLow"
+                                    placeholder="Min" [(ngModel)]="labfarm.temperatureLevelLow" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">°C</span>
+                                </div>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputDustLevelHigh" name="tempHigh"
+                                    placeholder="Max" [(ngModel)]="labfarm.temperatureLevelHigh" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">°C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Conductivity levels</label>
+                        <div class="row">
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputConductivityLevelLow" name="condLow"
+                                    placeholder="Min" [(ngModel)]="labfarm.conductivityLevelLow" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">%</span>
+                                </div>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputConductivityLevelHigh" name="condHigh"
+                                    placeholder="Max" [(ngModel)]="labfarm.conductivityLevelHigh" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Water reservoir levels</label>
+                        <div class="row">
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputWaterLevelLow" name="waterLow"
+                                    placeholder="Min" [(ngModel)]="labfarm.minimumReservoirLevel" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">L</span>
+                                </div>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputWaterLevelHigh" name="waterHigh"
+                                    placeholder="Max" [(ngModel)]="labfarm.maximumReservoirLevel" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">L</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn btn-danger delete-btn" type="button" (click)="deleteLabFarm()">Delete this labfarm</button>
+                        <button class="btn bg-dark text-light save-btn" type="submit" (click)="checkLabFarm()">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-loading *ngIf="!labfarm || savingLabfarm">
+
+</app-loading>
+<app-error *ngIf="serverError">
+
+</app-error>`

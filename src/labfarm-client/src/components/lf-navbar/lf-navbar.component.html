@@ -1,0 +1,27 @@
+<div class="navbar bg-dark">
+
+
+    <div id="title">
+        <img src="../../assets/images/leaf.png">
+        <h1 class="font-italic font-weight-light">Leave-It</h1>
+    </div>
+
+    <nav>
+        <!-- <a routerLink="/pictureviewer" routerLinkActive="active-link">Picture viewer</a> -->
+        <!-- <a routerLink="/test" routerLinkActive="active-link">Debug test</a> -->
+        <a routerLink="/home" routerLinkActive="active-link">Home</a>
+        <a routerLink="/options" routerLinkActive="active-link">Preferences</a>
+        <a routerLink="/profile" routerLinkActive="active-link">Profile</a>
+        <ng-template #notificationPopup>
+            <h6 *ngIf="!notificationService.notificationsToggled">You do not have notifications enabled. Enable them <span routerLink="/options">here.</span></h6>
+            <app-notification [notification]="notification" [popover]="p" *ngFor="let notification of notificationService.notifications"></app-notification>
+        </ng-template>
+        <a class="notification-icon" placement="bottom" [ngbPopover]="notificationPopup" [autoClose]="'outside'" #p="ngbPopover" popoverTitle="Notifications" popoverClass="notification-popover">
+            <i class="fa fa-bell" aria-hidden="true"></i>
+            <span class="circle" *ngIf="notificationService.notificationsToggled">
+                <i>{{notificationService.notifications.length}}</i>
+            </span>
+        </a>
+    </nav>
+
+</div>

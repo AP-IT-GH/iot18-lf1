@@ -1,0 +1,13 @@
+<div class="notification-container urgency{{notification.urgency}}" id="notification{{notification.id}}" *ngIf="notification">
+    <div class="content-block">
+        <h6 class="notification-title">{{notification.title}}</h6>
+        <i class="fa fa-close notification-close" aria-hidden="true" (click)="remove()"></i>
+    </div>
+    <div class="content-block">
+        <p class="notification-body">{{notification.body}}</p>
+        <a class="notification-link" routerLink="{{notification.linkToUrl}}" *ngIf="notification.linkToUrl" (click)="popover.close()">Show me</a>
+    </div>
+    <span class="removal-loading" *ngIf="loadingRemoval">
+        <img src="../../assets/images/loading.gif">
+    </span>
+</div>

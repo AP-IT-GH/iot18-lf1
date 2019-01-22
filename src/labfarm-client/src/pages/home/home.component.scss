@@ -1,0 +1,28 @@
+.labfarm-container{ 
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 120px;
+}
+
+.new-lab-container {
+    display: flex;
+    justify-content: space-between;
+    min-width: 650px;
+    color: white;
+    padding: 1em 1em 0 1em;
+    border-radius: 8px;
+    background: grey;
+
+    button {
+        width: 80px;
+        height: 40px;
+    }
+    button:hover {
+        background: #f8f9fa !important;
+        color: #212529 !important;
+    }
+}

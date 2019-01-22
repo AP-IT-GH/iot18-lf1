@@ -1,0 +1,37 @@
+<div class="profile-container">
+
+    <div class="card profile-content" *ngIf="authService.isAuthenticated()">
+        <div class="card-header bg-dark text-light">
+            <a>Profile</a>
+        </div>
+        <div class="card-body">
+            <div class="card-element">
+                <p class="card-text authid-text">
+                    AuthID: <span>{{authId}}</span>
+                </p>
+            </div>
+            <div class="card-element">
+                <p class="card-text">
+                    <input type="button" class="btn btn-danger" value="Logout" (click)="authService.logout()">
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="card" *ngIf="!authService.isAuthenticated()">
+        <div class="card-header bg-dark text-light">
+            <a>Log in</a>
+        </div>
+        <div class="card-body">
+            <div class="card-element">
+                <h3 class="card-text">
+                    You are not logged in yet!
+                </h3>
+            </div>
+            <div class="card-element">
+                <p class="card-text">
+                    <input type="button" class="btn btn-primary" value="Log in" (click)="authService.login()">
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

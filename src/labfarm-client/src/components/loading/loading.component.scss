@@ -1,0 +1,18 @@
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    img {
+        display: block;
+        max-width: 600px;
+        margin: auto;
+        // border: 3px solid red;
+    }
+    h1 {
+        margin: auto;
+        font-style: italic;
+    }
+
+    margin-bottom: 100px;
+}

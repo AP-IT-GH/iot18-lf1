@@ -1,0 +1,13 @@
+.picture-preview-container {
+    display: flex;
+    padding: 16px;
+    border-radius: 5px;
+    background: #343a40 !important;
+
+    img {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+
+    }
+}
