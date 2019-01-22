@@ -1,0 +1,62 @@
+<div class="labfarm-header" *ngIf="labfarm">
+    <h3>{{labfarm.name}}</h3>
+    <a class="updated small italic text-right font-italic font-weight-light">Updated:
+        {{lastUpdate | date:'full'}}</a>
+    <button type="button" class="btn bg-dark text-light" (click)="editLabfarm()">Edit labfarm</button>
+</div>
+<div class="labfarm-container" *ngIf="labfarm">
+    <div class="labfarm-body">
+        <app-sensor-graph [sensorId]="sensor.id" LabfarmId="{{farmId}}" *ngFor="let sensor of sensors"></app-sensor-graph>
+        <div class="camera-sensor bg-light">
+            <ng-template #pictureModal let-modal>
+                <app-picture-timeline [labfarm]="labfarm" [modal]="modal">
+
+                </app-picture-timeline>
+            </ng-template>
+            <ng-template #imgTooltip>
+                <div class="tooltip-container">
+                    <p>Click to see the rest of the images</p>
+                </div>
+            </ng-template>
+            <img src="data:image/png;base64,{{lastPicture}}" [ngbTooltip]="imgTooltip" (click)="openPictureModal(pictureModal)" class="rounded"
+                *ngIf="lastPicture">
+            <h3 *ngIf="!lastPicture">No pictures available</h3>
+        </div>
+    </div>
+
+    <div class="labfarm-options-container" *ngIf="labfarm.sensors">
+
+        <div class="card">
+            <div class="card-header bg-dark text-light">Lab farm options</div>
+            <div class="card-body">
+                <div class="lf-options">
+                    <ui-switch [(ngModel)]="autoMode" (change)="autoModeChanged()"></ui-switch>
+                    <a>Auto-mode</a>
+                </div>
+                <div class="lf-options">
+                    <mat-slider [min]="0" [max]="255" [step]="5" [(ngModel)]="conductivityLevel" [disabled]="conductivityDisabled"
+                        [thumbLabel]="true" [tickInterval]="5"></mat-slider>
+                    <a>{{conductivityLevel}} Conductivity</a>
+                </div>
+                <div class="lf-options">
+                    <mat-slider [min]="0" [max]="255" [step]="5" [(ngModel)]="lightLevel" [disabled]="lightDisabled"
+                        [thumbLabel]="true" [tickInterval]="5"></mat-slider>
+                    <a>{{lightLevel}} Light level</a>
+                </div>
+                <div class="lf-options">
+                    <a class="updated small italic text-right font-italic font-weight-light">Updated:
+                        {{lastUpdate | date:'short'}}</a>
+                    <button type="button" class="btn bg-dark text-light">Save</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<app-loading *ngIf="!labfarm">
+
+</app-loading>
+<app-error *ngIf="serverError">
+
+</app-error>

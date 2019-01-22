@@ -1,0 +1,22 @@
+.new-labfarm-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+
+    .new-labfarm-content {
+        min-width: 600px;
+        max-width: 800px;
+
+        .submit-group {
+            padding-top: 20px;
+            text-align: right;
+        }
+        
+    }
+    
+
+    .card-body {
+        // width: 50%;
+    }
+
+}

@@ -1,0 +1,50 @@
+.labfarm-label {
+    // position: fixed;
+    margin-top: -20px;
+    margin-left: 0px;
+    // background: rgb(72, 207, 147);
+    color: white;
+    padding: 8px 24px;
+    font-weight: 600;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+.labfarm-overview {
+    margin-bottom: 60px;
+    display: block;
+    min-width: 650px;
+    height: 120px;
+    // background: rgb(72, 207, 147);
+    border-radius: 8px;
+    color: white;
+
+    img {
+        // width: 120px;
+        height: 96px;
+        background-repeat: no-repeat;
+    }
+}
+.labfarm-overview ul{
+    padding: 6px;
+    li {
+        padding-bottom: 6px;
+    }
+}
+.rounded {
+    height: 100px;
+}
+.tooltip-container{
+    width: 200px;
+    li {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 10px;
+
+        a:nth-child(2) {
+            background: #007bff;
+            padding: 0 10px;
+            border-radius: 12px;
+        }
+    }
+}

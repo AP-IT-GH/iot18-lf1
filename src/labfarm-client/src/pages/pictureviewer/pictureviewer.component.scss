@@ -1,0 +1,41 @@
+.picture-container {
+
+    height: 200px;
+    width: auto;
+    max-width: 800px;
+    padding: 25px;
+    margin: auto;
+    margin-top: 25px;
+
+    border-radius: 5px;
+    border: solid 1px #343a40;
+
+    display: flex;
+    justify-content: space-between;
+
+    .image-container {
+        width: 222px;
+        img {
+            height: 100%;
+        }
+    }
+    .input-container {
+       * {
+           margin: 2px;
+       }
+    }
+    .button-container{ 
+        display: flex;
+        flex-direction: column;
+        // margin-top: 22px;
+        p {
+            padding-left: 12px;
+            margin-bottom: 6px;
+        }
+        button {
+            width: 80px;
+            margin: 12px;
+        }
+    }
+}
+

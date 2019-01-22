@@ -1,0 +1,136 @@
+<div class="new-labfarm-container" *ngIf="!savingLabfarm">
+    <div class="new-labfarm-content">
+        <div class="card">
+            <div class="card-header bg-dark text-light">
+                <a>New lab farm</a>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <div class="alert alert-danger" *ngIf="inputError">
+                        <strong>Warning</strong> The input you have submitted isn't quite right. Every field is required, <strong>Lab farm name</strong> and <strong>Plant species</strong> require a minimum length of <strong>4 characters</strong>.
+                    </div>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label>Lab farm name</label>
+                        <input type="text" class="form-control" id="inputLabfarmName" name="name" placeholder="My labfarm"
+                            [(ngModel)]="name" required minlength="4">
+                    </div>
+                    <div class="form-group">
+                        <label>Plant species</label>
+                        <input type="text" class="form-control" id="inputPlantSpecies" name="plantSpecies" placeholder="Cucumber"
+                            [(ngModel)]="plantSpecies" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Dust levels</label>
+                        <div class="row">
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputDustLevelMin" name="dustLow"
+                                    placeholder="Min" [(ngModel)]="dustLow" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">%</span>
+                                </div>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputDustLevelHigh" name="dustHigh"
+                                    placeholder="Max" [(ngModel)]="dustHigh" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Light levels</label>
+                        <div class="row">
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputLightLevelLow" name="lightLow"
+                                    placeholder="Min" [(ngModel)]="lightLow" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">lux</span>
+                                </div>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputLightLevelHigh" name="lightHigh"
+                                    placeholder="Max" [(ngModel)]="lightHigh">
+                                <div class="input-group-append" required>
+                                    <span class="input-group-text" id="basic-addon2">lux</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Temperature levels</label>
+                        <div class="row">
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputTemperatureLevelLow" name="tempLow"
+                                    placeholder="Min" [(ngModel)]="tempLow" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">°C</span>
+                                </div>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputDustLevelHigh" name="tempHigh"
+                                    placeholder="Max" [(ngModel)]="tempHigh" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">°C</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Conductivity levels</label>
+                        <div class="row">
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputConductivityLevelLow" name="condLow"
+                                    placeholder="Min" [(ngModel)]="condLow" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">%</span>
+                                </div>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputConductivityLevelHigh" name="condHigh"
+                                    placeholder="Max" [(ngModel)]="condHigh" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Water reservoir levels</label>
+                        <div class="row">
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputWaterLevelLow" name="waterLow"
+                                    placeholder="Min" [(ngModel)]="waterLow" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">L</span>
+                                </div>
+                            </div>
+                            <div class="col input-group">
+                                <input type="text" class="form-control" id="inputWaterLevelHigh" name="waterHigh"
+                                    placeholder="Max" [(ngModel)]="waterHigh" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">L</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="submit-group">
+                        <button class="btn bg-dark text-light" type="submit" (click)="checkLabFarm()">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-loading *ngIf="savingLabfarm">
+
+</app-loading>
